@@ -5,7 +5,7 @@
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="fl">
-				<li><a href="dashboard.php" class="active-tab dashboard-tab">Dashboard</a></li>
+				<li><a href="dashboard.php" class="active-tab dashboard-tab">Escritorio</a></li>
 				<li><a href="page-full-width.php" class="sales-tab">Sales</a></li>
 				<li><a href="page-full-width.php" class="customers-tab">Customers</a></li>
 				<li><a href="page-other.php" class="purchase-tab">Purchase</a></li>

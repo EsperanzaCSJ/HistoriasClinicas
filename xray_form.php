@@ -7,7 +7,7 @@
 ?>
 <html lang = "en">
 	<head>	
-		<title>Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</title>
+		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel = "shortcut icon" href = "images/logo.png" />
@@ -17,7 +17,7 @@
 	</head>
 	<body>
 	<div class = "navbar navbar-default navbar-fixed-top">
-		<img src = "images/logo.png" height = "55px" style = "float:left;"><label class = "navbar-brand">Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</label>
+		<img src = "images/logo.png" height = "55px" style = "float:left;"><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
 		<ul class = "nav navbar-right">	
 				<li class = "dropdown">
 					<a class = "user dropdown-toggle" data-toggle = "dropdown" href = "#">
@@ -56,9 +56,9 @@
 			?>
 			<div class = "panel-body">
 				<br style = "clear:both;"/>
-				<div class = "alert alert-info">Basic Information</div>		
+				<div class = "alert alert-info">Informacion Basica</div>		
 				<div style = "float:left; width:30%;">	
-					<label style = "font-size:15px;">Name of Patient:</label>
+					<label style = "font-size:15px;">Nombre del paciente:</label>
 					<br />
 					<label style = "font-size:15px;" class = "text-muted"><?php echo $f['firstname']." ".$f['middlename']." ".$f['lastname']?></label>		
 				</div>
@@ -114,7 +114,7 @@
 		 
 	</div>
 	<div id = "footer">
-		<label class = "footer-title">&copy; Copyright Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica 2018 - <a href="http://platea21.blogspot.com/">Platea21</a></label>
+		<label class = "footer-title">&copy; Copyright Sistema de Registro de las Historias Clinicas para el Consultorio Medico Popular Pio Tamayo</label>
 	</div>
 	</body>
 		<?php require "script.php" ?>
