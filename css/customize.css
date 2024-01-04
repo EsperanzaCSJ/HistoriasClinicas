@@ -60,7 +60,7 @@ ul center{
 	float:right;
 	position:relative;
 	top:120px;
-	right:20px;
+	right: 30%;
 	padding:10px;
 	border-radius:5px;
 	height:350px;
@@ -95,7 +95,7 @@ ul center{
 }
 
 .highlight{
-	background-color:#337AB7;
+	background-color:#160c46;
 }
 
 .highlight a{
