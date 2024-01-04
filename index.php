@@ -8,7 +8,10 @@
 		<link rel = "stylesheet" type = "text/css" href = "css/bootstrap.css" />
 		<link rel = "stylesheet" type = "text/css" href = "css/customize.css" />
 	</head>
-<body class = "center">
+<body>
+	<div class = "navbar navbar-default navtop">
+		<img src = "images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
+	</div>
 		<div  id = "sidelogin">
 			<form action = "login.php" enctype = "multipart/form-data" method = "POST" >
 				<label class = "lbllogin">Iniciar Sesión</label>

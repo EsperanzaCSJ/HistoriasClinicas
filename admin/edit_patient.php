@@ -143,8 +143,9 @@ ob_start();
 						<select name = "year" class = "form-control" style = "width:13%; float:left;" required = "required">
 							<option value = "">Año</option>
 							<?php
-								$a = date(Y);
-								while(1965 <= $a){
+								$a = date('Y');
+								// $a = "2024";
+								while(1910 <= $a){
 									echo "<option value = '".$a."'>".$a--."</option>";
 								}
 							?>
