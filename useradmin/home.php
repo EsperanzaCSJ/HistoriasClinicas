@@ -3,22 +3,22 @@
 	require_once 'logincheck.php';
 	$date = date("Y", strtotime("+ 8 HOURS"));
 	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-	$qfecalysis = $conn->query("SELECT COUNT(*) as total FROM `fecalisys` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-	$ffecalysis = $qfecalysis->fetch_array();
-	$qmaternity = $conn->query("SELECT COUNT(*) as total FROM `birthing` `prenatal` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-	$fmaternity = $qmaternity->fetch_array();
-	$qhematology = $conn->query("SELECT COUNT(*) as total FROM `hematology` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-	$fhematology = $qhematology->fetch_array();
-	$qdental = $conn->query("SELECT COUNT(*) as total FROM `dental` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-	$fdental = $qdental->fetch_array();
-	$qxray = $conn->query("SELECT COUNT(*) as total FROM `radiological` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-	$fxray = $qxray->fetch_array();
-	$qrehab = $conn->query("SELECT COUNT(*) as total FROM `rehabilitation` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-	$frehab = $qrehab->fetch_array();
-	$qsputum = $conn->query("SELECT COUNT(*) as total FROM `sputum` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-	$fsputum = $qsputum->fetch_array();
-	$qurinalysis = $conn->query("SELECT COUNT(*) as total FROM `urinalysis` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
-	$furinalysis = $qurinalysis->fetch_array();
+	// $qfecalysis = $conn->query("SELECT COUNT(*) as total FROM `fecalisys` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $ffecalysis = $qfecalysis->fetch_array();
+	// $qmaternity = $conn->query("SELECT COUNT(*) as total FROM `birthing` `prenatal` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $fmaternity = $qmaternity->fetch_array();
+	// $qhematology = $conn->query("SELECT COUNT(*) as total FROM `hematology` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $fhematology = $qhematology->fetch_array();
+	// $qdental = $conn->query("SELECT COUNT(*) as total FROM `dental` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $fdental = $qdental->fetch_array();
+	// $qxray = $conn->query("SELECT COUNT(*) as total FROM `radiological` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $fxray = $qxray->fetch_array();
+	// $qrehab = $conn->query("SELECT COUNT(*) as total FROM `rehabilitation` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $frehab = $qrehab->fetch_array();
+	// $qsputum = $conn->query("SELECT COUNT(*) as total FROM `sputum` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $fsputum = $qsputum->fetch_array();
+	// $qurinalysis = $conn->query("SELECT COUNT(*) as total FROM `urinalysis` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $furinalysis = $qurinalysis->fetch_array();
 ?>
 <html lang = "eng">
 	<head>
