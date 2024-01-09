@@ -44,7 +44,7 @@ ob_start();
 		<div style = "display:none;" id = "add_itr" class = "panel panel-success">	
 			<div class = "panel-heading">
 				<label>AGREGAR PACIENTE</label>
-				<button id = "hide_itr" style = "float:right; margin-top:-4px;" class = "btn btn-sm btn-danger"><span class = "glyphicon glyphicon-remove"></span> CLOSE</button>
+				<button id = "hide_itr" style = "float:right; margin-top:-4px;" class = "btn btn-sm btn-danger"><span class = "glyphicon glyphicon-remove"></span> Cerrar</button>
 			</div>
 			<div class = "panel-body">
 				<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
@@ -63,11 +63,8 @@ ob_start();
 					<br />
 					<br />
 					<div class = "form-inline">
-						<label for = "firstname">Primer Nombre:</label>
+						<label for = "firstname">Nombres:</label>
 						<input class = "form-control" name = "firstname" type = "text" required = "required">
-						&nbsp;&nbsp;&nbsp;
-						<label for = "middlename">Segundo Nombre:</label>
-						<input class = "form-control" name = "middlename" placeholder = "(Optional)" type = "text">
 						&nbsp;&nbsp;&nbsp;
 						<label for = "lastname">Apellidos:</label>
 						<input class = "form-control" name = "lastname" type = "text" required = "required">
@@ -123,7 +120,7 @@ ob_start();
 						<br style = "clear:both;"/>
 						<br />
 						<label for = "phil_health_no">Tratamiento:</label>
-						<input name = "phil_health_no" placeholder = "(if any)" class = "form-control" type = "text">
+						<input name = "phil_health_no" placeholder = "tratamiento" class = "form-control" type = "text">
 						<br />
 						<label for = "address">Direccion:</label>
 						<input class = "form-control" name = "address" type = "text" required = "required">
@@ -133,42 +130,37 @@ ob_start();
 						<br />
 						<label for = "civil_status">Estado Civil:</label>
 						<select style = "width:22%;" class = "form-control" name = "civil_status" required = "required">
-							<option value = "">--Seleccione--</option>
-							<option value = "Soltero">soltero(a)</option>
+							<option value = "">Seleccionar</option>
+							<option value = "Soltero">Soltero(a)</option>
 							<option value = "Casado">Casado(a)</option>
+							<option value = "Casado">Divorciado(a)</option>
 						</select>
 						<br />
 						<label for = "gender">Genero:</label>
 						<select style = "width:22%;" class = "form-control" name = "gender" required = "required">
-							<option value = "">--Seleccione--</option>
+							<option value = "">Seleccionar</option>
 							<option value = "Male">Masculino</option>
 							<option value = "Female">Femenino</option>
 						</select>
 					</div>
 					<br />
 					<div class = "form-inline">
-						<label for = "bp">BP:</label>
-						<input class = "form-control" name = "bp" type = "text"  required = "required">
-						&nbsp;&nbsp;&nbsp;
-						<label for = "temp">TEMP:</label>
+						<label for = "temp">Temperatura:</label>
 						<input class = "form-control" name = "temp" type = "number" max = "999" min = "0" size = "15" required = "required"><label>&deg;C</label>
 						&nbsp;&nbsp;&nbsp;
-						<label for = "pr">PR:</label>
-						<input class = "form-control" name = "pr" type = "text"  required = "required">
 						<br />
 						<br />
-						<label for = "rr">RR:</label>
-						<input class = "form-control" name = "rr" type = "text"  required = "required">
-						&nbsp;&nbsp;&nbsp;
-						<label for = "wt">WT :</label>
+						<label for = "wt">Peso:</label>
 						<input class = "form-control" name = "wt" style = "width:10%;" type = "number"  required = "required"><label>kg</label>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<label for = "ht">HT :</label>
-						<input class = "form-control" name = "ht" style = "margin-right:10px;" type = "text"  required = "required">
+						&nbsp;&nbsp;&nbsp;
+						<br />
+						<br />
+						<label for = "ht">Altura:</label>
+						<input class = "form-control" name = "ht" style = "margin-right:10px;" type = "text"  required = "required"><label>cm</label>
 					</div>
 					<br />
 					<div class = "form-inline">
-						<button class = "btn btn-primary" name = "save_patient"><span class = "glyphicon glyphicon-save"></span> SAVE</button>
+						<button class = "btn btn-primary" name = "save_patient"><span class = "glyphicon glyphicon-save"></span> Guardar</button>
 					</div>
 				</form>
 			</div>	
@@ -185,12 +177,12 @@ ob_start();
 				<table id = "table" class = "display" width = "100%" cellspacing = "0">
 					<thead>
 						<tr>
+							<th>Nro. Cedula</th>
 							<th>Nro. Historia</th>
 							<th>Nombre</th>
 							<th>F. Nacimiento</th>
 							<th>Edad</th>
 							<th>Dirección</th>
-							<th>Estado Civil</th>
 							<th><center>Acción</center></th>
 						</tr>
 					</thead>
@@ -204,12 +196,12 @@ ob_start();
 						$f = $q->fetch_array();
 					?>
 						<tr>
+							<td><?php echo $fetch['family_no']?></td>
 							<td><?php echo $fetch['itr_no']?></td>
 							<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 							<td><?php echo $fetch['birthdate']?></td>				
 							<td><?php echo $fetch['age']?></td>				
 							<td><?php echo $fetch['address']?></td>
-							<td><?php echo $fetch['civil_status']?></td>
 							<td><center><a href = "complaints.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">COMPLICACIONES <span class = "badge"><?php echo $f['total']?></span></a> 
 							<a href = "edit_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span> Actualizar</a><a href = "delete_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i>Eliminar</a></center></td>
 						</tr>
