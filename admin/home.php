@@ -36,7 +36,7 @@
 			window.onload = function() { 
 				$("#chartContainer").CanvasJSChart({ 
 					title: { 
-						text: "Poblacion Total de Pacientes <?php echo $date?>",
+						text: "Pacientes <?php echo $date?>",
 						fontSize: 24
 					}, 
 					axisY: { 

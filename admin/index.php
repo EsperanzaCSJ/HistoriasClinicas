@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang = "eng">
-	<head>
-		<title>Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</title>
-		<meta charset = "utf-8" />
-		<link rel = "shortcut icon" href = "../images/logo.png">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel = "stylesheet" type = "text/css" href = "../css/bootstrap.css" />
-		<link rel = "stylesheet" type = "text/css" href = "../css/customize.css" />
-	<!-- jQuery & JS files -->	<?php include_once("../tpl/common_js_ventas.php"); ?> <script src="../js/script.js"></script>  </head>
+<?php
+	require_once 'head.php';	
+?> 
 <body>
 	<div class = "navbar navbar-default">
 		<img src = "../images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</label>
