@@ -22,7 +22,7 @@
 ?>
 <html lang = "eng">
 	<head>
-		<title>Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</title>
+		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
 		<meta charset = "utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel = "shortcut icon" href = "../images/logo.png" />
@@ -126,7 +126,7 @@
 	 </head>
 <body>
 	<div class = "navbar navbar-default navbar-fixed-top">
-		<img src = "../images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</label>
+		<img src = "../images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
 		<?php 
 			$q = $conn->query("SELECT * FROM `admin` WHERE `admin_id` = $_SESSION[admin_id]") or die(mysqli_error());
 			$f = $q->fetch_array();

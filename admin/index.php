@@ -5,7 +5,7 @@
 ?> 
 <body>
 	<div class = "navbar navbar-default">
-		<img src = "../images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</label>
+		<img src = "../images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
 	</div>
 	<div id = "top" class = "login">
 		<div class = "panel panel-primary">

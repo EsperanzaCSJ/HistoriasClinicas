@@ -7,7 +7,7 @@
 ?>
 <html lang = "en">
 	<head>	
-		<title>Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</title>
+		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel = "shortcut icon" href = "images/logo.png" />
@@ -18,7 +18,7 @@
 	</head>
 	<body>
 	<div class = "navbar navbar-default navbar-fixed-top">
-		<img src = "images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</label>
+		<img src = "images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
 		<ul class = "nav navbar-right">	
 				<li class = "dropdown">
 					<a class = "user dropdown-toggle" data-toggle = "dropdown" href = "#">

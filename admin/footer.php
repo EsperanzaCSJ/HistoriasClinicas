@@ -1,5 +1,5 @@
 <div id = "footer">
-		<label class = "footer-title">&copy; Historias Clinicas - Consultorio Medico Popular Pio Tamayo - Esperanza Sanchez</label>
+		<label class = "footer-title">&copy; Esperanza Sanchez</label>
 </div>
 
 <?php

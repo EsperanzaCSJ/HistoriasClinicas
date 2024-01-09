@@ -10,7 +10,7 @@
 ?>
 	<body>
 	<div class = "navbar navbar-default navbar-fixed-top">
-		<img src = "images/logo.png" height = "55px" style = "float:left;"><label class = "navbar-brand">Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</label>
+		<img src = "images/logo.png" height = "55px" style = "float:left;"><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
 		<ul class = "nav navbar-right">	
 				<li class = "dropdown">
 					<a class = "user dropdown-toggle" data-toggle = "dropdown" href = "#">
