@@ -3129,19 +3129,19 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color: #286090;
+  background-color: #259c25;
   border-color: #122b40;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #286090;
+  background-color: #259c25;
   border-color: #204d74;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #286090;
+  background-color: #259c25;
   border-color: #204d74;
 }
 .btn-primary:active:hover,
@@ -3255,8 +3255,8 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info {
   color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #419641;
+  border-color: #54c454;
 }
 .btn-info:focus,
 .btn-info.focus {
@@ -3312,8 +3312,8 @@ fieldset[disabled] .btn-info:active,
 .btn-info.disabled.active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #1fc71f;
+  border-color: #54c454;
 }
 .btn-info .badge {
   color: #5bc0de;
@@ -5562,7 +5562,7 @@ button.list-group-item-danger.active:focus {
   border-top-width: 0;
 }
 .list-group + .panel-footer {
-  border-top-width: 0;
+  border-top-width: 7;
 }
 .panel > .table,
 .panel > .table-responsive > .table,
@@ -5995,7 +5995,7 @@ button.close {
 }
 .modal-footer {
   padding: 15px;
-  text-align: right;
+  text-align: center;
   border-top: 1px solid #e5e5e5;
 }
 .modal-footer .btn + .btn {
@@ -6003,7 +6003,7 @@ button.close {
   margin-left: 5px;
 }
 .modal-footer .btn-group .btn + .btn {
-  margin-left: -1px;
+  margin-left: 7px;
 }
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;

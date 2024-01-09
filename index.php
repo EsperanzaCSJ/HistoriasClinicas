@@ -35,9 +35,9 @@
 			</form>
 		</div>	
 		<img src = "images/salud.jpg" class = "background">			
-	<div id = "footer">
-		<label class = "footer-title">&copy; Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
-	</div>
+	<?php
+	require_once 'footer.php';	
+?> 
 </body>
 <?php
 	include("admin/script.php");

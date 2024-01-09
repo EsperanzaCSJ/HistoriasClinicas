@@ -115,7 +115,7 @@
 		 
 	</div>
 	<div id = "footer">
-		<label class = "footer-title">&copy; Copyright Patient Health Center Management System 2015</label>
+		<label class = "footer-title">&copy; Copyright Sistema de Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
 	</div>
 	</body>
 		<?php require "script.php" ?>

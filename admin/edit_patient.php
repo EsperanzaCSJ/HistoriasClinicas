@@ -201,9 +201,9 @@ ob_start();
 			</div>	
 		</div>	
 	</div>
-	<div id = "footer">
-		<label class = "footer-title">&copy; Copyright Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica 2018</label>
-	</div>
+	<?php
+	require_once 'footer.php';	
+	?> 
 <?php include("script.php"); ?>
 <script type = "text/javascript">
     $(document).ready(function() {

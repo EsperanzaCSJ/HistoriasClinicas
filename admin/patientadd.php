@@ -73,21 +73,18 @@ ob_start();
 		<br />
 		<div style = "display:none;" id = "add_itr" class = "panel panel-success">	
 			<div class = "panel-heading">
-				<label>AGREGAR PACIENTE</label>
+				<label>AGREGAR INFORMACION DEL PACIENTE</label>
 				<button id = "hide_itr" style = "float:right; margin-top:-4px;" class = "btn btn-sm btn-danger"><span class = "glyphicon glyphicon-remove"></span> CLOSE</button>
 			</div>
 			<div class = "panel-body">
 				<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
 					<div style = "float:left;" class = "form-inline">
-						<label for = "family_no">Nro. Cédula:</label>
-						<input class = "form-control" placeholder = "" size = "8" min = "27000000" max = "35000000" type = "number" name = "family_no">
-					</div>
-					<br />
-					<br />
-					<br />
-					<div style = "float:left;" class = "form-inline">
 						<label for = "itr_no">Nro. Historia:</label>
 						<input class = "form-control" size = "3" min = "0" type = "number" name = "itr_no">
+					</div>
+					<div style = "float:right;" class = "form-inline">
+						<label for = "family_no">Nro DNI:</label>
+						<input class = "form-control" placeholder = "(Optional)" size = "5" type = "text" name = "family_no">
 					</div>
 					<br />
 					<br />
@@ -106,7 +103,21 @@ ob_start();
 					<div class = "form-group">
 						<label for = "birthdate" style = "float:left;">F. Nacimiento:</label>
 						<br style = "clear:both;" />
-						
+						<select name = "month" style = "width:15%; float:left;" class = "form-control" required = "required">
+							<option value = "">sleccione mes</option>
+							<option value = "01">Enero</option>
+							<option value = "02">Febrero</option>
+							<option value = "03">Marzo</option>
+							<option value = "04">Abril</option>
+							<option value = "05">Mayo</option>
+							<option value = "06">Junio</option>
+							<option value = "07">Julio</option>
+							<option value = "08">Agosto</option>
+							<option value = "09">Septiembre</option>
+							<option value = "10">Octubre</option>
+							<option value = "11">Noviembre</option>
+							<option value = "12">Diciembre</option>
+						</select>
 						<select name = "day" class = "form-control" style = "width:13%; float:left;" required = "required">
 							<option value = "">Dia</option>
 							<option value = "01">01</option>
@@ -124,21 +135,6 @@ ob_start();
 									echo "<option value = '".$a."'>".$a++."</option>";
 								}
 							?>
-						</select>
-						<select name = "month" style = "width:15%; float:left;" class = "form-control" required = "required">
-							<option value = "">Mes</option>
-							<option value = "01">Enero</option>
-							<option value = "02">Febrero</option>
-							<option value = "03">Marzo</option>
-							<option value = "04">Abril</option>
-							<option value = "05">Mayo</option>
-							<option value = "06">Junio</option>
-							<option value = "07">Julio</option>
-							<option value = "08">Agosto</option>
-							<option value = "09">Septiembre</option>
-							<option value = "10">Octubre</option>
-							<option value = "11">Noviembre</option>
-							<option value = "12">Diciembre</option>
 						</select>
 						<select name = "year" class = "form-control" style = "width:13%; float:left;" required = "required">
 							<option value = "">Año</option>
@@ -164,7 +160,7 @@ ob_start();
 						<label for = "civil_status">Estado Civil:</label>
 						<select style = "width:22%;" class = "form-control" name = "civil_status" required = "required">
 							<option value = "">--Seleccione--</option>
-							<option value = "Soltero">soltero(a)</option>
+							<option value = "Soltero">Soltero(a)</option>
 							<option value = "Casado">Casado(a)</option>
 						</select>
 						<br />

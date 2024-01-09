@@ -99,9 +99,9 @@
 		</table>
 		</table>
 	</div>
-	<div id = "footer">
-		<label class = "footer-title">&copy; Copyright Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica 2018 - <a href="http://platea21.blogspot.com/">Platea21</a></label>
-	</div>
+		<?php 
+		require_once 'footer.php';	
+	?>
 	<?php require'script3.php'?>
 	<script type = "text/javascript">
 			$(document).ready(function(){

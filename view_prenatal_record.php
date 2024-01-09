@@ -84,9 +84,9 @@
 			</tbody>
 		</table>
 	</div>
-	<div id = "footer">
-		<label class = "footer-title">&copy; Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica 2015</label>
-	</div>
+	<?php
+	require_once 'footer.php';	
+?> 
 	</body>
 		<?php require "script.php" ?>
 </html>

@@ -59,9 +59,9 @@
 			?>
 		</div>
 	</div>
-	<div id = "footer">
-		<label class = "footer-title">&copy; Copyright Sistema de Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
-	</div>
+	<?php
+	require_once 'footer.php';	
+?> 
 	</body>
 		<?php require "script.php" ?>
 </html>

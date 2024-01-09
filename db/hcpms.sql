@@ -243,8 +243,8 @@ CREATE TABLE IF NOT EXISTS `itr` (
 -- Volcado de datos para la tabla `itr`
 --
 
-INSERT INTO `itr` (`itr_no`, `family_no`, `phil_health_no`, `firstname`, `middlename`, `lastname`, `birthdate`, `age`, `address`, `civil_status`, `gender`, `BP`, `TEMP`, `PR`, `RR`, `WT`, `HT`) VALUES
-('1111', '', 'platea', 'gorchor', 'pl', 'chavez', '06/15/1975', 27, 'tacna', 'Single', 'Male', '23', '2Â°C', '80/90', '45', '23kg', '1.69');
+INSERT INTO `itr` (`itr_no`, `family_no`, `phil_health_no`, `firstname`, `middlename`, `lastname`, `birthdate`, `age`, `address`, `civil_status`, `gender`, `TEMP`, `WT`, `HT`) VALUES
+('1111', '', 'Marco', 'Andres', 'pl', 'Polo', '06/01/1985', 39, 'tacna', 'Soltero', 'Masculino', '37°C',  '72kg', '1.80');
 
 -- --------------------------------------------------------
 
@@ -485,7 +485,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(20) NOT NULL,
   `password` varchar(12) NOT NULL,
   `firstname` varchar(20) NOT NULL,
-  `middlename` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
   `section` varchar(20) NOT NULL,
   PRIMARY KEY (`user_id`)
@@ -495,8 +494,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `section`) VALUES
-(1, 'platea21', 'platea21', 'platea21', 'gorchor', 'platea', 'Dental');
+INSERT INTO `user` (`user_id`, `username`, `password`, `firstname`, `lastname`, `section`) VALUES
+(1, 'usuario', 'contraseña', 'nombre', 'apellido', 'seccion');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

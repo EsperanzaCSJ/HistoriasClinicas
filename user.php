@@ -124,9 +124,9 @@
 			</div>
 		</div>
 	</div>
-	<div id = "footer">
-		<label class = "footer-title">&copy; Copyright Patient Health Center Management System 2015</label>
-	</div>
+	<?php
+	require_once 'footer.php';	
+?> 
 <?php
 	include("script.php");
 ?>	
