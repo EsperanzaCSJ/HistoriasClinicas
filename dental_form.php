@@ -6,33 +6,11 @@
 	$fetch = $query->fetch_array();
 ?>
 <html lang = "en">
-	<head>	
-		<title>Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</title>
-		<meta charset = "UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel = "shorcut icon" href = "images/logo.png" />
-		<link rel = "stylesheet" type = "text/css" href = "css/bootstrap.css" />
-		<link rel = "stylesheet" type = "text/css" href = "css/jquery.dataTables.css" />
-		<link rel = "stylesheet" type = "text/css" href = "css/customize.css" />
-	</head>
+	<?php	require_once 'head.php';
+?>
 	<body>
-	<div class = "navbar navbar-default navbar-fixed-top">
-		<img src = "images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</label>
-		<ul class = "nav navbar-right">	
-				<li class = "dropdown">
-					<a class = "user dropdown-toggle" data-toggle = "dropdown" href = "#">
-						<span class = "glyphicon glyphicon-user"></span>
-						<?php echo $fetch['firstname']." ".$fetch['lastname'] ?>
-						<b class = "caret"></b>
-					</a>
-				<ul class = "dropdown-menu">
-					<li>
-						<a class = "me" href = "logout.php"><i class = "glyphicon glyphicon-log-out"></i> Cerrar Sesión</a>
-					</li>
-				</ul>
-				</li>
-			</ul>
-	</div>
+	<?php	require_once 'navbar2.php';
+?>
 	<br />
 	<br />
 	<br />

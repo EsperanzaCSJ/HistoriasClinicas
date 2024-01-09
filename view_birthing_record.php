@@ -6,15 +6,8 @@
 	$fetch = $query->fetch_array();
 ?>
 <html lang = "en">
-	<head>	
-		<title>Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</title>
-		<meta charset = "UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel = "shorcut icon" href = "images/logo.png" />
-		<link rel = "stylesheet" type = "text/css" href = "css/bootstrap.css" />
-		<link rel = "stylesheet" type = "text/css" href = "css/jquery.dataTables.css" />
-		<link rel = "stylesheet" type = "text/css" href = "css/customize.css" />
-	</head>
+	<?php	require_once 'head.php';
+?>
 	<body>
 	<div class = "navbar navbar-default navbar-fixed-top">
 		<img src = "images/logo.png" height = "55px" style = "float:left;"><label class = "navbar-brand">Sistema de Historias Clinicas y Registro de Pacientes - Hospital & Clinica</label>
