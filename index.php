@@ -49,6 +49,6 @@
 ?> 
 </body>
 <?php
-	include("admin/script.php");
+	include("useradmin/script.php");
 ?>
 </html>

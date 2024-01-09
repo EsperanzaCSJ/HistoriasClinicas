@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "eng">
 <?php
-	require_once 'head.php';	
+	require_once 'head.php';
 ?> 
 <body>
 	<div class = "navbar navbar-default">
@@ -10,7 +10,7 @@
 	<div id = "top" class = "login">
 		<div class = "panel panel-primary">
 			<div class = "panel-heading">
-				<center><h1 class = "panel-title">Administrador</a></h1></center>
+				<center><h1 class = "panel-title">User Admin</a></h1></center>
 			</div>
 			<div class = "panel-body">
 				<form enctype = "multipart/form-data" action = "login.php" role = "form" method = "POST">
