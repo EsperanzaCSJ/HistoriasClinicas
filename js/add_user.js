@@ -3,9 +3,9 @@ $(document).ready(function(){
 		var username = $("#username").val();
 		var password = $("#password").val();
 		var firstname = $("#firstname").val();
-		var middlename = $("#middlename").val();
 		var lastname = $("#lastname").val();
-		var section = $("#section").val();
+		var idmedico = $("#idmedico").val();
+		var cimedico = $("#cimedico").val();
 		$.ajax({
 			type: "POST",
 			url: "add_user.php",
@@ -13,9 +13,9 @@ $(document).ready(function(){
 				Usuario: username,
 				Contraseña: password,
 				Nombre: firstname,
-				Segundo Nombre: middlename,
 				Apellidos: lastname,
-				section: section
+				Licencia: idmedico,				
+				Cedula: cimedico
 			},
 			success: function(msg){
 				$("#a").html(msg);

@@ -20,7 +20,7 @@
 		<br />
 		<div id = "add" class = "panel panel-success">	
 			<div class = "panel-heading">
-				<label>AGREGAR USUARIO</label>
+				<label>AGREGAR MÉDICO</label>
 				<button id = "hide" class = "btn btn-sm btn-danger" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-remove"></span> CERRAR</button>
 			</div>
 			<div class = "panel-body">
@@ -42,27 +42,17 @@
 							<input class = "form-control" type = "text" name = "firstname" required = "required">
 						</div>
 						<div class = "form-group">
-							<label for = "middlename">Segundo Nombre: </label>
-							<input class = "form-control" type = "text" name = "middlename" placeholder = "(Opcional)">
-						</div>
-						<div class = "form-group">
 							<label for = "lastname">Apellidos: </label>
 							<input class = "form-control" type = "text" name = "lastname" required = "required">
+						</div>						
+						<div class = "form-group">
+							<label for = "idmedico">Licencia Médica: </label>
+							<input class = "form-control" type = "text" name = "idmedico" placeholder = "">
 						</div>
 						<div class = "form-group">
-							<label for = "section">Seccion: </label>
-							<select name = "section" class = "form-control" required = "required">
-								<option value = "">--Porfavor seleccione una opción--</option>
-								<option value = "Dental">Dental</option>
-								<option value = "Fecalysis">Fecalysis</option>
-								<option value = "Hematology">Hematology</option>
-								<option value = "Xray">Rayos X</option>
-								<option value = "Rehabilitation">Rehabilitation</option>
-								<option value = "Sputum">Sputum</option>
-								<option value = "Urinalysis">Urinalysis</option>
-								<option value = "Maternity">Maternidad</option>
-							</select>
-						</div>
+							<label for = "cimedico">Cédula: </label>
+							<input class = "form-control" type = "number" name = "cimedico" placeholder = "">
+						</div>		
 							<button class = "btn btn-primary" name = "save_user" ><span class = "glyphicon glyphicon-save"></span> GUARDAR</button>
 							<br />
 					</div>	
@@ -73,7 +63,7 @@
 		</div>	
 		<div class = "panel panel-primary">
 			<div class = "panel-heading">
-				<label>ACCOUNTS / USER</Label>
+				<label>Lista de Médicos</Label>
 			</div>
 			<div class = "panel-body">
 				<button id = "show" class = "btn btn-info"><span class  = "glyphicon glyphicon-plus"></span> AGREGAR</button>
@@ -85,7 +75,8 @@
 							<th>Usuario</th>
 							<th>Contraseña</th>
 							<th>Nombre</th>
-							<th>Seccion</th>
+							<th>Licencia</th>
+							<th>Cédula</th>
 							<th><center>Accion</center></th>
 						</tr>
 					</thead>
@@ -99,7 +90,8 @@
 							<td><?php echo $fetch['username']?></td>
 							<td><?php echo md5($fetch['password'])?></td>
 							<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
-							<td><?php echo $fetch['section']?></td>
+							<td><?php echo $fetch['idmedico']?></td>
+							<td><?php echo $fetch['cimedico']?></td>
 							<td><center><a href = "edit_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>"class = "btn btn-sm btn-warning"><i class = "glyphicon glyphicon-edit"></i> Actualizar</a> <a onclick = "delete_user(this); return false;"  href = "delete_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Editar</a></center></td>
 						</tr>
 					<?php

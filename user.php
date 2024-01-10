@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	require'connect.php';
+	require 'connect.php';
 	require_once('logincheck.php');
 ?>
 <html lang = "eng">
