@@ -3,73 +3,23 @@
 	require_once 'logincheck.php';
 ?>
 <html lang = "eng">
-	<head>
-		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
-		<meta charset = "utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel = "shortcut icon" href = "../images/logo.png" />
-		<link rel = "stylesheet" type = "text/css" href = "../css/bootstrap.css" />
-		<link rel = "stylesheet" type = "text/css" href = "../css/jquery.dataTables.css" />
-		<link rel = "stylesheet" type = "text/css" href = "../css/customize.css" />
-		<script src = "../js/jquery.min.js"></script>
-	<!-- jQuery & JS files -->	<?php include_once("../tpl/common_js_ventas.php"); ?> <script src="../js/script.js"></script>  </head>
+<?php
+	require_once 'head.php';	
+?> 
 <body>
-	<div class = "navbar navbar-default navbar-fixed-top">
-		<img src = "../images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
-			<?php
-				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$q = $conn->query("SELECT * FROM `admin` WHERE `admin_id` = '$_SESSION[admin_id]'") or die(mysqli_error());
-				$f = $q->fetch_array();
-			?>
-			<ul class = "nav navbar-right">	
-				<li class = "dropdown">
-					<a class = "user dropdown-toggle" data-toggle = "dropdown" href = "#">
-						<span class = "glyphicon glyphicon-user"></span>
-						<?php
-							echo $f['firstname']." ".$f['lastname'];
-							$conn->close();
-						?>
-						<b class = "caret"></b>
-					</a>
-				<ul class = "dropdown-menu">
-					<li>
-						<a class = "me" href = "logout.php">Cerrar Sesión</a>
-					</li>
-				</ul>
-				</li>
-			</ul>
-	</div>
-	<div id = "sidebar">
-			<ul id = "menu" class = "nav menu">
-				<li><a href = "home.php"><i class = "glyphicon glyphicon-home"></i> Inicio</a></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Cuentas</a>
-					<ul>
-						<li><a href = "admin.php"><i class = "glyphicon glyphicon-cog"></i> Administrador</a></li>
-						<li><a href = "user.php"><i class = "glyphicon glyphicon-cog"></i> Usuarios </a></li>
-					</ul>
-				</li>
-				<li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Paciente</a></li></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-folder-close"></i> Secciones</a>
-					<ul>
-						<li><a href = "fecalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Fecalisis</a></li>
-						<li><a href = "maternity.php"><i class = "glyphicon glyphicon-folder-open"></i> Maternidad</a></li>
-						<li><a href = "hematology.php"><i class = "glyphicon glyphicon-folder-open"></i> Hematología</a></li>
-						<li><a href = "dental.php"><i class = "glyphicon glyphicon-folder-open"></i> Dental</a></li>
-						<li><a href = "xray.php"><i class = "glyphicon glyphicon-folder-open"></i> Rayos X</a></li>
-						<li><a href = "rehabilitation.php"><i class = "glyphicon glyphicon-folder-open"></i> Rehabilitacion</a></li>
-						<li><a href = "sputum.php"><i class = "glyphicon glyphicon-folder-open"></i> Esputo</a></li>
-						<li><a href = "urinalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Análisis de orina</a></li>
-					</ul>
-				</li>
-			</ul>
-	</div>
+<?php
+	require_once 'navbar.php';
+?>
+<?php
+	include 'sidebar.php';
+?>
 	<div id = "content">
 		<br />
 		<br />
 		<br />
 		<div style = "display:none;" id = "com" class = "panel panel-success">	
 			<div class = "panel-heading">
-				<label>PATIENT / MOLESTIAS</label>
+				<label>HISTORIA CLÍNICA</label>
 				<button class = "btn btn-danger" id = "hide_com" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-remove"></span>CERRAR</button>
 			</div>
 			<div class = "panel-body">
@@ -80,12 +30,12 @@
 			?>
 				<form method = "POST" enctype = "multipart/form-data">
 					<div style = "float:left;" class = "form-inline">
-						<label for = "itr_no">HISTORIA CLINICA Nro:</label>
+						<label for = "itr_no">Historia Clinica Nro:</label>
 						<input class = "form-control" value = "<?php echo $f['itr_no'] ?>" disabled = "disabled" size = "3" type = "number" name = "itr_no">
 					</div>
 					<div style = "float:right;" class = "form-inline">
-						<label for = "family_no">Cantidad Familia</label>
-						<input class = "form-control" size = "3" value = "
+						<label for = "family_no">Cédula</label>
+						<input class = "form-control" value = "
 							<?php 
 								if($f['family_no'] == "0"){
 									echo "";
@@ -98,11 +48,8 @@
 					<br />
 					<br />
 					<div class = "form-inline">
-						<label for = "firstname">Nombre:</label>
+						<label for = "firstname">Nombres:</label>
 						<input class = "form-control" name = "firstname" value = "<?php echo $f['firstname']?>" disabled = "disabled" type = "text" required = "required">
-						&nbsp;&nbsp;&nbsp;
-						<label for = "middlename">Segundo Nombre:</label>
-						<input class = "form-control" name = "middlename" value = "<?php echo $f['middlename']?>" disabled = "disabled" type = "text" required = "required">
 						&nbsp;&nbsp;&nbsp;
 						<label for = "lastname">Apellidos:</label>
 						<input class = "form-control" name = "lastname" value = "<?php echo $f['lastname']?>" disabled = "disabled" type = "text" required = "required">
@@ -144,7 +91,7 @@
 		?>
 		<div class = "panel panel-info">
 			<div class = "panel-heading">
-				<label style = "font-size:16px;">COMPLAINTS / <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
+				<label style = "font-size:16px;">Historias Clínicas de <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
 				<a style = "float:right; margin-top:-5px;" id = "add_complaints" class = "btn btn-success" href = "patient.php"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 		</div>

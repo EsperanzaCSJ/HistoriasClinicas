@@ -6,7 +6,7 @@ ob_start();
 	require_once 'logincheck.php';
 ?>
 <html lang = "es_ES">
-	<?php
+<?php
 	require_once 'head.php';	
 ?> 
 <body>
@@ -29,7 +29,7 @@ ob_start();
 				<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
 					<div style = "float:left;" class = "form-inline">
 						<label for = "family_no">Nro. Cédula:</label>
-						<input class = "form-control" placeholder = "" size = "8" min = "27000000" max = "35000000" type = "number" name = "family_no">
+						<input class = "form-control" placeholder = "" size = "8" min = "2700000" max = "35000000" type = "number" name = "family_no">
 					</div>
 					<br />
 					<br />
@@ -110,9 +110,10 @@ ob_start();
 						<label for = "civil_status">Estado Civil:</label>
 						<select style = "width:22%;" class = "form-control" name = "civil_status" required = "required">
 							<option value = "">Seleccionar</option>
-							<option value = "Soltero">Soltero(a)</option>
-							<option value = "Casado">Casado(a)</option>
-							<option value = "Casado">Divorciado(a)</option>
+							<option value = "Soltero(a)">Soltero(a)</option>
+							<option value = "Casado(a)">Casado(a)</option>
+							<option value = "Divorciado(a)">Divorciado(a)</option>
+							<option value = "Viudo(a)">Viudo(a)</option>
 						</select>
 						<br />
 						<label for = "gender">Genero:</label>
@@ -181,8 +182,9 @@ ob_start();
 							<td><?php echo $fetch['birthdate']?></td>				
 							<td><?php echo $fetch['age']?></td>				
 							<td><?php echo $fetch['address']?></td>
-							<td><center><a href = "complaints.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">COMPLICACIONES <span class = "badge"><?php echo $f['total']?></span></a> 
-							<a href = "edit_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span> Actualizar</a><a href = "delete_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i>Eliminar</a></center></td>
+							<td><center><a href = "complaints.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Atenciones <span class = "badge"><?php echo $f['total']?></span></a> 
+							<a href = "edit_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
+							<a href = "delete_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Eliminar</a></center></td>
 						</tr>
 					<?php
 						}

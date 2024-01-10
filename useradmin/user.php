@@ -63,7 +63,7 @@
 		</div>	
 		<div class = "panel panel-primary">
 			<div class = "panel-heading">
-				<label>Lista de Médicos</Label>
+				<label>LISTA DE MÉDICOS</Label>
 			</div>
 			<div class = "panel-body">
 				<button id = "show" class = "btn btn-info"><span class  = "glyphicon glyphicon-plus"></span> AGREGAR</button>

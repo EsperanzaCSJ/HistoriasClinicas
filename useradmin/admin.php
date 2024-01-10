@@ -69,7 +69,7 @@
 		</div>	
 		<div class = "panel panel-primary">
 			<div class = "panel-heading">
-				<label>CUENTAS / ADMINISTRADOR</Label>
+				<label>CUENTAS ADMINISTRADORAS</Label>
 			</div>
 			<div class = "panel-body">
 				<button id = "show" class = "btn btn-info"><span class  = "glyphicon glyphicon-plus"></span> AGREGAR</button>
