@@ -26,18 +26,7 @@
 					</ul>
 				</li>
 				<li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Paciente</a></li></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-folder-close"></i> Secciones</a>
-					<ul>
-						<li><a href = "fecalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Fecalisis</a></li>
-						<li><a href = "maternity.php"><i class = "glyphicon glyphicon-folder-open"></i> Maternidad</a></li>
-						<li><a href = "hematology.php"><i class = "glyphicon glyphicon-folder-open"></i> Hematología</a></li>
-						<li><a href = "dental.php"><i class = "glyphicon glyphicon-folder-open"></i> Dental</a></li>
-						<li><a href = "xray.php"><i class = "glyphicon glyphicon-folder-open"></i> Rayos X</a></li>
-						<li><a href = "rehabilitation.php"><i class = "glyphicon glyphicon-folder-open"></i> Rehabilitacion</a></li>
-						<li><a href = "sputum.php"><i class = "glyphicon glyphicon-folder-open"></i> Esputo</a></li>
-						<li><a href = "urinalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Análisis de orina</a></li>
-					</ul>
-				</li>
+				
 			</ul>
 	</div>
 	<div id = "content">
@@ -71,10 +60,6 @@
 						<div class = "form-group">
 							<label for = "firstname">Nombre: </label>
 							<input class = "form-control" type = "text" name = "firstname" value = "<?php echo $fetch['firstname'] ?>" required = "required">
-						</div>
-						<div class = "form-group">
-							<label for = "middlename">Segundo Nombre: </label>
-							<input class = "form-control" type = "text" name = "middlename" value = "<?php echo $fetch['middlename'] ?>">
 						</div>
 						<div class = "form-group">
 							<label for = "lastname">Apellidos: </label>
