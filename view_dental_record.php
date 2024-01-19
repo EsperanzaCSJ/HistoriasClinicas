@@ -1,15 +1,17 @@
-<!DOCTYPE html>
 <?php
 	require_once'logincheck.php';
 	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 	$query = $conn->query("SELECT * FROM `user` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
 	$fetch = $query->fetch_array();
 ?>
+<!DOCTYPE html>
 <html lang = "en">
-	<?php	require_once 'head.php';
+<?php	
+	require_once 'head.php';
 ?>
 	<body>
-	<?php	require_once 'navbar2.php';
+<?php	
+	require_once 'navbar2.php';
 ?>
 	<br />
 	<br />
@@ -26,12 +28,12 @@
 			$f = $q->fetch_array();
 		?>
 		<a style = "float:right; margin-top:-4px;" href = "dental.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
-		<a style = "float:right; margin-top:-4px; margin-right:4px;" href = "dental_print.php" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> PRINT</a>
+		<!-- <a style = "float:right; margin-top:-4px; margin-right:4px;" href = "dental_print.php" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> PRINT</a> -->
 		<br />
 		<br />
 		<div class = "panel panel-primary">
 			<div class = "panel-heading">
-				<h4>Registro Dental LIST</h4>
+				<h4>Atenciones</h4>
 			</div>
 		</div>
 		<br />

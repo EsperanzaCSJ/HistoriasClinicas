@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 	require_once 'logincheck.php';
 	$date = date("Y", strtotime("+ 8 HOURS"));
@@ -20,6 +19,7 @@
 	// $qurinalysis = $conn->query("SELECT COUNT(*) as total FROM `urinalysis` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
 	// $furinalysis = $qurinalysis->fetch_array();
 ?>
+<!DOCTYPE html>
 <html lang = "eng">
 	<head>
 		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
