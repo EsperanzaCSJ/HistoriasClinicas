@@ -31,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `username` varchar(20) NOT NULL,
   `password` varchar(12) NOT NULL,
   `firstname` varchar(20) NOT NULL,
-  `middlename` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
   PRIMARY KEY (`admin_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
@@ -40,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- Volcado de datos para la tabla `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `username`, `password`, `firstname`, `middlename`, `lastname`) VALUES
+INSERT INTO `admin` (`admin_id`, `username`, `password`, `firstname`, `lastname`) VALUES
 (2, 'admin', 'admin', 'Administrator', '', '');
 
 -- --------------------------------------------------------
@@ -219,22 +218,16 @@ CREATE TABLE IF NOT EXISTS `hematology` (
 
 CREATE TABLE IF NOT EXISTS `itr` (
   `itr_no` varchar(4) NOT NULL,
-  `family_no` varchar(6) NOT NULL,
-  `phil_health_no` varchar(11) NOT NULL,
+  `nacionalidad` varchar(1) NOT NULL,
+  `cedula` varchar(9) NOT NULL,
   `firstname` varchar(20) NOT NULL,
-  `middlename` varchar(20) NOT NULL,
   `lastname` varchar(20) NOT NULL,
   `birthdate` varchar(20) NOT NULL,
   `age` int(3) NOT NULL,
-  `address` varchar(30) NOT NULL,
+  `address` varchar(40) NOT NULL,
   `civil_status` varchar(10) NOT NULL,
   `gender` varchar(10) NOT NULL,
-  `BP` varchar(10) NOT NULL,
-  `TEMP` varchar(10) NOT NULL,
-  `PR` varchar(10) NOT NULL,
-  `RR` varchar(10) NOT NULL,
-  `WT` varchar(10) NOT NULL,
-  `HT` varchar(10) NOT NULL,
+  `user_id` varchar(12) NOT NULL,
   PRIMARY KEY (`itr_no`),
   UNIQUE KEY `itr_no` (`itr_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -243,8 +236,8 @@ CREATE TABLE IF NOT EXISTS `itr` (
 -- Volcado de datos para la tabla `itr`
 --
 
-INSERT INTO `itr` (`itr_no`, `family_no`, `phil_health_no`, `firstname`, `middlename`, `lastname`, `birthdate`, `age`, `address`, `civil_status`, `gender`, `TEMP`, `WT`, `HT`) VALUES
-('1111', '', 'Marco', 'Andres', 'pl', 'Polo', '06/01/1985', 39, 'tacna', 'Soltero', 'Masculino', '37°C',  '72kg', '1.80');
+INSERT INTO `itr` (`itr_no`, `nacionalidad`, `cedula`, `firstname`, `lastname`, `birthdate`, `age`, `address`, `civil_status`, `gender`, 'user_id') VALUES
+('1111', 'V', '11672888', 'Marco', 'Polo', '06/01/1985', 39, 'Tachira', 'Soltero', 'Masculino', '55');
 
 -- --------------------------------------------------------
 

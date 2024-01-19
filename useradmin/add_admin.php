@@ -2,8 +2,7 @@
 		if(ISSET($_POST['save_admin'])){
 		$username = $_POST['username']; 
 		$password = $_POST['password']; 
-		$firstname = $_POST['firstname']; 
-		$middlename = $_POST['middlename']; 
+		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname']; 
 		$conn = new mysqli("localhost", "root", "", "hcpms");
 		$q1 = $conn->query("SELECT * FROM `admin` WHERE `username` = '$username'") or die(mysqli_error());
@@ -12,7 +11,7 @@
 			if($c1 > 0){
 				echo "<script>alert('Username already taken')</script>";
 			}else{
-				$conn->query("INSERT INTO `admin` VALUES('', '$username', '$password', '$firstname', '$middlename', '$lastname')") or die(mysqli_error());
+				$conn->query("INSERT INTO `admin` VALUES('', '$username', '$password', '$firstname', '$lastname')") or die(mysqli_error());
 				header("location: admin.php");
 			}				
 		}

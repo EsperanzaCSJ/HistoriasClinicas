@@ -3,7 +3,6 @@ $(document).ready(function(){
 		var username = $("#username").val();
 		var password = $("#password").val();
 		var firstname = $("#firstname").val();
-		var middlename = $("#middlename").val();
 		var lastname = $("#lastname").val();
 		$.ajax({
 			type: "POST",
@@ -12,7 +11,6 @@ $(document).ready(function(){
 				Usuario: username,
 				Contraseña: password,
 				Nombre: firstname,
-				Segundo Nombre: middlename,
 				Apellidos: lastname
 			},
 			success: function(msg){
