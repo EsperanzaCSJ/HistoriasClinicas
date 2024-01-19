@@ -57,8 +57,8 @@
 			<div class = "panel-body">
 				<form id = "form_dental" action = "edit_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" method = "POST" enctype = "multipart/form-data">
 					<div style = "float:right;" class = "form-inline">
-						<label for family_no>Cantidad Familia</label>
-						<input class = "form-control" size = "3" value = "<?php echo $fetch['family_no']?>" type = "text" name = "family_no">
+						<label for cedula>Cantidad Familia</label>
+						<input class = "form-control" size = "3" value = "<?php echo $fetch['cedula']?>" type = "text" name = "cedula">
 					</div>
 					<br />
 					<br />

@@ -34,15 +34,15 @@
 						<input class = "form-control" value = "<?php echo $f['itr_no'] ?>" disabled = "disabled" size = "3" type = "number" name = "itr_no">
 					</div>
 					<div style = "float:right;" class = "form-inline">
-						<label for = "family_no">Cédula</label>
+						<label for = "cedula">Cédula</label>
 						<input class = "form-control" value = "
 							<?php 
-								if($f['family_no'] == "0"){
+								if($f['cedula'] == "0"){
 									echo "";
 								}else{
-									echo $f['family_no'];
+									echo $f['cedula'];
 								}	
-							?>" disabled = "disabled" type = "number" name = "family_no">
+							?>" disabled = "disabled" type = "number" name = "cedula">
 					</div>
 					<br />
 					<br />
@@ -64,16 +64,16 @@
 						<br />
 						<label>Seccion:</label>
 						<select name = "section" class = "form-control" required = "required">
-								<option value = "">--Porfavor seleccione una opción--</option>
-								<option value = "Dental">Dental</option>
-								<option value = "Fecalysis">Fecalysis</option>
-								<option value = "Hematology">Hematology</option>
+								<option value = "">--Seleccione una opción--</option>
+								<option value = "Dental">Enfermedades Crónicas</option>
+								<option value = "Fecalysis">Otras enfermedades</option>
+								<!-- <option value = "Hematology">Hematology</option>
 								<option value = "Prenatal">Prenatal</option>
 								<option value = "Xray">Rayos X</option>
 								<option value = "Rehabilitation">Rehabilitation</option>
 								<option value = "Sputum">Sputum</option>
 								<option value = "Urinalysis">Urinalysis</option>
-								<option value = "Maternity">Maternidad</option>
+								<option value = "Maternity">Maternidad</option> -->
 							</select>
 					</div>
 					<br />

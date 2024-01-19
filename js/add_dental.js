@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$("#save_dental").click(function(){
-			var family_no = $("#family_no").val();
+			var cedula = $("#cedula").val();
 			var name = $("#name").val();
 			var birthdate = $("#birthdate").val();
 			var age = $("#age").val();
@@ -18,7 +18,7 @@ $(document).ready(function(){
 				type: "POST",
 				url: "../add_dental.php",
 				data: {
-					family_no: family_no,
+					cedula: cedula,
 					name: name,
 					birthdate: birthdate,
 					age: age,

@@ -2,8 +2,8 @@
 	if(ISSET($_POST['save_patient'])){
 		$itr_no = $_POST['itr_no'];
 		$date1= $_POST['date1'];
-		//$family_no = $_POST['family_no'];
-		$family_no = "";
+		//$cedula = $_POST['cedula'];
+		$cedula = "";
 		$firstname = $_POST['firstname'];
 		//$middlename = $_POST['middlename'];
 		$dni = $_POST['dni'];
@@ -31,7 +31,7 @@
 		if($c1 > 0){
 				echo "<script>alert('Nro Documento de Identidad . must not be the same!')</script>";
 		}else{
-			$conn->query("INSERT INTO itr VALUES ('$itr_no', '$date1','$family_no', '$phil_health_no', '$firstname', '$dni', '$lastname', '$birthdate', '$age', '$address', '$civil_status', '$gender', '$bp', '$temp', '$pr', '$rr', '$wt', '".addslashes($ht)."','$telefono', '$trabajo', '$enfermedad_actual','$patologicos')") or die(mysqli_error($conn));
+			$conn->query("INSERT INTO itr VALUES ('$itr_no', '$date1','$cedula', '$phil_health_no', '$firstname', '$dni', '$lastname', '$birthdate', '$age', '$address', '$civil_status', '$gender', '$bp', '$temp', '$pr', '$rr', '$wt', '".addslashes($ht)."','$telefono', '$trabajo', '$enfermedad_actual','$patologicos')") or die(mysqli_error($conn));
 			header("location: patient.php");	
 		}
 	}

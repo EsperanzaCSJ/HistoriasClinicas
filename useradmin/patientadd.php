@@ -54,8 +54,8 @@ ob_start();
 						<input class = "form-control" size = "3" min = "0" type = "number" name = "itr_no">
 					</div>
 					<div style = "float:right;" class = "form-inline">
-						<label for = "family_no">Nro DNI:</label>
-						<input class = "form-control" placeholder = "(Optional)" size = "5" type = "text" name = "family_no">
+						<label for = "cedula">Nro DNI:</label>
+						<input class = "form-control" placeholder = "(Optional)" size = "5" type = "text" name = "cedula">
 					</div>
 					<br />
 					<br />

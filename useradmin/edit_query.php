@@ -2,7 +2,7 @@
 	$id = $_GET['id'];
 	$last = $_GET['lastname'];
 	if(ISSET($_POST['edit_patient'])){
-		$family_no = $_POST['family_no'];
+		$cedula = $_POST['cedula'];
 		$firstname = $_POST['firstname'];
 		$middlename = $_POST['middlename'];
 		$lastname = $_POST['lastname'];
@@ -19,7 +19,7 @@
 		$wt= $_POST['wt'];
 		$ht = $_POST['ht'];
 		$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-		$conn->query("UPDATE `itr` SET `family_no` = '$family_no', `phil_health_no` = '$phil_health_no', `firstname` = '$firstname', `middlename` = '$middlename', `lastname` = '$lastname', `birthdate` = '$birthdate', `age` = '$age', `address` = '$address', `civil_status` = '$civil_status', `gender` = '$gender', `BP` = '$bp', `TEMP` = '$temp', `PR` = '$pr', `RR` = '$rr', `WT` = '$wt', `HT` = '".addslashes($ht)."' WHERE `itr_no` = '$id' && `lastname` = '$last'") or die(mysqli_error());
+		$conn->query("UPDATE `itr` SET `cedula` = '$cedula', `phil_health_no` = '$phil_health_no', `firstname` = '$firstname', `middlename` = '$middlename', `lastname` = '$lastname', `birthdate` = '$birthdate', `age` = '$age', `address` = '$address', `civil_status` = '$civil_status', `gender` = '$gender', `BP` = '$bp', `TEMP` = '$temp', `PR` = '$pr', `RR` = '$rr', `WT` = '$wt', `HT` = '".addslashes($ht)."' WHERE `itr_no` = '$id' && `lastname` = '$last'") or die(mysqli_error());
 		header("location: patient.php");
 	}
 	if(ISSET($_POST['edit_admin'])){

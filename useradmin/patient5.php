@@ -216,8 +216,8 @@ function calcularEdad()
 						</tr>
 					</div>
 					<!--<div style = "float:center;" class = "form-inline">
-						<label for = "family_no">Cantidad Familia</label>
-						<input class = "form-control" placeholder = "(Opcional)" size = "5" type = "text" name = "family_no">
+						<label for = "cedula">Cantidad Familia</label>
+						<input class = "form-control" placeholder = "(Opcional)" size = "5" type = "text" name = "cedula">
 					</div>-->
 					
 					<tr>

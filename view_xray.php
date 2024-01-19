@@ -75,9 +75,9 @@
 						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['phil_health_no']?></label>
 					</div>
 					<div style = "float:left; width:15%;">
-						<label for = "family_no" style = "font-size:18px;">Nro Familia</label>
+						<label for = "cedula" style = "font-size:18px;">Nro Familia</label>
 						<br />
-						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['family_no']?></label>
+						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['cedula']?></label>
 					</div>	
 					<br style = "clear:both;" />
 					<hr style = "border:1px dotted #d3d3d3;"/>

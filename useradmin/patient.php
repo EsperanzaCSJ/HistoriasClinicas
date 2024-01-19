@@ -28,8 +28,12 @@ ob_start();
 			<div class = "panel-body">
 				<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
 					<div style = "float:left;" class = "form-inline">
-						<label for = "family_no">Nro. Cédula:</label>
-						<input class = "form-control" placeholder = "" size = "8" min = "2700000" max = "35000000" type = "number" name = "family_no">
+						<label for = "cedula">Nro. Cédula:</label>
+						<select  class = "form-control" name = "nacionalidad" required = "required">
+							<option value = "Venezolano">V</option>
+							<option value = "Extrangero">E</option>
+						</select>
+						<input class = "form-control" placeholder = "" min = "2700000" max = "99000000" type = "number" name = "cedula">
 					</div>
 					<br />
 					<br />
@@ -37,7 +41,7 @@ ob_start();
 					<div style = "float:left;" class = "form-inline">
 						<label for = "itr_no">Nro. Historia:</label>
 						<input class = "form-control" size = "3" min = "0" type = "number" name = "itr_no">
-					</div>
+					</div> 
 					<br />
 					<br />
 					<br />
@@ -98,13 +102,12 @@ ob_start();
 						</select>
 						<br style = "clear:both;"/>
 						<br />
-						<label for = "phil_health_no">Tratamiento:</label>
-						<input name = "phil_health_no" placeholder = "tratamiento" class = "form-control" type = "text">
-						<br />
+						<!-- <label for = "phil_health_no">Motivo de la Consulta:</label>
+						<input name = "phil_health_no" placeholder = "tratamiento" class = "form-control" type = "text"> -->
 						<label for = "address">Direccion:</label>
 						<input class = "form-control" name = "address" type = "text" required = "required">
 						<br />
-						<label for = "age">Edad:</label>
+						<label for = "age">Edad:</label>						
 						<input class = "form-control" style = "width:20%;" min = "0" max = "999" name = "age" type = "number">
 						<br />
 						<label for = "civil_status">Estado Civil:</label>
@@ -124,9 +127,14 @@ ob_start();
 						</select>
 					</div>
 					<br />
-					<div class = "form-inline">
+					<!-- <div class = "form-inline">
 						<label for = "temp">Temperatura:</label>
 						<input class = "form-control" name = "temp" type = "number" max = "999" min = "0" size = "15" required = "required"><label>&deg;C</label>
+						&nbsp;&nbsp;&nbsp;
+						<br />
+						<br />
+						<label for = "tension">Tensión:</label>
+						<input class = "form-control" name = "tension" type = "number" max = "300" min = "0"  required = "required"><label>mm Hg</label>
 						&nbsp;&nbsp;&nbsp;
 						<br />
 						<br />
@@ -138,7 +146,7 @@ ob_start();
 						<label for = "ht">Altura:</label>
 						<input class = "form-control" name = "ht" style = "margin-right:10px;" type = "text"  required = "required"><label>cm</label>
 					</div>
-					<br />
+					<br /> -->
 					<div class = "form-inline">
 						<button class = "btn btn-primary" name = "save_patient"><span class = "glyphicon glyphicon-save"></span> Guardar</button>
 					</div>
@@ -176,15 +184,15 @@ ob_start();
 						$f = $q->fetch_array();
 					?>
 						<tr>
-							<td><?php echo $fetch['family_no']?></td>
+							<td><?php echo $fetch['cedula']?></td>
 							<td><?php echo $fetch['itr_no']?></td>
 							<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 							<td><?php echo $fetch['birthdate']?></td>				
 							<td><?php echo $fetch['age']?></td>				
 							<td><?php echo $fetch['address']?></td>
-							<td><center><a href = "complaints.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Atenciones <span class = "badge"><?php echo $f['total']?></span></a> 
+							<td><center><a href = "complaints.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Historia Clínica <span class = "badge"><?php echo $f['total']?></span></a> 
 							<a href = "edit_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
-							<a href = "delete_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Eliminar</a></center></td>
+							<a href = "delete_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td>
 						</tr>
 					<?php
 						}
