@@ -13,21 +13,12 @@
 		<link rel = "stylesheet" type = "text/css" href = "../css/customize.css" />
 	<!-- jQuery & JS files -->	<?php include_once("../tpl/common_js_ventas.php"); ?> <script src="../js/script.js"></script>  </head>
 <body>
-	<?php
+<?php
 	require_once 'navbar.php';
 ?>
-	<div id = "sidebar">
-			<ul id = "menu" class = "nav menu">
-				<li><a href = "home.php"><i class = "glyphicon glyphicon-home"></i> Inicio</a></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Cuentas</a>
-					<ul>
-						<li><a href = "admin.php"><i class = "glyphicon glyphicon-cog"></i> Administrador</a></a></li>
-						<li><a href = "user.php"><i class = "glyphicon glyphicon-cog"></i> Usuarios </a></li>
-					</ul>
-				</li>
-				<li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Paciente</a></li></li>
-			</ul>
-	</div>
+<?php
+	require_once 'sidebar.php';
+?>
 	<div id = "content">
 		<br />
 		<br />

@@ -16,30 +16,9 @@
 	<?php
 	require_once 'navbar.php';
 ?>
-	<div id = "sidebar">
-			<ul id = "menu" class = "nav menu">
-				<li><a href = "home.php"><i class = "glyphicon glyphicon-home"></i> Inicio</a></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Cuentas</a>
-					<ul>
-						<li><a href = "admin.php"><i class = "glyphicon glyphicon-cog"></i> Administrador</a></li>
-						<li><a href = "user.php"><i class = "glyphicon glyphicon-cog"></i> Usuarios </a></li>
-					</ul>
-				</li>
-				<li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Paciente</a></li></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-folder-close"></i> Secciones</a>
-					<ul>
-						<li><a href = "fecalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Fecalisis</a></li>
-						<li><a href = "maternity.php"><i class = "glyphicon glyphicon-folder-open"></i> Maternidad</a></li>
-						<li><a href = "hematology.php"><i class = "glyphicon glyphicon-folder-open"></i> Hematología</a></li>
-						<li><a href = "dental.php"><i class = "glyphicon glyphicon-folder-open"></i> Dental</a></li>
-						<li><a href = "xray.php"><i class = "glyphicon glyphicon-folder-open"></i> Rayos X</a></li>
-						<li><a href = "rehabilitation.php"><i class = "glyphicon glyphicon-folder-open"></i> Rehabilitacion</a></li>
-						<li><a href = "sputum.php"><i class = "glyphicon glyphicon-folder-open"></i> Esputo</a></li>
-						<li><a href = "urinalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Análisis de orina</a></li>
-					</ul>
-				</li>
-			</ul>
-	</div>
+<?php
+	include 'sidebar.php';
+?>
 	<div id = "content">
 		<br />
 		<br />
@@ -52,7 +31,7 @@
 		?>
 			<div class = "panel-heading">
 				<label>AGREGAR USUARIO</label>
-				<a href = "user.php" class = "btn btn-sm btn-info" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
+				<a href = "user.php" class = "btn btn-sm btn-info" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-hand-right"></span> Regresar</a>
 			</div>
 			<div class = "panel-body">
 				<form id = "form_user" method = "POST" enctype = "multi-part/form-data">
@@ -69,32 +48,33 @@
 							<input class = "form-control" name = "password" maxlength = "12" value = "<?php echo $fetch['password']?>" type = "password" required = "required">
 						</div>
 						<div class = "form-group">
-							<label for = "firstname">Nombre: </label>
+							<label for = "firstname">Nombres: </label>
 							<input class = "form-control" type = "text" value = "<?php echo $fetch['firstname']?>" name = "firstname" required = "required">
-						</div>
-						<div class = "form-group">
-							<label for = "middlename">Segundo Nombre: </label>
-							<input class = "form-control" type = "text" value = "<?php echo $fetch['middlename']?>" name = "middlename" placeholder = "(Opcional)">
 						</div>
 						<div class = "form-group">
 							<label for = "lastname">Apellidos: </label>
 							<input class = "form-control" type = "text" value = "<?php echo $fetch['lastname']?>" name = "lastname" required = "required">
 						</div>
 						<div class = "form-group">
-							<label for = "section">Seccion: </label>
+							<label for = "section">Rol de usuario: </label>
 							<select name = "section" class = "form-control" required = "required">
-								<option value = "">--Porfavor seleccione una opción--</option>
-								<option value = "Dental">Dental</option>
-								<option value = "Fecalysis">Fecalysis</option>
-								<option value = "Hematology">Hematology</option>
-								<option value = "Prenatal">Prenatal</option>
-								<option value = "Xray">Rayos X</option>
-								<option value = "Rehabilitation">Rehabilitation</option>
-								<option value = "Sputum">Sputum</option>
-								<option value = "Urinalysis">Urinalysis</option>
-								<option value = "Maternity">Maternidad</option>
+								<option value = "">--Seleccione el rol--</option>
+								<option value = "Dental">Doctor</option>
+								<option value = "Fecalysis">Secretaria</option>
 							</select>
 						</div>
+						<div class = "form-group">
+							<label for = "especialidad">Especialidad: </label>
+							<input class = "form-control" type = "text" name = "especialidad" placeholder = "Si es doctor: escriba su especialidad. Si es secretaria: escriba 'secretaria'" value = "<?php echo $fetch['especialidad']?>">
+						</div>				
+						<div class = "form-group">
+							<label for = "idmedico">Licencia Médica: </label>
+							<input class = "form-control" type = "text" name = "idmedico" placeholder = "" value = "<?php echo $fetch['idmedico']?>">
+						</div>
+						<div class = "form-group">
+							<label for = "cimedico">Cédula: </label>
+							<input class = "form-control" type = "number" name = "cimedico" placeholder = "" value = "<?php echo $fetch['cimedico']?>">
+						</div>		
 							<button class = "btn btn-warning" name = "edit_user" ><span class = "glyphicon glyphicon-edit"></span> GUARDAR</button>
 							<br />
 					</div>	

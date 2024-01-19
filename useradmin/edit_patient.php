@@ -16,41 +16,20 @@ ob_start();
 		<link rel = "stylesheet" type = "text/css" href = "../css/customize.css" />
 	</head>
 <body>
-	<?php
+<?php
 	require_once 'navbar.php';
 ?>
-	<div id = "sidebar">
-			<ul id = "menu" class = "nav menu">
-				<li><a href = "home.php"><i class = "glyphicon glyphicon-home"></i> inicio</a></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Cuentas</a>
-					<ul>
-						<li><a href = "admin.php"><i class = "glyphicon glyphicon-cog"></i> Administrador</a></li>
-						<li><a href = "user.php"><i class = "glyphicon glyphicon-cog"></i> Usuario</a></li>
-					</ul>
-				</li>
-				<li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Paciente</a></li></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-folder-close"></i> Secciones</a>
-					<ul>
-						<li><a href = "fecalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Fecalisis</a></li>
-						<li><a href = "maternity.php"><i class = "glyphicon glyphicon-folder-open"></i> Maternidad</a></li>
-						<li><a href = "hematology.php"><i class = "glyphicon glyphicon-folder-open"></i> Hematologia</a></li>
-						<li><a href = "dental.php"><i class = "glyphicon glyphicon-folder-open"></i> Dental</a></li>
-						<li><a href = "xray.php"><i class = "glyphicon glyphicon-folder-open"></i> Rayos X</a></li>
-						<li><a href = "rehabilitation.php"><i class = "glyphicon glyphicon-folder-open"></i> Rehabilitacion</a></li>
-						<li><a href = "sputum.php"><i class = "glyphicon glyphicon-folder-open"></i> Esputo</a></li>
-						<li><a href = "urinalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Análisis de Orina</a></li>
-					</ul>
-				</li>
-			</ul>
-	</div>
+<?php
+	include 'sidebar.php';
+?>
 	<div id = "content">
 		<br />
 		<br />
 		<br />
 		<div class = "panel panel-success">	
 			<div class = "panel-heading">
-				<label>INFORMACION DEL PACIENTE / EDITAR</label>
-				<a style = "float:right; margin-top:-4px;" href = "patient.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
+				<label>EDITAR INFORMACIÓN DEL PACIENTE</label>
+				<a style = "float:right; margin-top:-4px;" href = "patient.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> Regresar</a>
 			</div>
 			<div class = "panel-body">
 			<?php
@@ -60,22 +39,26 @@ ob_start();
 			?>
 				<form method = "POST" enctype = "multipart/form-data">
 					<div style = "float:left;" class = "form-inline">
-						<label for = "itr_no">Nro Historia C.:</label>
+						<label for = "itr_no">Nro Historia:</label>
 						<input class = "form-control" value = "<?php echo $f['itr_no'] ?>" disabled = "disabled" size = "3" type = "number" name = "itr_no">
 					</div>
-					<div style = "float:right;" class = "form-inline">
-						<label for = "family_no">Nro DNI:</label>
-						<input class = "form-control" size = "3" value = "<?php echo $f['family_no']?>" type = "number" name = "family_no">
+					<br />
+					<br />
+					<br />
+					<div style = "float:left;" class = "form-inline">
+						<label for = "cedula">Nro Cédula:</label>
+						<select  class = "form-control" name = "nacionalidad" required = "required" value = "<?php echo $f['nacionalidad']?>">
+							<option value = "Venezolano">V</option>
+							<option value = "Extrangero">E</option>
+						</select>
+						<input class = "form-control"  min = "2700000" max = "99000000" value = "<?php echo $f['cedula']?>" type = "number" name = "cedula">
 					</div>
 					<br />
 					<br />
 					<br />
 					<div class = "form-inline">
-						<label for = "firstname">Primer Nombre:</label>
-						<input class = "form-control" name = "firstname" value = "<?php echo $f['firstname']?>" type = "text" required = "required">
-						&nbsp;&nbsp;&nbsp;
-						<label for = "middlename">Segundo Nombre:</label>
-						<input class = "form-control" name = "middlename" value = "<?php echo $f['middlename']?>" type = "text" required = "required">
+						<label for = "firstname">Nombres:</label>
+						<input class = "form-control" name = "firstname" value = "<?php echo $f['firstname']?>" type = "text" required = "required">						
 						&nbsp;&nbsp;&nbsp;
 						<label for = "lastname">Apellidos:</label>
 						<input class = "form-control" name = "lastname" value = "<?php echo $f['lastname']?>" type = "text" required = "required">
@@ -85,7 +68,7 @@ ob_start();
 						<label for = "birthdate" style = "float:left;">F. Nacimiento:</label>
 						<br style = "clear:both;" />
 						<select name = "month" style = "width:15%; float:left;" class = "form-control" required = "required">
-							<option value = "">Selecciona mes</option>
+							<option value = "">Mes</option>
 							<option value = "01">Enero</option>
 							<option value = "02">Febrero</option>
 							<option value = "03">Marzo</option>
@@ -100,7 +83,7 @@ ob_start();
 							<option value = "12">Diciembre</option>
 						</select>
 						<select name = "day" class = "form-control" style = "width:13%; float:left;" required = "required">
-							<option value = "">Selecciona dia</option>
+							<option value = "">Día</option>
 							<option value = "01">01</option>
 							<option value = "02">02</option>
 							<option value = "03">03</option>
@@ -130,9 +113,9 @@ ob_start();
 						</select>
 						<br style = "clear:both;"/>
 						<br />
-						<label for = "phil_health_no">Tratamiento:</label>
-						<input name = "phil_health_no" class = "form-control" value = "<?php echo $f['phil_health_no']?>" type = "text">
-						<br />
+						<!-- <label for = "phil_health_no">Tratamiento:</label>
+						<input name = "phil_health_no" class = "form-control" value = "<?php // echo $f['phil_health_no']?>" type = "text">
+						<br /> -->
 						<label for = "address">Dirección:</label>
 						<input class = "form-control" name = "address" type = "text" value = "<?php echo $f['address']?>" required = "required">
 						<br />
@@ -140,39 +123,24 @@ ob_start();
 						<input class = "form-control" style = "width:20%;" value = "<?php echo $f['age']?>" name = "age" type = "number">
 						<br />
 						<label for = "civil_status">Estado Civil:</label>
-						<input class = "form-control" style = "width:20%;" value = "<?php echo $f['civil_status']?>" name = "civil_status" type = "text" required = "required">
+						<select style = "width:22%;" class = "form-control" name = "civil_status" required = "required">
+							<option value = "">Seleccionar</option>
+							<option value = "Soltero(a)">Soltero(a)</option>
+							<option value = "Casado(a)">Casado(a)</option>
+							<option value = "Divorciado(a)">Divorciado(a)</option>
+							<option value = "Viudo(a)">Viudo(a)</option>
+						</select>
 						<br />
 						<label for = "gender">Genero:</label>
-						<select style = "width:22%;" class = "form-control"  name = "gender" required = "required">
-							<option value = "">--Selecciona  una opcion--</option>
+						<select style = "width:22%;" class = "form-control" name = "gender" required = "required">
+							<option value = "">Seleccionar</option>
 							<option value = "Male">Masculino</option>
 							<option value = "Female">Femenino</option>
 						</select>
 					</div>
 					<br />
 					<div class = "form-inline">
-						<label for = "bp">BP:</label>
-						<input class = "form-control" name = "bp" type = "text" value = "<?php echo $f['BP']?>"  required = "required">
-						&nbsp;&nbsp;&nbsp;
-						<label for = "temp">TEMP:</label>
-						<input class = "form-control" name = "temp" type = "text" value = "<?php echo $f['TEMP']?>"  required = "required">
-						&nbsp;&nbsp;&nbsp;
-						<label for = "pr">PR:</label>
-						<input class = "form-control" name = "pr" type = "text" value = "<?php echo $f['PR']?>"  required = "required">
-						<br />
-						<br />
-						<label for = "rr">RR:</label>
-						<input class = "form-control" name = "rr" type = "text" value = "<?php echo $f['RR']?>" required = "required">
-						&nbsp;&nbsp;&nbsp;
-						<label for = "wt">WT :</label>
-						<input class = "form-control" name = "wt"type = "text" value = "<?php echo $f['WT']?>" required = "required">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<label for = "ht">HT :</label>
-						<input class = "form-control" name = "ht"type = "text" value = "<?php echo htmlspecialchars($f['HT'])?>" required = "required">
-					</div>
-					<br />
-					<div class = "form-inline">
-						<button class = "btn btn-warning" name = "edit_patient"><span class = "glyphicon glyphicon-pencil"></span> SAVE</button>
+						<button class = "btn btn-warning" name = "edit_patient"><span class = "glyphicon glyphicon-pencil"></span> Guardar</button>
 					</div>
 					<?php require_once 'edit_query.php' ?>
 				</form>
