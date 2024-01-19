@@ -32,7 +32,7 @@
 	<div class = "well">
 		<div class = "panel panel-warning">
 			<div class = "panel-heading">
-				<center><label>FECALYSIS</label></center>
+				<center><label>Secretaria</label></center>
 			</div>
 		</div>
 		<a style = "float:right; margin-top:-4px;" href = "fecalysis.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
@@ -40,7 +40,7 @@
 		<br />
 		<div class = "panel panel-primary">
 			<div class = "panel-heading">
-				<h4>FECALYSIS RECORD LIST</h4>
+				<h4>Lista de pacientes</h4>
 			</div>
 		</div>
 		<br />

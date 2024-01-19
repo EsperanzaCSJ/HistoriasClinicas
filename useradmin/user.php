@@ -3,17 +3,17 @@
 	require_once 'logincheck.php';
 ?>
 <html lang = "eng">
-	<?php
+<?php
 	include 'head.php';
 	$a=12;
-	?>
+?>
 <body>
-	<?php
+<?php
 	include 'navbar.php';
-	?>
-	<?php
+?>
+<?php
 	include 'sidebar.php';
-	?>
+?>
 	<div id = "content">
 		<br />
 		<br />
@@ -44,17 +44,31 @@
 						<div class = "form-group">
 							<label for = "lastname">Apellidos: </label>
 							<input class = "form-control" type = "text" name = "lastname" required = "required">
-						</div>						
-						<div class = "form-group">
-							<label for = "idmedico">Licencia Médica: </label>
-							<input class = "form-control" type = "text" name = "idmedico" placeholder = "">
 						</div>
 						<div class = "form-group">
 							<label for = "cimedico">Cédula: </label>
 							<input class = "form-control" type = "number" name = "cimedico" placeholder = "">
-						</div>		
-							<button class = "btn btn-primary" name = "save_user" ><span class = "glyphicon glyphicon-save"></span> GUARDAR</button>
-							<br />
+						</div>						
+						<div class = "form-group">
+						<label for = "section">Rol de usuario: </label>
+							<select name = "section" class = "form-control" required = "required">
+								<option value = "">--Seleccione el rol--</option>
+								<option value = "Dental">Doctor</option>
+								<option value = "Fecalysis">Secretaria</option>
+							</select>
+						</div>
+						<div class = "form-group">
+							<label for = "especialidad">Especialidad: </label>
+							<input class = "form-control" type = "text" name = "especialidad" placeholder = "Si es doctor: escriba su especialidad. Si es secretaria: escriba 'secretaria'">
+						</div>
+						<div class = "form-group">
+							<label for = "idmedico">Licencia Médica: </label>
+							<input class = "form-control" type = "text" name = "idmedico" placeholder = "Si es secretaria: escriba 'No aplica'"">
+						</div>
+						<button class = "btn btn-primary" name = "save_user" ><span class = "glyphicon glyphicon-save"></span> GUARDAR
+						</button>
+						<br />
+						
 					</div>	
 					<?php require 'add_user.php'?>
 					</div>
@@ -77,7 +91,8 @@
 							<th>Nombre</th>
 							<th>Licencia</th>
 							<th>Cédula</th>
-							<th><center>Accion</center></th>
+							<th>Especialidad</th>
+							<th><center>Editar</center></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -92,7 +107,8 @@
 							<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 							<td><?php echo $fetch['idmedico']?></td>
 							<td><?php echo $fetch['cimedico']?></td>
-							<td><center><a href = "edit_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>"class = "btn btn-sm btn-warning"><i class = "glyphicon glyphicon-edit"></i> Actualizar</a> <a onclick = "delete_user(this); return false;"  href = "delete_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Editar</a></center></td>
+							<td><?php echo $fetch['especialidad']?></td>
+							<td><center><a href = "edit_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>"class = "btn btn-sm btn-warning"><i class = "glyphicon glyphicon-edit"></i></a></center></td>
 						</tr>
 					<?php
 						}

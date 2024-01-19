@@ -40,8 +40,8 @@
 			$fetch = $query->fetch_array();
 		?>
 			<div class = "panel-heading">
-				<label>EDIT ADMINISTRATOR</label>
-				<a href = "admin.php" class = "btn btn-sm btn-info" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
+				<label>EDITAR ADMINISTRATOR</label>
+				<a href = "admin.php" class = "btn btn-sm btn-info" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-hand-right"></span> Regresar</a>
 			</div>
 			<div class = "panel-body">
 				<form id = "form_admin" method = "POST" enctype = "multi-part/form-data" >
