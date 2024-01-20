@@ -1,11 +1,11 @@
 <?php
 ob_start();
 ?>
-<!DOCTYPE html>
 <?php
 	require_once 'logincheck.php';
 ?>
-<html lang = "es_ES">
+<!DOCTYPE html>
+<html lang = "en">lang = "es_ES">
 <?php
 	require_once 'head.php';	
 ?> 
@@ -104,11 +104,11 @@ ob_start();
 						<br />
 						<!-- <label for = "phil_health_no">Motivo de la Consulta:</label>
 						<input name = "phil_health_no" placeholder = "tratamiento" class = "form-control" type = "text"> -->
-						<label for = "address">Direccion:</label>
-						<input class = "form-control" name = "address" type = "text" required = "required">
-						<br />
 						<label for = "age">Edad:</label>						
 						<input class = "form-control" style = "width:20%;" min = "0" max = "999" name = "age" type = "number">
+						<br />
+						<label for = "address">Direccion:</label>
+						<input class = "form-control" name = "address" type = "text" required = "required">
 						<br />
 						<label for = "civil_status">Estado Civil:</label>
 						<select style = "width:22%;" class = "form-control" name = "civil_status" required = "required">
@@ -190,7 +190,7 @@ ob_start();
 							<td><?php echo $fetch['birthdate']?></td>				
 							<td><?php echo $fetch['age']?></td>				
 							<td><?php echo $fetch['address']?></td>
-							<td><center><a href = "complaints.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Historia Clínica <span class = "badge"><?php echo $f['total']?></span></a> 
+							<td><center><a href = "complaints.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Historial <span class = "badge"><?php echo $f['total']?></span></a> 
 							<a href = "edit_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
 							<a href = "delete_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td>
 						</tr>

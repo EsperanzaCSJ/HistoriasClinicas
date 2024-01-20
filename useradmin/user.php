@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <?php
 	require_once 'logincheck.php';
 ?>
-<html lang = "eng">
+<!DOCTYPE html>
+<html lang = "en">lang = "eng">
 <?php
 	include 'head.php';
 	$a=12;
@@ -53,8 +53,8 @@
 						<label for = "section">Rol de usuario: </label>
 							<select name = "section" class = "form-control" required = "required">
 								<option value = "">--Seleccione el rol--</option>
-								<option value = "Dental">Doctor</option>
-								<option value = "Fecalysis">Secretaria</option>
+								<option value = "Rehabilitation">Doctor</option>
+								<option value = "Rehabilitation">Secretaria</option>
 							</select>
 						</div>
 						<div class = "form-group">
@@ -108,7 +108,9 @@
 							<td><?php echo $fetch['idmedico']?></td>
 							<td><?php echo $fetch['cimedico']?></td>
 							<td><?php echo $fetch['especialidad']?></td>
-							<td><center><a href = "edit_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>"class = "btn btn-sm btn-warning"><i class = "glyphicon glyphicon-edit"></i></a></center></td>
+							<td><center><a href = "edit_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>"class = "btn btn-sm btn-warning"><i class = "glyphicon glyphicon-edit"></i></a>
+							<a onclick = "delete_user(this); return false;"  href = "delete_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td>
+							
 						</tr>
 					<?php
 						}

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 	require_once 'logincheck.php';
 	$year = date("Y", strtotime("+8 HOURS"));
@@ -29,7 +28,8 @@
 	$fdec = $qdec->fetch_array();
 	$year = date("Y");
 ?>
-<html lang = "eng">
+<!DOCTYPE html>
+<html lang = "en">lang = "eng">
 	<head>
 		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
 		<meta charset = "utf-8" />

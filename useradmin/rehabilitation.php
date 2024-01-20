@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 	require_once 'logincheck.php';
 	$year = date("Y", strtotime("+8 HOURS"));
@@ -29,7 +28,8 @@
 	$fdec = $qdec->fetch_array();
 	$year = date("Y");
 ?>
-<html lang = "eng">
+<!DOCTYPE html>
+<html lang = "en">lang = "eng">
 	<head>
 		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
 		<meta charset = "utf-8" />
@@ -38,17 +38,18 @@
 		<link rel = "stylesheet" type = "text/css" href = "../css/bootstrap.css" />
 		<link rel = "stylesheet" type = "text/css" href = "../css/jquery.dataTables.css" />
 		<link rel = "stylesheet" type = "text/css" href = "../css/customize.css" />
-		<!-- jQuery & JS files -->	<?php include_once("../tpl/common_js_ventas.php"); ?> <script src="../js/script.js"></script>
+		<!-- jQuery & JS files -->	<?php include_once("../tpl/common_js_ventas.php"); ?>
+		<script src="../js/script.js"></script>
 		<?php require 'script.php'?>
 		<script src = "../js/jquery.canvasjs.min.js"></script>
 		<script type="text/javascript"> 
 		window.onload = function(){ 
 			$(".chartContainer").CanvasJSChart({ 
 				title: { 
-					text: "Monthly Rehabilitation Patient Population <?php echo $year?>" 
+					text: "Población mensual de pacientes de rehabilitación del año <?php echo $year?>" 
 				}, 
 				axisY: { 
-					title: "Total Population", 
+					title: "Total de Poblacion", 
 					includeZero: false 
 				}, 
 				data: [ 
@@ -73,36 +74,15 @@
 				] 
 			}); 
 		}
-</script>
+		</script>
   </head>
 <body>
-	<?php
+<?php
 	require_once 'navbar.php';
 ?>
-	<div id = "sidebar">
-			<ul id = "menu" class = "nav menu">
-				<li><a href = "home.php"><i class = "glyphicon glyphicon-home"></i> Inicio</a></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Cuentas</a>
-					<ul>
-						<li><a href = "admin.php"><i class = "glyphicon glyphicon-cog"></i> Administrador</a></li>
-						<li><a href = "user.php"><i class = "glyphicon glyphicon-cog"></i> Usuarios </a></li>
-					</ul>
-				</li>
-				<li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Paciente</a></li></li>
-				<li><a href = ""><i class = "glyphicon glyphicon-folder-close"></i> Secciones</a>
-					<ul>
-						<li><a href = "fecalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Fecalisis</a></li>
-						<li><a href = "maternity.php"><i class = "glyphicon glyphicon-folder-open"></i> Maternidad</a></li>
-						<li><a href = "hematology.php"><i class = "glyphicon glyphicon-folder-open"></i> Hematología</a></li>
-						<li><a href = "dental.php"><i class = "glyphicon glyphicon-folder-open"></i> Dental</a></li>
-						<li><a href = "xray.php"><i class = "glyphicon glyphicon-folder-open"></i> Rayos X</a></li>
-						<li><a href = "rehabilitation.php"><i class = "glyphicon glyphicon-folder-open"></i> Rehabilitacion</a></li>
-						<li><a href = "sputum.php"><i class = "glyphicon glyphicon-folder-open"></i> Esputo</a></li>
-						<li><a href = "urinalysis.php"><i class = "glyphicon glyphicon-folder-open"></i> Análisis de orina</a></li>
-					</ul>
-				</li>
-			</ul>
-	</div>
+	<?php
+	require_once 'sidebar.php';
+?>
 	<div id = "content">
 		<br />
 		<br />
@@ -110,7 +90,7 @@
 		<div id = "ta" class = "well">
 			<div class="chartContainer" style="height: 300px; width: 100%"></div>	
 		</div>
-		<button id = "s_target" class = "btn btn-success"><span class = "glyphicon glyphicon-eye-open"></span> Show Record</button>
+		<button id = "s_target" class = "btn btn-success"><span class = "glyphicon glyphicon-eye-open"></span> Ver record</button>
 		<button id = "h_target" style = "display:none;" class = "btn btn-danger"><span class = "glyphicon glyphicon-eye-close"></span> Hide Record</button>
 		<br />
 		<br />

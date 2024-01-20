@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <?php
 	require_once 'logincheck.php';
 ?>
-<html lang = "eng">
+<!DOCTYPE html>
+<html lang = "en">lang = "eng">
 	<head>
 		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
 		<meta charset = "utf-8" />

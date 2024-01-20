@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <?php
 	require_once 'logincheck.php';
 ?>
-<html lang = "eng">
+<!DOCTYPE html>
+<html lang = "en">lang = "eng">
 <?php
 	require_once 'head.php';	
 ?> 
@@ -35,14 +35,7 @@
 					</div>
 					<div style = "float:right;" class = "form-inline">
 						<label for = "cedula">Cédula</label>
-						<input class = "form-control" value = "
-							<?php 
-								if($f['cedula'] == "0"){
-									echo "";
-								}else{
-									echo $f['cedula'];
-								}	
-							?>" disabled = "disabled" type = "number" name = "cedula">
+						<input class = "form-control" value = "<?php echo $f['cedula'] ?>">
 					</div>
 					<br />
 					<br />
@@ -56,17 +49,17 @@
 					</div>
 					<br />
 					<div class = "form-group">
-						<label>Molestias:</label>
+						<label>Fecha:</label>
 						<textarea style = "resize:none;" name = "complaints" class = "form-control"></textarea>
 						<br />
-						<label>Observaciones:</label>
+						<label>Motivo de la consulta:</label>
 						<textarea style = "resize:none;" name = "remarks" class = "form-control"></textarea>
 						<br />
-						<label>Seccion:</label>
+						<label>Asigne un doctor:</label>
 						<select name = "section" class = "form-control" required = "required">
-								<option value = "">--Seleccione una opción--</option>
-								<option value = "Dental">Enfermedades Crónicas</option>
-								<option value = "Fecalysis">Otras enfermedades</option>
+								<option value = "">Seleccione al doctor</option>
+								<option value = "Rehabilitation">Dr. Juancho Pacho</option>
+								<option value = "Rehabilitation">Dra. Nicole Kidman</option>
 								<!-- <option value = "Hematology">Hematology</option>
 								<option value = "Prenatal">Prenatal</option>
 								<option value = "Xray">Rayos X</option>
@@ -74,7 +67,7 @@
 								<option value = "Sputum">Sputum</option>
 								<option value = "Urinalysis">Urinalysis</option>
 								<option value = "Maternity">Maternidad</option> -->
-							</select>
+						</select>
 					</div>
 					<br />
 					<div class = "form-inline">
@@ -103,10 +96,10 @@
 				$q = $conn->query("SELECT * FROM `complaints` WHERE `itr_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
 					while($f = $q->fetch_array()){
 						if($f['status'] == "Done"){
-							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>".$f['date']."<label style = 'float:right; color:red;'>Done</label><br /><br /><hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<label style = 'float:right; color:red;'>Done</label><br /><br /><hr style = 'border:1px solid #eee;' />";
 						}
 						if($f['status'] == "Pending"){
-							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>".$f['date']."<br /><br /><hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><br /><hr style = 'border:1px solid #eee;' />";
 						}
 					}
 				?>

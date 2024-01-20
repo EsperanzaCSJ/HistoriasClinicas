@@ -1,11 +1,11 @@
 
-<!DOCTYPE html>
 <?php
 	require_once'logincheck.php';
 	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 	$query = $conn->query("SELECT * FROM `user` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
 	$fetch = $query->fetch_array();
 ?>
+<!DOCTYPE html>
 <html lang = "en">
 	<?php	require_once 'head.php';
 ?>

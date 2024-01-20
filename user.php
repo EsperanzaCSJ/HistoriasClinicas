@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <?php
 	require 'connect.php';
 	require_once('logincheck.php');
 ?>
-<html lang = "eng">
+<!DOCTYPE html>
+<html lang = "en">lang = "eng">
 	<head>
 		<title>Patient Health Center Management System</title>
 		<meta charset = "utf-8" />
