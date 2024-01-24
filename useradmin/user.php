@@ -1,9 +1,7 @@
 <?php	require_once 'logincheck.php';?>
 <!DOCTYPE html>
 <html lang = "es_ES">
-	<?php	include 'head.php';
-	$a=12;
-	?>
+	<?php	include 'head.php';?>
 	<body>
 		<?php	include 'navbar.php';?>
 		<?php	include 'sidebar.php';?>
@@ -24,39 +22,43 @@
 						<div class = "panel-body">
 							<div class = "form-group">
 								<label for = "username">Usuario: </label>
-								<input class = "form-control" name = "username" type = "text" required = "required">
+								<input class = "form-control" name = "username" type = "text" required = "required" placeholder = "Escriba un usuario con el que ingresará">
 							</div>
 							<div class = "form-group">	
 								<label for = "password">Contraseña: </label>
-								<input class = "form-control" name = "password" maxlength = "12" type = "password" required = "required">
+								<input class = "form-control" name = "password" maxlength = "12" type = "password" required = "required" placeholder = "Escriba la contraseña con la que ingresará">
 							</div>
 							<div class = "form-group">
 								<label for = "firstname">Nombre: </label>
-								<input class = "form-control" type = "text" name = "firstname" required = "required">
+								<input class = "form-control" type = "text" name = "firstname" required = "required" placeholder = "Escriba el nombre del médico">
 							</div>
 							<div class = "form-group">
 								<label for = "lastname">Apellidos: </label>
-								<input class = "form-control" type = "text" name = "lastname" required = "required">
+								<input class = "form-control" type = "text" name = "lastname" required = "required" placeholder = "Escriba el apellido del médico">
 							</div>
 							<div class = "form-group">
 								<label for = "cimedico">Cédula: </label>
-								<input class = "form-control" type = "number" name = "cimedico" placeholder = "">
+								<input class = "form-control" type = "number" name = "cimedico" placeholder = "" placeholder = "Escriba la cédula del médico" required = "required">
 							</div>						
 							<div class = "form-group">
-							<label for = "section">Rol de usuario: </label>
+							<div class = "form-inline" style = "display: none;">					 
+								<label for = "section">Rol de usuario:</label>
+								<input class = "form-control" type = "text" value = "Medic" name = "section" >
+							</div> 
+							<!-- <label for = "section">Rol de usuario: </label>
 								<select name = "section" class = "form-control" required = "required">
 									<option value = "">--Seleccione el rol--</option>
 									<option value = "Medic">Doctor</option>
 									<option value = "Secre">Secretaria</option>
-								</select>
+								</select> -->
 							</div>
 							<div class = "form-group">
 								<label for = "especialidad">Especialidad: </label>
-								<input class = "form-control" type = "text" name = "especialidad" placeholder = "Si es doctor: escriba su especialidad. Si es secretaria: escriba 'secretaria'">
+								<input class = "form-control" type = "text" name = "especialidad" placeholder = "Escriba la especialidad médica del Doctor">
 							</div>
 							<div class = "form-group">
 								<label for = "idmedico">Licencia Médica: </label>
-								<input class = "form-control" type = "text" name = "idmedico" placeholder = "Si es secretaria: escriba 'No aplica'">
+								<input class = "form-control" type = "text" name = "idmedico" placeholder = "Escriba el número de su licencia médica" required = "required">
 							</div>
 							<button class = "btn btn-primary" name = "save_user" ><span class = "glyphicon glyphicon-save"></span> GUARDAR
 							</button>
@@ -79,10 +81,9 @@
 					<table id = "table" class = "display" width = "100%" cellspacing = "0">
 						<thead>
 							<tr>
-								<th>Usuario</th>
-								<th>Contraseña</th>
 								<th>Nombre</th>
-								<th>Licencia</th>
+								<th>Usuario</th>
+								<th>Licencia Médica</th>
 								<th>Cédula</th>
 								<th>Especialidad</th>
 								<th><center>Editar</center></th>
@@ -95,9 +96,8 @@
 							while($fetch = $query->fetch_array()){
 						?>
 							<tr>
-								<td><?php echo $fetch['username']?></td>
-								<td><?php echo md5($fetch['password'])?></td>
 								<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
+								<td><?php echo $fetch['username']?></td>
 								<td><?php echo $fetch['idmedico']?></td>
 								<td><?php echo $fetch['cimedico']?></td>
 								<td><?php echo $fetch['especialidad']?></td>

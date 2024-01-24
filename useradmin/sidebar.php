@@ -4,7 +4,7 @@
 		<li><a href = ""><i class = "glyphicon glyphicon-user"></i> Crear usuario</a>
 			<ul>
 				<li><a href = "admin.php"><i class = "glyphicon glyphicon-user"></i> Administrador</a></li>
-				<li><a href = "user.php"><i class = "glyphicon glyphicon-user"></i> Médico / Secretaria </a></li>
+				<li><a href = "user.php"><i class = "glyphicon glyphicon-user"></i> Médico</a></li>
 			</ul>
 		</li>
 		<!-- <li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Pacientes</a></li></li> -->
