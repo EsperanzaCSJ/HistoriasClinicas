@@ -41,6 +41,10 @@
 					$_SESSION['user_id'] = $fetch['user_id'];
 					header("location: urinalysis.php");
 				}
+				if($section == "Medic"){
+					$_SESSION['user_id'] = $fetch['user_id'];
+					header("location: home.php");
+				}							
 			}else{
 				echo "<script>alert('Account Does Not Exist!')</script>";
 				echo "<script>window.location = 'index.php'</script>";
