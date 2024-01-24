@@ -26,7 +26,7 @@ ob_start();
 				<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
 					<div class = "form-inline" style = "display: none;">					 
 						<label for = "idmedico">Médico asignado:</label>
-						<input class = "form-control" size = "3" type = "text" value = "<?php echo $fetch['idmedico'] ?>" name = "idmedico" >
+						<input class = "form-control" type = "text" value = "<?php echo $fetch['idmedico'] ?>" name = "idmedico" >
 					</div> 
 						<div style = "float:left;" class = "form-inline">
 							<label for = "cedula">Nro. Cédula:</label>
@@ -104,7 +104,7 @@ ob_start();
 							<br style = "clear:both;"/>
 							<br />
 							<label for = "age">Edad:</label>						
-							<input class = "form-control" style = "width:20%;" min = "0" max = "999" name = "age" type = "number">
+							<input class = "form-control" style = "width:20%;" min = "0" max = "140" name = "age" type = "number">
 							<br />
 							<label for = "address">Direccion:</label>
 							<input class = "form-control" name = "address" type = "text" required = "required">
