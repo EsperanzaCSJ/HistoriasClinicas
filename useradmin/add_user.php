@@ -15,7 +15,12 @@
 			if($c1 > 0){
 				echo "<script>alert('Username already taken')</script>";
 			}else{
-				$conn->query("INSERT INTO `user` VALUES('', '$username', '$password', '$firstname', '$lastname', '$section', '$especialidad', '$idmedico', '$cimedico')");
+				if($section=="Medic") {
+					$conn->query("INSERT INTO `user` VALUES('', '$username', '$password', '$firstname', '$lastname', '$section', '$especialidad', '$idmedico', '$cimedico')");
+				} 
+				else {
+					$conn->query("INSERT INTO `secretaria` VALUES('', '$username', '$password', '$firstname', '$lastname', '$section', '$especialidad', '$idmedico', '$cimedico')");				
+				}
 				header("location: user.php");
 			}
 	}
