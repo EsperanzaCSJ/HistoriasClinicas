@@ -3,6 +3,9 @@ ob_start();
 ?>
 <?php
 	require_once 'logincheck.php';
+	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
+	$query = $conn->query("SELECT * FROM `user` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
+	$fetch = $query->fetch_array();
 ?>
 <!DOCTYPE html>
 <html lang = "es_ES">
@@ -27,6 +30,10 @@ ob_start();
 			</div>
 			<div class = "panel-body">
 			<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
+					<div class = "form-inline" style = "display: none;">					 
+						<label for = "idmedico">Médico asignado:</label>
+						<input class = "form-control" size = "3" type = "text" value = "<?php echo $fetch['idmedico'] ?>" name = "idmedico" >
+					</div> 	
 					<div style = "float:left;" class = "form-inline">
 						<label for = "cedula">Nro. Cédula:</label>
 						<select  class = "form-control" name = "nacionalidad" required = "required">
