@@ -122,8 +122,8 @@ ob_start();
 						<label for = "gender">Genero:</label>
 						<select style = "width:22%;" class = "form-control" name = "gender" required = "required">
 							<option value = "">Seleccionar</option>
-							<option value = "Male">Masculino</option>
-							<option value = "Female">Femenino</option>
+							<option value = "Masculino">Masculino</option>
+							<option value = "Femenino">Femenino</option>
 						</select>
 					</div>
 					<br />
