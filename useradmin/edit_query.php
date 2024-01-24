@@ -29,11 +29,10 @@
 			$password = $_POST['password'];
 			$firstname = $_POST['firstname'];
 			$lastname = $_POST['lastname'];
-			$section = $_POST['section'];
 			$especialidad = $_POST['especialidad'];
 			$idmedico = $_POST['idmedico'];
 			$cimedico = $_POST['cimedico'];
 			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-			$conn->query("UPDATE `user` SET `username` = '$username', `password` = '$password', `firstname` = '$firstname', `lastname` = '$lastname', `section` = '$section', `especialidad` = '$especialidad', `idmedico` = '$idmedico', `cimedico` = '$cimedico' WHERE `user_id` = '$id'") or die(mysqli_error());
+			$conn->query("UPDATE `user` SET `username` = '$username', `password` = '$password', `firstname` = '$firstname', `lastname` = '$lastname', `especialidad` = '$especialidad', `idmedico` = '$idmedico', `cimedico` = '$cimedico' WHERE `user_id` = '$id'") or die(mysqli_error());
 			header("location: user.php");
 		}	
