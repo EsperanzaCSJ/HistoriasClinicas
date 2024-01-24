@@ -10,6 +10,14 @@
 					</ul>
 		</li> -->
 		<li><a href = "view_rehabilitation_record.php"><i class = "glyphicon glyphicon-search"></i> Ver historia</a></li>
+		<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Mantenimiento y ayuda</a>
+			<ul>				
+				<li><a href = "user_secretario.php"><i class = "glyphicon glyphicon-cog"></i> Usuarios secretarios</a></li>
+				<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Respaldos</a></li>
+				<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Auditoría</a></li>
+				<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Manual de Usuarios</a></li>
+			</ul>
+		</li>	
 		<?php
 		// include 'secciones.php';
 		?>
