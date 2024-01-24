@@ -1,7 +1,5 @@
 <?php
 	require_once 'logincheck.php';
-	$date = date("Y", strtotime("+ 8 HOURS"));
-	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 ?>
 <!DOCTYPE html>
 <html lang = "eng">
@@ -36,6 +34,13 @@
 	<?php 
 		require_once 'footer.php';	
 	?>
-		
+	<?php include("script.php"); ?>
+	<script type = "text/javascript">
+		$(document).ready(function() {
+			function disableBack() { window.history.forward() }
+			window.onload = disableBack();
+			window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+		});
+	</script>	
 </body>
 </html>
