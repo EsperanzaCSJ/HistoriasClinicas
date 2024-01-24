@@ -3,7 +3,7 @@
 	require_once('logincheck.php');
 ?>
 <!DOCTYPE html>
-<html lang = "en">lang = "eng">
+<html lang = "es_ES">
 	<head>
 		<title>Patient Health Center Management System</title>
 		<meta charset = "utf-8" />

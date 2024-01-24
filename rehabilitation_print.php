@@ -22,68 +22,72 @@
 			$q = $conn->query("SELECT * FROM `rehabilitation` NATURAL JOIN `itr` WHERE `itr_no` = '$_GET[itr_no]' && `rehab_id` = '$_GET[rehab_id]'") or die(mysqli_error());
 			$f = $q->fetch_array();
 	?>		
-<button onclick="printContent('print')">Print Content</button>
+<button onclick="printContent('print')">Imprimir</button>
 <button><a style = "text-decoration:none; color:#000;" href = "rehabilitation_form.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $_GET['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print">VOLVER</a></button>
 <br />
 <br />
 	<div id="print">
 		<div style = "margin:10px;">
-			<img src = "images/logo.png" height = "100px" width = "100px" style = "float:left; position:relative; left:15%;" />
+			<img src = "images/logo.png" height = "80px" width = "80px" style = "float:left; position:relative; left:15%;" />
 			<div style = "float:right; position:relative; right:35%;">
-				<label><center>Republic of the Philippines</center></label>
-				<label><center>Province of Negros Occidental</center></label>
-				<label><center>City of Victorias</center></label>
-				<label><center>City Health Office</center></label>
+				<br />
+				<label><center>Consultorio Médico Popular Pio Tamayo</center></label>
+				<label><center>Comunidad Pio Tamayo</center></label>
+				<label><center>Barquisimeto, Estado Lara, Venezuela</center></label>
 			</div>
 			<br style = "clear:both;" />
 			<br />
-			<label><center><b>PHYSICAL MEDICINE AND REHABILITATION CENTER</b></center></label>
-			<label style = "font-size:14px;"><center>Center Based and Community Based Rehabilitation Program</center></label>
 			<br />
-			<label>Nombre: <?php echo $f['firstname']." ".$f['lastname']?>
-			<label style = "margin-right:48%; float:right;">DIAGNOSIS: <?php echo $f['diagnosis']?></label></label>
 			<br />
-			<label>AGE: <?php echo $f['age']?>
-			<label style = "margin-right:40%; float:right;">TYPE OF DISABILITY: <?php echo $f['diagnosis']?></label></label>
+			<label><center><b>CONSULTORIO MÉDICO POPULAR PIO TAMAYO</b></center></label>
+			<label style = "font-size:14px;"><center>Historia Clinica de visita del día: <?php echo $f['fecha']?></center></label>
+			<label><b>DATOS DEL PACIENTE:</b></label>
 			<br />
-			<label>GENDER: <?php echo $f['gender']?></label>
+			<label>Nombres: <?php echo $f['firstname']." ".$f['lastname']?>
+			<label style = "margin-right:48%; float:right;">Motivo de la consulta: <?php echo $f['diagnosis']?></label></label>
+			<br />
+			<label>Edad: <?php echo $f['age']?></label>
+			<br />
+			<label>Genero: <?php echo $f['gender']?></label>
 			<br/>
-			<label>Address: <?php echo $f['address']?></label>
+			<label>Dirección: <?php echo $f['address']?></label>
 			<br />
-			<label>DATE OF BIRTH: <?php echo $f['birthdate']?></label>
+			<label>Fecha de nacimiento: <?php echo $f['birthdate']?></label>
 			<br />
 			<br />
-			<label>Temp: <u><?php 
-			$t = substr($f['TEMP'], 0, 2);
+			<label>Temperatura: <u><?php 
+			$t = substr($f['temp'], 0, 2);
 			echo $t; ?></u>&deg;C</label>
-			<label>Pulse: <u>&nbsp;<?php echo $f['PR']?>&nbsp;</u></label>
-			<label>RR: <u>&nbsp;<?php echo $f['RR']?>&nbsp;</u></label>
-			<br />
-			<label>BP: <u>&nbsp;<?php echo $f['BP']?>&nbsp;</u></label>
-			<br />
-			<br />
-			<label><center><u><b>PT NOTES</b></u></center></label>
+			<label>Tensión: <u>&nbsp;<?php echo $f['pr']?>&nbsp;</u></label>
+			<label>Altura: <u>&nbsp;<?php echo $f['ht']?>&nbsp;</u></label>
+			<label>Peso: <u>&nbsp;<?php echo $f['wt']?>&nbsp;</u></label>
 			<br />
 			<br />
-			<label><b>Initial Evaluation</b></label>
+			<br />
+			<label><center><u><b>EVALUACIÓN DEL PACIENTE</b></u></center></label>
 			<br />
 			<br />
-			<label><b>Subject:</b></label>
+			<label><b>Motivo de la consulta:</b></label>
 			<br />
 			<label style = "word-wrap:break-word;"><?php echo $f['subjective']?></label>
 			<br />
 			<br />
-			<label><b>Objective:</b></label>
+			<label><b>Diagnostico:</b></label>
+			<br />
+			<label style = "word-wrap:break-word;"><?php echo $f['diagnostico']?></label>
+			<br />
+			<br />
+			<label><b>Evaluación:</b></label>
 			<br />
 			<label style = "word-wrap:break-word;"><?php echo $f['objective']?></label>
 			<br />
 			<br />
-			<label><b>Assessment:</b></label>
+			<label><b>Reporte Médico:</b></label>
 			<br />
 			<label style = "word-wrap:break-word;"><?php echo $f['assessment']?></label>
 			<br />
 			<br />
-			<label><b>Plan:</b></label>
+			<label><b>Recipe:</b></label>
 			<br />
 			<label style = "word-wrap:break-word;"><?php echo $f['plan']?></label>
 		</div>

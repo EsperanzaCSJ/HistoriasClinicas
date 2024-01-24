@@ -2,7 +2,7 @@
 	require_once 'logincheck.php';
 ?>
 <!DOCTYPE html>
-<html lang = "en">lang = "eng">
+<html lang = "es_ES">
 <?php
 	require_once 'head.php';	
 ?> 
@@ -96,10 +96,10 @@
 				$q = $conn->query("SELECT * FROM `complaints` WHERE `itr_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
 					while($f = $q->fetch_array()){
 						if($f['status'] == "Done"){
-							echo "<label style = 'color:#3399f3;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<label style = 'float:right; color:red;'>Done</label><br /><br /><hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<label style = 'float:right; color:red;'>Done</label><br /><br /><hr style = 'border:1px solid #eee;' />";
 						}
 						if($f['status'] == "Pending"){
-							echo "<label style = 'color:#3399f3;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><br /><hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><br /><hr style = 'border:1px solid #eee;' />";
 						}
 					}
 				?>

@@ -6,77 +6,57 @@
 ?>
 <!DOCTYPE html>
 <html lang = "en">
-	<?php	require_once 'head.php';
-?>
+	<?php	require_once 'head.php';?>
 	<body>
-	<div class = "navbar navbar-default navbar-fixed-top">
-		<img src = "images/logo.png" height = "55px" style = "float:left;"><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
-		<ul class = "nav navbar-right">	
-				<li class = "dropdown">
-					<a class = "user dropdown-toggle" data-toggle = "dropdown" href = "#">
-						<span class = "glyphicon glyphicon-user"></span>
-						<?php echo $fetch['firstname']." ".$fetch['lastname'] ?>
-						<b class = "caret"></b>
-					</a>
-				<ul class = "dropdown-menu">
-					<li>
-						<a class = "me" href = "logout.php"><span class = "glyphicon glyphicon-log-out"></span> Cerrar Sesión</a>
-					</li>
-				</ul>
-				</li>
-			</ul>
-	</div>
-	<br />
-	<br />
-	<br />
-	<div class = "well">
-		<div class = "panel panel-warning">
-			<div class = "panel-heading">
-				<center><label>REHABILITATION</label></center>
+		<?php	require_once 'navbar2.php';?>
+		<?php	require_once 'sidebar.php';?>
+		<div id = "content">
+			<br />
+			<br />
+			<br />
+			<div class = "panel panel-primary">
+				<div class = "panel-heading">
+					<label>PACIENTES ATENDIDOS</label>
+				</div>
+				<br />
+				<br />
+				<div class = "panel-body">
+					<table id = "table" class = "display" width = "100%" cellspacing = "0">
+						<thead>
+							<tr>
+								<th>Nro Documento de Identidad </th>
+								<th>Nombre</th>
+								<th>Edad</th>
+								<th>Gender</th>
+								<th>Dirección</th>
+								<th><center>Accion</center></th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php 
+							$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
+							$tu = "SELECT * FROM `rehabilitation` NATURAL JOIN `itr` GROUP BY `itr_no` ORDER BY `rehab_id` DESC";
+							$q = $conn->query($tu) or die(mysqli_error());
+							while($f = $q->fetch_array()){
+						?>
+							<tr>
+								<td><?php echo $f['itr_no']?></td>
+								<td><?php echo $f['firstname']." ".$f['lastname']?></td>
+								<td><?php echo $f['age']?></td>
+								<td><?php echo $f['gender']?></td>
+								<td><?php echo $f['address']?></td>
+								<td><center>
+										<a href = "rehabilitation_record.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> All Record</a> 
+									</center></td>
+							</tr>
+						<?php
+							}
+						?>	
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-		<a style = "float:right; margin-top:-4px;" href = "rehabilitation.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a> 
-		<br />
-		<br />
-		<div class = "panel panel-primary">
-			<div class = "panel-heading">
-				<h4>REHABILITATION RECORD LIST</h4>
-			</div>
-		</div>
-		<br />
-		<table id = "table" cellspacing = "0" class = "display">
-			<thead>
-				<tr>
-					<th>Nro Documento de Identidad </th>
-					<th>Nombre</th>
-					<th>Edad</th>
-					<th>Gender</th>
-					<th>Dirección</th>
-					<th><center>Accion</center></th>
-				</tr>
-			</thead>
-			<tbody>
-			<?php 
-				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$q = $conn->query("SELECT * FROM `rehabilitation` NATURAL JOIN `itr` GROUP BY `itr_no` ORDER BY `rehab_id` DESC") or die(mysqli_error());
-				while($f = $q->fetch_array()){
-			?>
-				<tr>
-					<td><?php echo $f['itr_no']?></td>
-					<td><?php echo $f['firstname']." ".$f['lastname']?></td>
-					<td><?php echo $f['age']?></td>
-					<td><?php echo $f['gender']?></td>
-					<td><?php echo $f['address']?></td>
-					<td><center>
-							<a href = "rehabilitation_record.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> All Record</a> 
-						</center></td>
-				</tr>
-			<?php
-				}
-			?>	
-			</tbody>
-		</table>
-	</div>
 		<?php 
 		require_once 'footer.php';	
 	?>

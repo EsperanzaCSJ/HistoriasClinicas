@@ -3,7 +3,7 @@
 	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 ?>
 <!DOCTYPE html>
-<html lang = "en">lang = "eng">
+<html lang = "es_ES">
 	<head>
 		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
 		<meta charset = "utf-8" />

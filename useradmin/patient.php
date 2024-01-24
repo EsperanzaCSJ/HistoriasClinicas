@@ -5,7 +5,7 @@ ob_start();
 	require_once 'logincheck.php';
 ?>
 <!DOCTYPE html>
-<html lang = "en">lang = "es_ES">
+<html lang = "es_ES">
 <?php
 	require_once 'head.php';	
 ?> 
@@ -203,18 +203,17 @@ ob_start();
 			</div>
 		</div>
 	</div>
-	<?php
+<?php
 	require_once 'footer.php';	
 ?> 
 <?php include("script.php"); ?>
 <script type = "text/javascript">
     $(document).ready(function() {
         function disableBack() { window.history.forward() }
-
         window.onload = disableBack();
         window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
     });
-</script>	
+</script>
 </body>
 </html>
 <?php

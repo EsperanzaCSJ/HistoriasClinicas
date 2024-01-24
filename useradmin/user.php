@@ -2,7 +2,7 @@
 	require_once 'logincheck.php';
 ?>
 <!DOCTYPE html>
-<html lang = "en">lang = "eng">
+<html lang = "es_ES">
 <?php
 	include 'head.php';
 	$a=12;

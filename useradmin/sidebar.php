@@ -1,21 +1,22 @@
 <div id = "sidebar">
 	<ul id = "menu" class = "nav menu">
 		<li><a href = "home.php"><i class = "glyphicon glyphicon-home"></i> Inicio</a></li>
-		<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Usuarios</a>
+		<li><a href = ""><i class = "glyphicon glyphicon-user"></i> Crear usuario</a>
 			<ul>
-				<li><a href = "admin.php"><i class = "glyphicon glyphicon-cog"></i> Administradores</a></li>
-				<li><a href = "user.php"><i class = "glyphicon glyphicon-cog"></i> Médicos y Secretarias </a></li>
+				<li><a href = "admin.php"><i class = "glyphicon glyphicon-user"></i> Administrador</a></li>
+				<li><a href = "user.php"><i class = "glyphicon glyphicon-user"></i> Médico / Secretaria </a></li>
 			</ul>
 		</li>
-		<li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Pacientes</a></li></li>
-		<li><a href = ""><i class = "glyphicon glyphicon-book"></i> Reportes</a>
+		<!-- <li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Pacientes</a></li></li> -->
+		<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Mantenimiento y ayuda</a>
 			<ul>
-				<li><a href = "#"><i class = "glyphicon glyphicon-print"></i> Pacientes del día</a></li>
-				<li><a href = "#"><i class = "glyphicon glyphicon-print"></i> Recipe</a></li>
+				<li><a href = "admin.php"><i class = "glyphicon glyphicon-cog"></i> Respaldos</a></li>
+				<li><a href = "user.php"><i class = "glyphicon glyphicon-cog"></i> Auditoría</a></li>
+				<li><a href = "user.php"><i class = "glyphicon glyphicon-cog"></i> Manual de Usuarios</a></li>
 			</ul>
-		</li>
+		</li>		
 		<?php
 		// include 'secciones.php';
-		?>				
+		?>
 	</ul>
 </div>

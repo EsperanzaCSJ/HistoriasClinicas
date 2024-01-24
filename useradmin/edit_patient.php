@@ -5,7 +5,7 @@ ob_start();
 	require_once 'logincheck.php';
 ?>
 <!DOCTYPE html>
-<html lang = "en">lang = "eng">
+<html lang = "es_ES">
 	<head>
 		<title>Historias Clinicas - Consultorio Medico Popular Pio Tamayo</title>
 		<meta charset = "utf-8" />

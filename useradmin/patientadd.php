@@ -5,7 +5,7 @@ ob_start();
 	require_once 'logincheck.php';
 ?>
 <!DOCTYPE html>
-<html lang = "en">lang = "es_ES">
+<html lang = "es_ES">
 	<?php
 	require_once 'head.php';	
 ?> 
