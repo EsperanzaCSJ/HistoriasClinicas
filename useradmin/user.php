@@ -53,8 +53,8 @@
 						<label for = "section">Rol de usuario: </label>
 							<select name = "section" class = "form-control" required = "required">
 								<option value = "">--Seleccione el rol--</option>
-								<option value = "Rehabilitation">Doctor</option>
-								<option value = "Rehabilitation">Secretaria</option>
+								<option value = "Medic">Doctor</option>
+								<option value = "Secre">Secretaria</option>
 							</select>
 						</div>
 						<div class = "form-group">
