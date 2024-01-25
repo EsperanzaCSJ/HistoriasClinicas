@@ -1,6 +1,6 @@
 <?php
 	require_once 'logincheck.php';
-	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
+	$conn = new mysqli("localhost", "root", "", "hcpms") or die("Conexión fallida: " . mysqli_connect_error());
 	$query = $conn->query("SELECT * FROM `user` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
 	$fetch = $query->fetch_array();
 ?>
