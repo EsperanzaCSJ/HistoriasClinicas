@@ -34,8 +34,6 @@
 			<div class = "panel-heading">
 				<label>HISTORIA CLÍNICA</label>	<a style = "float:right; margin-top:-4px;" href = "rehabilitation_pending.php?itr_no=<?php echo $_GET['itr_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> REGRESAR</a>
 			</div>
-			<br />
-			<br />
 			<div class = "panel-body">
 				<form method = "POST" enctype = "multipart/form-data" cellspacing = "0">
 					<?php
@@ -44,95 +42,103 @@
 						$f1 = $q1->fetch_array();
 						$f = $q->fetch_array();
 					?>
-					<div style = "width:30%; float:left;">
+					<div style = "width:40%; float:left;">
 						<label style = "font-size:18px;">Nombre</label>
 						<br />
 						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['firstname']." ".$f['lastname']?></label>
 					</div>
-					<div style = "width:10%; float:left;">
+					<div style = "width:20%; float:left;">
 						<label style = "font-size:18px;">Edad</label>
 						<br />
 						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['age']?></label>
 					</div>
-					<div style = "width:10%; float:left;">
+					<div style = "width:20%; float:left;">
 						<label style = "font-size:18px;">Genero</label>
 						<br />
 						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['gender']?></label>
 					</div>
-					<div style = "width:15%; float:left;">
+					<div style = "width:20%; float:left;">
 						<label style = "font-size:18px;">F. Nacimiento</label>
 						<br />
 						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['birthdate']?></label>
 					</div>
-					<div style = "float:left; width:35%;">
-						<label style = "font-size:18px;">Direccion</label>
-						<br />
-						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['address']?></label>				
-					</div>
 					<br />
 					<br />
 					<br />
 					<br style = "clear:both;"/>
-					<div style = "width:20%; float:left;">
-						<label style = "font-size:18px;">BP</label>
+					<div style = "float:left; width:100%;">
+						<label style = "font-size:18px;">Dirección de vivienda</label>
 						<br />
-						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['BP']?></label>
+						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['address']?></label>
+					</div>			
+					<br style = "clear:both;"/>
+					<hr style = "border:1px dotted #d3d3d3;" />
+					<div class = "form-inline">
+					<div style = "width:25%; float:left;">
+						<label style = "font-size:18px;"  for = "temp">Temperatura</label>
+						<br />
+						<input style = "width:30%;" class = "form-control" name = "temp" type = "number" required = "required"><label>&deg;C</label>
+						&nbsp;&nbsp;&nbsp;
 					</div>
-					<div style = "width:20%; float:left;">
-						<label style = "font-size:18px;">Temp:</label>
+					<div style = "width:25%; float:left;">
+						<label style = "font-size:18px;"  for = "tension">Tensión</label>
 						<br />
-						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['TEMP']?></label>
+						<input style = "width:30%;" class = "form-control" name = "tension" type = "number" required = "required"><label>mm Hg</label>
+						&nbsp;&nbsp;&nbsp;
 					</div>
-					<div style = "width:20%; float:left;">
-						<label style = "font-size:18px;">Pulse</label>
+					<div style = "width:25%; float:left;">
+						<label style = "font-size:18px;"  for = "wt">Peso</label>
 						<br />
-						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['PR']?></label>
+						<input style = "width:30%;" class = "form-control" name = "wt" type = "number" required = "required"><label>Kg</label>
+						&nbsp;&nbsp;&nbsp;
 					</div>
-					<div style = "width:40%; float:left;">
-						<label style = "font-size:18px;">RR</label>
+					<div style = "width:25%; float:left;">
+						<label style = "font-size:18px;"  for = "ht">Altura</label>
 						<br />
-						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['RR']?></label>
+						<input style = "width:30%;" class = "form-control" name = "ht" type = "number" required = "required"><label>cm</label>
+						&nbsp;&nbsp;&nbsp;
 					</div>
 					<br style = "clear:both;"/>
 					<hr style = "border:1px dotted #d3d3d3;" />
-					<!-- <div class = "form-inline">
-						<label>Diagnosis:</label>
-						<input type = "text" name = "diagnosis" class = "form-control" />
-						<label style = "margin-left:10px;">Type of Disability:</label>
-						<input type = "text" name = "type_of_disability" class = "form-control" />
-					</div> -->
-					<div class = "form-inline">
-						<center><h3 style = "color:#3C763D;"><u>NOTAS DEL MÉDICO</u></h3></center>
 					</div>
 					<br />
 					<div class = "form-group">
-						<label>Motivo de la consulta:</label>
-						<textarea name = "subjective" class = "form-control" style = "resize:none;"></textarea>
-					</div>
-					<br />
-					<div class = "form-group">
-						<label>Diagnostico:</label>
-						<textarea name = "Diagnostico" class = "form-control" style = "resize:none;"></textarea>
+						<label>Sintomatología:</label>
+						<textarea name = "sintomas" class = "form-control" style = "resize:none;"></textarea>
 					</div>
 					<br />
 					<div class = "form-group">
 						<label>Evaluación:</label>
-						<textarea name = "objective" class = "form-control" style = "resize:none;"></textarea>
+						<textarea name = "evaluacion" class = "form-control" style = "resize:none;"></textarea>
+					</div>
+					<br />
+					<div class = "form-group">
+						<label>Diagnóstico:</label>
+						<textarea name = "diagnostico" class = "form-control" style = "resize:none;"></textarea>
 					</div>
 					<br />
 					<div class = "form-group">
 						<label>Reporte Médico:</label>
-						<textarea name = "assessment" class = "form-control" style = "resize:none;"></textarea>
+						<textarea name = "reporte_med" class = "form-control" style = "resize:none;"></textarea>
 					</div>
 					<br />
 					<div class = "form-group">
 						<label>Recipe:</label>
 						<textarea name = "plan" class = "form-control" style = "resize:none;"></textarea>
-						<input type = "hidden" name = "itr_no" value = "<?php echo $f['itr_no']?>" />
-						<input type = "hidden" name = "user_id" value = "<?php echo $_SESSION['user_id']?>" />
 					</div>
 					<br />
-					<br />
+					<div class = "form-group">
+						<label>Nota:</label>
+						<textarea name = "nota" class = "form-control" style = "resize:none;"></textarea>
+					</div>
+					<div class = "form-inline" style = "display: none;">					 
+						<label for = "itr_no">Médico asignado:</label>
+						<input class = "form-control" type = "text" value = "<?php echo $_GET['itr_no'] ?>" name = "itr_no" >
+					</div>
+					<div class = "form-inline" style = "display: none;">					 
+						<label for = "user_id">Médico asignado:</label>
+						<input class = "form-control" type = "text" value = "<?php echo $fetch['user_id'] ?>" name = "user_id" >
+					</div>
 					<div class = "form-inline">
 						<button class = "btn btn-primary" name = "save_r" ><span class = "glyphicon glyphicon-save"></span> GUARDAR</button>
 					</div>
@@ -142,6 +148,6 @@
 	</div>	
 	<?php require 'add_query.php'?>
 </body>
-		<?php	require_once 'footer.php';?>
-		<?php	require "script.php";?>
+	<?php	require_once 'footer.php';?>
+	<?php	require "script.php";?>
 </html>
