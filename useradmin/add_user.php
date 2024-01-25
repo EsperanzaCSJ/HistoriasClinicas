@@ -21,6 +21,9 @@
 				else {
 					$conn->query("INSERT INTO `secretaria` VALUES('', '$username', '$password', '$firstname', '$lastname', '$section', '$especialidad', '$idmedico', '$cimedico')");				
 				}
+				include_once 'audit.php';
+				audit($_SESSION['admin_id'], "Ha agregado un usuario médico", "admin");
+
 				header("location: user.php");
 			}
 	}

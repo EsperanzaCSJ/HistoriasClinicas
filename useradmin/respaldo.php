@@ -76,7 +76,8 @@
 				}
 				fwrite($file, "\n");
 			}
-
+			include_once 'audit.php';
+			audit($_SESSION['admin_id'], "Ha realizado un respaldo de la Base de Datos", "admin");
 			// Cerrar el archivo de respaldo y la conexión a la base de datos
 			fclose($file);
 			mysqli_close($conn);

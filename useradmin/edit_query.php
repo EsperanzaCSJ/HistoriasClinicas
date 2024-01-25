@@ -22,6 +22,8 @@
 			$lastname = $_POST['lastname'];
 			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 			$conn->query("UPDATE `admin` SET `username` = '$username', `password` = '$password', `firstname` = '$firstname', `lastname` = '$lastname' WHERE `admin_id` = '$id'") or die(mysqli_error());
+			include_once 'audit.php';
+				audit($_SESSION['admin_id'], "Ha editado un usuario administrador", "admin");
 			header("location: admin.php");
 		}
 	if(ISSET($_POST['edit_user'])){
@@ -34,5 +36,7 @@
 			$cimedico = $_POST['cimedico'];
 			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 			$conn->query("UPDATE `user` SET `username` = '$username', `password` = '$password', `firstname` = '$firstname', `lastname` = '$lastname', `especialidad` = '$especialidad', `idmedico` = '$idmedico', `cimedico` = '$cimedico' WHERE `user_id` = '$id'") or die(mysqli_error());
+			include_once 'audit.php';
+			audit($_SESSION['admin_id'], "Ha editado un usuario médico", "admin");
 			header("location: user.php");
-		}	
+		}

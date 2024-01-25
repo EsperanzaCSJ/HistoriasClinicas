@@ -12,6 +12,8 @@
 				echo "<script>alert('Username already taken')</script>";
 			}else{
 				$conn->query("INSERT INTO `admin` VALUES('', '$username', '$password', '$firstname', '$lastname')") or die(mysqli_error());
+				include_once 'audit.php';
+				audit($_SESSION['admin_id'], "Ha agregado un usuario administrador", "admin");
 				header("location: admin.php");
 			}				
 		}

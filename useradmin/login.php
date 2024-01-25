@@ -9,9 +9,11 @@
 		$valid = $query->num_rows;
 			if($valid > 0){
 				$_SESSION['admin_id'] = $fetch['admin_id'];
+				include_once 'audit.php';
+				audit($_SESSION['admin_id'], "Ha ingresado a la pagina", "admin");
 				header("location:home.php");
 			}else{
-				echo "<script>alert('Invalid username or password')</script>";
+				echo "<script>alert('Usuario o contrasena incorrecta')</script>";
 				echo "<script>window.location = 'index.php'</script>";
 			}
 		$conn->close();
