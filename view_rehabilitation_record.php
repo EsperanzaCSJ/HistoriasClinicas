@@ -46,7 +46,7 @@
 								<td><?php echo $f['gender']?></td>
 								<td><?php echo $f['address']?></td>
 								<td><center>
-										<a href = "rehabilitation_record.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clínico</a> 
+										<a href = "rehabilitation_record.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clinico</a> 
 									</center></td>
 							</tr>
 						<?php

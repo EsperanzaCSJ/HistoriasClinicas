@@ -132,12 +132,12 @@
 						<textarea name = "nota" class = "form-control" style = "resize:none;"></textarea>
 					</div>
 					<div class = "form-inline" style = "display: none;">					 
-						<label for = "itr_no">Médico asignado:</label>
+						<label for = "itr_no">Número de historia/Paciente:</label>
 						<input class = "form-control" type = "text" value = "<?php echo $_GET['itr_no'] ?>" name = "itr_no" >
 					</div>
 					<div class = "form-inline" style = "display: none;">					 
-						<label for = "user_id">Médico asignado:</label>
-						<input class = "form-control" type = "text" value = "<?php echo $fetch['user_id'] ?>" name = "user_id" >
+						<label for = "idmedico">Usuario médico asignado:</label>
+						<input class = "form-control" type = "text" value = "<?php echo $fetch['idmedico'] ?>" name = "idmedico" >
 					</div>
 					<div class = "form-inline">
 						<button class = "btn btn-primary" name = "save_r" ><span class = "glyphicon glyphicon-save"></span> GUARDAR</button>
@@ -146,7 +146,7 @@
 			</div>
 		</div>		 
 	</div>	
-	<?php require 'add_query.php'?>
+	<?php require 'add_query.php';?>
 </body>
 	<?php	require_once 'footer.php';?>
 	<?php	require "script.php";?>

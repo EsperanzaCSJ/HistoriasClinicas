@@ -12,10 +12,11 @@
 		$nota = $_POST['nota'];
 		$date = date('d/m/Y', strtotime('+8 HOURS'));
 		$itr_no = $_POST['itr_no'];
-		$user_id = $_POST['user_id'];
+		$idmedico = $_POST['idmedico'];
 		$conn = new mysqli("localhost", 'root', '', 'hcpms') or die(mysqli_error());
-		$conn->query("INSERT INTO `rehabilitation` VALUES('', '$temp', '$tension', '$wt', '$ht', '$sintomas', '$evaluacion', '$diagnostico', '$reporte_med', '$plan', '$nota', '$date', '$itr_no', '$user_id')") or die(mysqli_error());
+		$conn->query("INSERT INTO `rehabilitation` VALUES('', '$temp', '$tension', '$wt', '$ht', '$sintomas', '$evaluacion', '$diagnostico', '$reporte_med', '$plan', '$nota', '$date', '$itr_no', '$idmedico')") or die(mysqli_error());
 		$conn->query("UPDATE `complaints` SET `status` = 'Done' WHERE `itr_no` = '$_GET[itr_no]' && `section` = 'Rehabilitation' && `com_id` = '$_GET[comp_id]'") or die(mysqli_error());
 		$conn->close();
 		header("location:rehabilitation.php");
 	}
+?>
