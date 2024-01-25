@@ -25,15 +25,11 @@
 				</li>
 			</ul>
 	</div>
+	<?php	require_once 'sidebar.php';?>
 	<br />
 	<br />
 	<br />
-	<div class = "well">
-		<!-- <div class = "panel panel-warning">
-			<div class = "panel-heading">
-				<center><label>REHABILITATION</label></center>
-			</div>
-		</div> -->
+	<div id= "content" class = "well">
 		<div class = "panel panel-success">	
 			<div class = "panel-heading">
 			<?php
@@ -44,7 +40,7 @@
 			?>
 				<label class = "font-size:18px;">Información del Paciente: <label class = "text-warning;"><?php echo $f['firstname']." ".$f['lastname']?></label></label>
 				<a style = "float:right; margin-top:-4px;" href = "rehabilitation.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
-				<a style = "float:right; margin-top:-4px; margin-right:5px;" href = "rehabilitation_pending.php?itr_no=<?php echo $f['itr_no']?>" class = "btn btn-info">Atenciones <span class = "badge"> <?php echo $f1['total']?></span></a>
+				<a style = "float:right; margin-top:-4px; margin-right:5px;" href = "rehabilitation_pending.php?itr_no=<?php echo $f['itr_no']?>" class = "btn btn-info">Atenciones Pendientes <span class = "badge"> <?php echo $f1['total']?></span></a>
 				<label style = "margin-top:5px; margin-right:20px; float:right;">HISTORIA CLINICA Nro: <label class = "text-warning"><?php echo $f['itr_no']?></label></label>
 			</div>
 			<div class = "panel-body">					
@@ -111,14 +107,10 @@
 						<br />
 						<label style = "font-size:18px;" class = "text-muted"><//?php echo $f['HT']?></label>
 					</div> -->
-					<br />
 			</div>	
-		</div>	
-		 
+		</div>		 
 	</div>
-		<?php 
-		require_once 'footer.php';	
-	?>
+		<?php	require_once 'footer.php';?>
 	</body>
-		<?php require "script.php" ?>
+		<?php	require "script.php";?>
 </html>

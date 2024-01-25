@@ -45,7 +45,7 @@
 			?>
 				<label class = "font-size:18px;">Información del Paciente: <label class = "text-warning;"><?php echo $f['firstname']." ".$f['lastname']?></label></label>
 				<a style = "float:right; margin-top:-4px;" href = "paciente.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
-				<a style = "float:right; margin-top:-4px; margin-right:5px;" href = "atenciones.php?id=<?php echo $f['itr_no']?>&lastname=<?php echo $f['lastname']?>" class = "btn btn-info">Atenciones <span class = "badge"> <?php echo $f1['total']?></span></a>
+				<a style = "float:right; margin-top:-4px; margin-right:5px;" href = "atenciones.php?id=<?php echo $f['itr_no']?>&lastname=<?php echo $f['lastname']?>" class = "btn btn-info">Atenciones Pendientes <span class = "badge"> <?php echo $f1['total']?></span></a>
 				<label style = "margin-top:5px; margin-right:20px; float:right;">HISTORIA CLINICA Nro: <label class = "text-warning"><?php echo $f['itr_no']?></label></label>
 			</div>
 			<div class = "panel-body">					

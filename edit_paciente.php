@@ -114,9 +114,6 @@ ob_start();
 						<label for = "address">Dirección:</label>
 						<input class = "form-control" name = "address" type = "text" value = "<?php echo $f['address']?>" required = "required">
 						<br />
-						<label for = "age">Edad:</label>
-						<input class = "form-control" style = "width:20%;" value = "<?php echo $f['age']?>" name = "age" type = "number">
-						<br />
 						<label for = "civil_status">Estado Civil:</label>
 						<select style = "width:22%;" class = "form-control" name = "civil_status" required = "required">
 							<option value = "">Seleccionar</option>

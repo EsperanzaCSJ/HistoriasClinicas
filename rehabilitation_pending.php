@@ -1,13 +1,12 @@
 <?php
-	require_once'logincheck.php';
+	require_once 'logincheck.php';
 	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 	$query = $conn->query("SELECT * FROM `user` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
 	$fetch = $query->fetch_array();
 ?>
 <!DOCTYPE html>
 <html lang = "en">
-	<?php	require_once 'head.php';
-?>
+	<?php	require_once 'head.php';?>
 	<body>
 	<div class = "navbar navbar-default navbar-fixed-top">
 		<img src = "images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
@@ -26,18 +25,14 @@
 				</li>
 			</ul>
 	</div>
+	<?php	require_once 'sidebar.php';?>
 	<br />
 	<br />
 	<br />
-	<div class = "well">
-		<div class = "panel panel-warning">
-			<div class = "panel-heading">
-				<center><label>REHABILITATION</label></center>
-			</div>
-		</div>	
+	<div id="content" class = "well">
 		<div class = "panel panel-success">
 			<div class = "panel-heading">
-				<label>REHABILITATION REQUEST</label>
+				<label>ATENCIONES PENDIENTES</label>
 				<a style = "float:right; margin-top:-4px;" href = "view_rehabilitation.php?itr_no=<?php echo $_GET['itr_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 			<div class = "panel-body">
@@ -56,9 +51,7 @@
 			?>
 		</div>
 	</div>
-		<?php 
-		require_once 'footer.php';	
-	?>
+		<?php	require_once 'footer.php';?>
 	</body>
-		<?php require "script.php" ?>
+		<?php	require "script.php";?>
 </html>

@@ -18,7 +18,7 @@
 					$conn->query("INSERT INTO `secretaria` VALUES('', '$username', '$password', '$firstname', '$lastname', '$section', '$idmedico', '$ci_secretaria')");				
 				}
 				else{}
-				header("location: user_secretaria.php");
+				header("location: user_secretario.php");
 			}
 	}
 ?>

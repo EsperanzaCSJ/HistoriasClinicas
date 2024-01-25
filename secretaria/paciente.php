@@ -9,16 +9,10 @@ ob_start();
 ?>
 <!DOCTYPE html>
 <html lang = "es_ES">
-<?php
-	require_once 'head.php';	
-?> 
+<?php		require_once 'head.php';?> 
 <body>
-<?php
-	require_once 'navbar2.php';
-?>
-<?php
-	include 'sidebar.php';
-?>
+<?php	require_once 'navbar2.php';?>
+<?php	include 'sidebar.php';?>
 	<div id = "content">
 		<br />
 		<br />
@@ -107,10 +101,7 @@ ob_start();
 								//}
 							?>
 						</select> -->
-						<br style = "clear:both;"/>
-						<br />
-						<label for = "age">Edad:</label>						
-						<input class = "form-control" style = "width:20%;" min = "0" max = "999" name = "age" type = "number">
+						<br style = "clear:both;"/>						
 						<br />
 						<label for = "address">Direccion:</label>
 						<input class = "form-control" name = "address" type = "text" required = "required">
@@ -162,7 +153,7 @@ ob_start();
 					<tbody>
 					<?php
 						$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-						$query = $conn->query("SELECT * FROM `itr` ORDER BY `itr_no` DESC") or die(mysqli_error());
+						$query = $conn->query("SELECT * FROM `itr` WHERE `idmedico` = '$fetch[idmedico]' ORDER BY `itr_no` DESC") or die(mysqli_error());
 						while($fetch = $query->fetch_array()){
 						$id = $fetch['itr_no'];
 						$q = $conn->query("SELECT COUNT(*) as total FROM `complaints` where `itr_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
@@ -192,10 +183,8 @@ ob_start();
 			</div>
 		</div>
 	</div>
-<?php
-	require_once 'footer.php';	
-?> 
-<?php include("script.php"); ?>
+<?php	require_once 'footer.php';?> 
+<?php	include("script.php");?>
 <script type = "text/javascript">
     $(document).ready(function() {
         function disableBack() { window.history.forward() }

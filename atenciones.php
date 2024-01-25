@@ -50,24 +50,16 @@
 					<br />
 					<div class = "form-group">
 						<label>Fecha:</label>
-						<textarea style = "resize:none;" name = "complaints" class = "form-control"></textarea>
+						<textarea style = "resize:none;" name = "complaints" class = "form-control" required = "required"></textarea>
 						<br />
 						<label>Motivo de la consulta:</label>
-						<textarea style = "resize:none;" name = "remarks" class = "form-control"></textarea>
-						<br />
-						<label>Asigne un doctor:</label>
-						<select name = "section" class = "form-control" required = "required">
-								<option value = "">Seleccione al doctor</option>
-								<option value = "Rehabilitation">Dr. Juancho Pacho</option>
-								<option value = "Rehabilitation">Dra. Nicole Kidman</option>
-								<!-- <option value = "Hematology">Hematology</option>
-								<option value = "Prenatal">Prenatal</option>
-								<option value = "Xray">Rayos X</option>
-								<option value = "Rehabilitation">Rehabilitation</option>
-								<option value = "Sputum">Sputum</option>
-								<option value = "Urinalysis">Urinalysis</option>
-								<option value = "Maternity">Maternidad</option> -->
-						</select>
+						<textarea style = "resize:none;" name = "remarks" class = "form-control" required = "required"></textarea>
+					</div>
+					<div class = "form-group">
+						<div class = "form-inline" style = "display: none;">					 
+							<label for = "section">Asignando section tabla jeje</label>
+							<input class = "form-control" type = "text" value = "Rehabilitation" name = "section" >
+						</div> 
 					</div>
 					<br />
 					<div class = "form-inline">
@@ -96,10 +88,10 @@
 				$q = $conn->query("SELECT * FROM `complaints` WHERE `itr_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
 					while($f = $q->fetch_array()){
 						if($f['status'] == "Done"){
-							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<label style = 'float:right; color:red;'>Done</label><br /><br /><hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<label style = 'float:right; color:red;'></label><br /<hr style = 'border:1px solid #eee;' />";
 						}
 						if($f['status'] == "Pending"){
-							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><br /><hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<hr style = 'border:1px solid #eee;' />";
 						}
 					}
 				?>

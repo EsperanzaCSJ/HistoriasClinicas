@@ -1,13 +1,12 @@
 <?php
-	require_once'logincheck.php';
+	require_once 'logincheck.php';
 	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 	$query = $conn->query("SELECT * FROM `user` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
 	$fetch = $query->fetch_array();
 ?>
 <!DOCTYPE html>
 <html lang = "en">
-	<?php	require_once 'head.php';
-?>
+	<?php	require_once 'head.php';?>
 	<body>
 	<div class = "navbar navbar-default navbar-fixed-top">
 		<img src = "images/logo.png" style = "float:left;" height = "55px" /><label class = "navbar-brand">Historias Clinicas - Consultorio Medico Popular Pio Tamayo</label>
@@ -145,9 +144,7 @@
 		</div>
 		 
 	</div>
-		<?php 
-		require_once 'footer.php';	
-	?>
+		<?php	require_once 'footer.php';?>
 	</body>
-		<?php require "script.php" ?>
+		<?php	require "script.php";?>
 </html>

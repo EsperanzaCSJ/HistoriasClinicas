@@ -34,6 +34,13 @@
 	<?php 
 		require_once 'footer.php';	
 	?>
-		
+	<?php include("script.php"); ?>
+	<script type = "text/javascript">
+		$(document).ready(function() {
+			function disableBack() { window.history.forward() }
+			window.onload = disableBack();
+			window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+		});
+	</script>		
 </body>
 </html>
