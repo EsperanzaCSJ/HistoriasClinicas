@@ -1,5 +1,5 @@
 -- Respaldando la base de datos 'hcpms'
--- Fecha: 2024-01-25 06:46:48
+-- Fecha: 2024-01-25 07:03:14
 
 --
 -- Estructura de la tabla 'admin'
@@ -32,7 +32,7 @@ CREATE TABLE `auditoria` (
   `accion` varchar(50) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Datos de la tabla 'auditoria'
@@ -44,8 +44,6 @@ INSERT INTO auditoria VALUES('13','admin','login a plataforma','2024-01-25 06:03
 INSERT INTO auditoria VALUES('14','admin','agrego un usuario','2024-01-25 06:04:36');
 INSERT INTO auditoria VALUES('15','admin','Edito a un usuario administrador','2024-01-25 06:39:29');
 INSERT INTO auditoria VALUES('16','admin','Ha realizado un respaldo','2024-01-25 06:46:36');
-INSERT INTO auditoria VALUES('17','admin','Ha realizado un respaldo','2024-01-25 06:46:39');
-INSERT INTO auditoria VALUES('18','admin','Ha realizado un respaldo','2024-01-25 06:46:44');
 
 --
 -- Estructura de la tabla 'birthing'
@@ -599,9 +597,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO user VALUES('14','antonio','antonio','Antonio','Banderas','Medic','Psiquiatra','15148hdffd23','18456321');
-INSERT INTO user VALUES('15','medico','medico','medico','medico','Medic','oftalmologo','15','25555555');
 INSERT INTO user VALUES('20','javier','javier','Javier','Milei','Medic','Traumatologo','158234s56d9asc12','13235562');
 INSERT INTO user VALUES('22','agustin','agustin','Agustin','Laje','Medic','Neurocirujano','565d14ssd','10236541');
-INSERT INTO user VALUES('23','jquery','admin','jquery','qqq','Medic','sss','1234','1234321');
 INSERT INTO user VALUES('25','astro','astro','Astro','Build','Medic','Podologo','333777a','15263254');
 
