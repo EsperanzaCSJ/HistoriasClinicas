@@ -102,7 +102,7 @@
 								<td><?php echo $fetch['cimedico']?></td>
 								<td><?php echo $fetch['especialidad']?></td>
 								<td><center><a href = "edit_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>"class = "btn btn-sm btn-warning"><i class = "glyphicon glyphicon-edit"></i></a>
-								<a onclick = "delete_user(this); return false;"  href = "delete_user.php?id=<?php echo $fetch['user_id']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td>
+								<!-- <a onclick = "delete_user(this); return false;"  href = "delete_user.php?id=<//?php echo $fetch['user_id']?>&lastname=<//?php echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td> -->
 								
 							</tr>
 						<?php

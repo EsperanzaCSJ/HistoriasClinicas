@@ -40,11 +40,10 @@
 			<br />
 			<br />
 			<label><center><b>CONSULTORIO MÉDICO POPULAR PIO TAMAYO</b></center></label>
-			<label style = "font-size:14px;"><center>Historia Clinica de visita del día: <?php echo $f['fecha']?></center></label>
+			<label style = "font-size:14px;"><center>Historia Clinica de visita del día: <?php echo $f['date']?></center></label>
 			<label><b>DATOS DEL PACIENTE:</b></label>
 			<br />
-			<label>Nombres: <?php echo $f['firstname']." ".$f['lastname']?>
-			<label style = "margin-right:48%; float:right;">Motivo de la consulta: <?php echo $f['diagnosis']?></label></label>
+			<label>Nombres: <?php echo $f['firstname']." ".$f['lastname']?></label>
 			<br />
 			<label>Edad: <?php echo $f['age']?></label>
 			<br />
@@ -55,41 +54,47 @@
 			<label>Fecha de nacimiento: <?php echo $f['birthdate']?></label>
 			<br />
 			<br />
-			<label>Temperatura: <u><?php 
-			$t = substr($f['temp'], 0, 2);
-			echo $t; ?></u>&deg;C</label>
-			<label>Tensión: <u>&nbsp;<?php echo $f['pr']?>&nbsp;</u></label>
-			<label>Altura: <u>&nbsp;<?php echo $f['ht']?>&nbsp;</u></label>
-			<label>Peso: <u>&nbsp;<?php echo $f['wt']?>&nbsp;</u></label>
+			<label>Temperatura: <u><?php echo $f['temp']?></u>&deg;C.</label>
+			<br />
+			<label>Tensión: <u>&nbsp;<?php echo $f['tension']?>&nbsp;</u>mm Hg.</label>
+			<br />
+			<label>Altura: <u>&nbsp;<?php echo $f['ht']?>&nbsp;</u>cm.</label>
+			<br />
+			<label>Peso: <u>&nbsp;<?php echo $f['wt']?>&nbsp;</u>Kg.</label>
 			<br />
 			<br />
 			<br />
 			<label><center><u><b>EVALUACIÓN DEL PACIENTE</b></u></center></label>
 			<br />
 			<br />
-			<label><b>Motivo de la consulta:</b></label>
+			<label><b>Sintomatología:</b></label>
 			<br />
-			<label style = "word-wrap:break-word;"><?php echo $f['subjective']?></label>
-			<br />
-			<br />
-			<label><b>Diagnostico:</b></label>
-			<br />
-			<label style = "word-wrap:break-word;"><?php echo $f['diagnostico']?></label>
+			<label style = "word-wrap:break-word;"><?php echo $f['sintomas']?></label>
 			<br />
 			<br />
 			<label><b>Evaluación:</b></label>
 			<br />
-			<label style = "word-wrap:break-word;"><?php echo $f['objective']?></label>
+			<label style = "word-wrap:break-word;"><?php echo $f['evaluacion']?></label>
+			<br />
+			<br />
+			<label><b>Diagnóstico:</b></label>
+			<br />
+			<label style = "word-wrap:break-word;"><?php echo $f['diagnostico']?></label>
 			<br />
 			<br />
 			<label><b>Reporte Médico:</b></label>
 			<br />
-			<label style = "word-wrap:break-word;"><?php echo $f['assessment']?></label>
+			<label style = "word-wrap:break-word;"><?php echo $f['reporte_med']?></label>
 			<br />
 			<br />
 			<label><b>Recipe:</b></label>
 			<br />
 			<label style = "word-wrap:break-word;"><?php echo $f['plan']?></label>
+			<br />
+			<br />
+			<label><b>Nota:</b></label>
+			<br />
+			<label style = "word-wrap:break-word;"><?php echo $f['nota']?></label>
 		</div>
 	</div>
 <script>

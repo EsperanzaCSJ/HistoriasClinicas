@@ -1,8 +1,10 @@
 <?php
 	require_once 'logincheck.php';
 	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-	$query = $conn->query("SELECT * FROM `user` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
+	$query = $conn->query("SELECT `idmedico` FROM `secretaria` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
 	$fetch = $query->fetch_array();
+	$query2 = $conn->query("SELECT * FROM `user` WHERE `idmedico` = '$fetch[idmedico]'") or die(mysqli_error());
+	$fetch2 = $query2->fetch_array();
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,17 +26,17 @@
 </head> 
 <body> 
 	<?php
-			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-			$q = $conn->query("SELECT * FROM `rehabilitation` NATURAL JOIN `itr` WHERE `itr_no` = '$_GET[itr_no]' && `rehab_id` = '$_GET[rehab_id]'") or die(mysqli_error());
-			$f = $q->fetch_array();
+		$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
+		$q = $conn->query("SELECT * FROM `rehabilitation` NATURAL JOIN `itr` WHERE `itr_no` = '$_GET[itr_no]' && `rehab_id` = '$_GET[rehab_id]'") or die(mysqli_error());
+		$f = $q->fetch_array();
 	?>
-<button onclick="printContent('print')">Imprimir</button>
-<button><a style = "text-decoration:none; color:#000;" href = "rehabilitation_form.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $_GET['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print">VOLVER</a></button>
+		<button onclick="printContent('print')">Imprimir</button>
+		<button><a style = "text-decoration:none; color:#000;" href = "rehabilitation_form.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $_GET['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print">VOLVER</a></button>
 <br />
 <br />
 	<div id="print">
 		<div style = "margin:10px;">
-			<img src = "images/logo.png" height = "80px" width = "80px" style = "float:left; position:relative; left:15%;" />
+			<img src = "../images/logo.png" height = "80px" width = "80px" style = "float:left; position:relative; left:15%;" />
 			<div style = "float:right; position:relative; right:35%;">
 				<br />
 				<label><center>Consultorio Médico Popular Pio Tamayo</center></label>
@@ -58,14 +60,14 @@
 			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 			$q = $conn->query("SELECT * FROM `user` NATURAL JOIN `user_id` WHERE `user_id`") or die(mysqli_error());
 			$fe = $q->fetch_array();
-			?>			 -->
-			<label><b>DATOS DEL MÉDICO:</b></label>
+			?>-->
+			<label><b>DATOS DEL MÉDICO:</b></label>	
 			<br />
-			<label>Nombres: <?php echo $fetch['firstname']." ".$fetch['lastname']?>
+			<label>Nombres: <?php echo $fetch2['firstname']." ".$fetch2['lastname']?>			
 			<br />
-			<label>Especialidad: <?php echo $fetch['especialidad']?></label></label>
+			<label>Especialidad: <?php echo $fetch2['especialidad']?></label></label>
 			<br />
-			<label>Cédula: <?php echo $fetch['cimedico']?></label></label>
+			<label>Cédula: <?php echo $fetch2['cimedico']?></label></label>
 			<br />
 			<br />
 			<label><center><u><b>RECIPE MÉDICO</b></u></center></label>

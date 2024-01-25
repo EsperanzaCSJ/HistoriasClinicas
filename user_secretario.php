@@ -92,7 +92,7 @@
 						<tbody>
 						<?php
 							$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-							$query = $conn->query("SELECT * FROM `secretaria` ORDER BY `user_id` DESC") or die(mysqli_error());
+							$query = $conn->query("SELECT * FROM `secretaria` WHERE `idmedico` = '$fetch[idmedico]'") or die(mysqli_error());
 							while($fetch = $query->fetch_array()){
 						?>
 							<tr>

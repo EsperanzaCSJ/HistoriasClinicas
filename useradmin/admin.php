@@ -72,7 +72,7 @@
 							<th>Usuario</th>
 							<th>Contraseña</th>
 							<th>Nombre</th>
-							<th><center>Accion</center></th>
+							<th><center>Editar</center></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -85,7 +85,8 @@
 							<td><?php echo $fetch['username']?></td>
 							<td><?php echo md5($fetch['password'])?></td>
 							<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
-							<td><center><a class = "btn btn-sm btn-warning" href = "edit_admin.php?id=<?php echo $fetch['admin_id']?>&lastname=<?php echo $fetch['lastname']?>"><i class = "glyphicon glyphicon-edit"></i> Actualizar</a> <a onclick="confirmationDelete(this);return false;" href = "delete_admin.php?id=<?php echo $fetch['admin_id']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Eliminar</a></center></td>
+							<td><center><a class = "btn btn-sm btn-warning" href = "edit_admin.php?id=<?php echo $fetch['admin_id']?>&lastname=<?php echo $fetch['lastname']?>"><i class = "glyphicon glyphicon-edit"></i></a>
+							<!-- <a onclick="confirmationDelete(this);return false;" href = "delete_admin.php?id=<//?php echo $fetch['admin_id']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Eliminar</a> --></center></td>
 						</tr>
 					<?php
 						}

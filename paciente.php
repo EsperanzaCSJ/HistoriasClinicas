@@ -101,7 +101,6 @@ ob_start();
 								<th>Nro. Cedula</th>
 								<th>Nro. Historia</th>
 								<th>Nombre</th>
-								<th>F. Nacimiento</th>
 								<th>Edad</th>
 								<th>Dirección</th>
 								<th><center>Acción</center></th>
@@ -125,7 +124,6 @@ ob_start();
 								<td><?php echo $fetch['cedula']?></td>
 								<td><?php echo $fetch['itr_no']?></td>
 								<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
-								<td><?php echo $fetch['birthdate']?></td>
 								<td><?php echo $fetch['age']?></td>
 								<td><?php echo $fetch['address']?></td>
 								<td><center><a href = "atenciones.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Atenciones <span class = "badge"><?php echo $f['total']?></span></a>

@@ -76,7 +76,7 @@
 		?>
 		<div class = "panel panel-info">
 			<div class = "panel-heading">
-				<label style = "font-size:16px;">Historias Clínicas de <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
+				<label style = "font-size:16px;">Historial de atenciones / <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
 				<a style = "float:right; margin-top:-5px;" id = "add_complaints" class = "btn btn-success" href = "paciente.php"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 		</div>
