@@ -57,55 +57,9 @@ ob_start();
 						<div class = "form-group">
 							<label for = "birthdate" style = "float:left;">F. Nacimiento:</label>
 							<br style = "clear:both;" />
-							<input type="date" name="birthdate" class = "form-control" style = "width:30%; float:left;"/>
-							<!-- <select name = "day" class = "form-control" style = "width:13%; float:left;" required = "required">
-								<option value = "">Dia</option>
-								<option value = "01">01</option>
-								<option value = "02">02</option>
-								<option value = "03">03</option>
-								<option value = "04">04</option>
-								<option value = "05">05</option>
-								<option value = "06">06</option>
-								<option value = "07">07</option>
-								<option value = "08">08</option>
-								<option value = "09">09</option>	
-								<?php
-									//$a = 10;
-									//while($a <= 31){
-									//	echo "<option value = '".$a."'>".$a++."</option>";
-									//}
-								?>
-							</select>
-							<select name = "month" style = "width:15%; float:left;" class = "form-control" required = "required">
-								<option value = "">Mes</option>
-								<option value = "01">Enero</option>
-								<option value = "02">Febrero</option>
-								<option value = "03">Marzo</option>
-								<option value = "04">Abril</option>
-								<option value = "05">Mayo</option>
-								<option value = "06">Junio</option>
-								<option value = "07">Julio</option>
-								<option value = "08">Agosto</option>
-								<option value = "09">Septiembre</option>
-								<option value = "10">Octubre</option>
-								<option value = "11">Noviembre</option>
-								<option value = "12">Diciembre</option>
-							</select>
-							<select name = "year" class = "form-control" style = "width:13%; float:left;" required = "required">
-								<option value = "">Año</option>
-								<?php
-									//$a = date('Y');
-									// $a = "2024";
-									//while(1910 <= $a){
-									//	echo "<option value = '".$a."'>".$a--."</option>";
-									//}
-								?>
-							</select> -->
+							<input type="date" name="birthdate" class = "form-control" style = "width:30%; float:left;"/>							
 							<br style = "clear:both;"/>
-							<br />
-							<label for = "age">Edad:</label>						
-							<input class = "form-control" style = "width:20%;" min = "0" max = "140" name = "age" type = "number">
-							<br />
+							<br />							
 							<label for = "address">Direccion:</label>
 							<input class = "form-control" name = "address" type = "text" required = "required">
 							<br />
@@ -155,19 +109,24 @@ ob_start();
 						</thead>
 						<tbody>
 						<?php
+							// echo $_SESSION['user_id'];
+							// VAR_dump($_SESSION);
+							// die;
 							$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-							$query = $conn->query("SELECT * FROM `itr` ORDER BY `itr_no` DESC") or die(mysqli_error());
+							// $query = $conn->query("SELECT * FROM `itr` WHERE `idmedico` = '565d14ssd' ORDER BY `itr_no` DESC") or die(mysqli_error());
+							// $query = $conn->query("SELECT * FROM `itr` WHERE `idmedico` = '$_SESSION[user_id]' ORDER BY `itr_no` DESC") or die(mysqli_error());
+							$query = $conn->query("SELECT * FROM `itr` WHERE `idmedico` = '$fetch[idmedico]' ORDER BY `itr_no` DESC") or die(mysqli_error());
 							while($fetch = $query->fetch_array()){
 							$id = $fetch['itr_no'];
 							$q = $conn->query("SELECT COUNT(*) as total FROM `complaints` where `itr_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
 							$f = $q->fetch_array();
-						?>
+							?>
 							<tr>
 								<td><?php echo $fetch['cedula']?></td>
 								<td><?php echo $fetch['itr_no']?></td>
 								<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
-								<td><?php echo $fetch['birthdate']?></td>				
-								<td><?php echo $fetch['age']?></td>				
+								<td><?php echo $fetch['birthdate']?></td>
+								<td><?php echo $fetch['age']?></td>
 								<td><?php echo $fetch['address']?></td>
 								<td><center><a href = "atenciones.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Atenciones <span class = "badge"><?php echo $f['total']?></span></a>
 								<a href = "edit_paciente.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
