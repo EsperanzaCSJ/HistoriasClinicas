@@ -50,7 +50,7 @@
 					<br />
 					<div class = "form-group">
 						<label>Fecha:</label>
-						<textarea style = "resize:none;" name = "complaints" class = "form-control"></textarea>
+						<textarea style = "resize:none;" name = "atenciones" class = "form-control"></textarea>
 						<br />
 						<label>Motivo de la consulta:</label>
 						<textarea style = "resize:none;" name = "remarks" class = "form-control"></textarea>
@@ -71,9 +71,9 @@
 					</div>
 					<br />
 					<div class = "form-inline">
-						<button class = "btn btn-primary" name = "save_complaints"><span class = "glyphicon glyphicon-save"></span> GUARDAR</button>
+						<button class = "btn btn-primary" name = "save_atenciones"><span class = "glyphicon glyphicon-save"></span> GUARDAR</button>
 					</div>
-					<?php require_once 'add_complaints.php' ?>
+					<?php require_once 'add_atenciones.php' ?>
 				</form>
 			</div>	
 		</div>	
@@ -85,7 +85,7 @@
 		<div class = "panel panel-info">
 			<div class = "panel-heading">
 				<label style = "font-size:16px;">Historias Clínicas de <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
-				<a style = "float:right; margin-top:-5px;" id = "add_complaints" class = "btn btn-success" href = "paciente.php"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
+				<a style = "float:right; margin-top:-5px;" id = "add_atenciones" class = "btn btn-success" href = "paciente.php"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 		</div>
 		<button class = "btn btn-primary" id = "show_com"><i class = "glyphicon glyphicon-plus">AGREGAR</i></button>
@@ -93,7 +93,7 @@
 			<?php
 				$q1 = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[id]'") or die(mysqli_error());
 				$f1 = $q1->fetch_array();
-				$q = $conn->query("SELECT * FROM `complaints` WHERE `paciente_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
+				$q = $conn->query("SELECT * FROM `atenciones` WHERE `paciente_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
 					while($f = $q->fetch_array()){
 						if($f['status'] == "Done"){
 							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<label style = 'float:right; color:red;'>Done</label><br /><br /><hr style = 'border:1px solid #eee;' />";

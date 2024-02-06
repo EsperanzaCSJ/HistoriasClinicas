@@ -15,7 +15,7 @@
 		$idmedico = $_POST['idmedico'];
 		$conn = new mysqli("localhost", 'root', '', 'hcpms') or die(mysqli_error());
 		$conn->query("INSERT INTO `datos_historias` VALUES('', '$temp', '$tension', '$wt', '$ht', '$sintomas', '$evaluacion', '$diagnostico', '$reporte_med', '$plan', '$nota', '$date', '$paciente_no', '$idmedico')") or die(mysqli_error());
-		$conn->query("UPDATE `complaints` SET `status` = 'Done' WHERE `paciente_no` = '$_GET[paciente_no]' && `section` = 'datos_historias' && `com_id` = '$_GET[comp_id]'") or die(mysqli_error());
+		$conn->query("UPDATE `atenciones` SET `status` = 'Done' WHERE `paciente_no` = '$_GET[paciente_no]' && `section` = 'datos_historias' && `com_id` = '$_GET[comp_id]'") or die(mysqli_error());
 		$conn->close();
 		header("location:datos_historias.php");
 	}

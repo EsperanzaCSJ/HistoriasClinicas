@@ -40,7 +40,7 @@
 			<?php
 				$q = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[paciente_no]'") or die(mysqli_error());
 				$f = $q->fetch_array();
-				$q1 = $conn->query("SELECT COUNT(*) as total FROM `complaints` where `status` = 'Pending' && `paciente_no` = '$f[paciente_no]' && `section` = 'datos_historias'") or die(mysqli_error());
+				$q1 = $conn->query("SELECT COUNT(*) as total FROM `atenciones` where `status` = 'Pending' && `paciente_no` = '$f[paciente_no]' && `section` = 'datos_historias'") or die(mysqli_error());
 				$f1 = $q1->fetch_array();
 			?>
 				<label class = "font-size:18px;">Información del Paciente: <label class = "text-warning;"><?php echo $f['firstname']." ".$f['lastname']?></label></label>

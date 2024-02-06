@@ -93,13 +93,13 @@ CREATE TABLE IF NOT EXISTS `birthing` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `complaints`
+-- Estructura de tabla para la tabla `atenciones`
 --
 
-CREATE TABLE IF NOT EXISTS `complaints` (
+CREATE TABLE IF NOT EXISTS `atenciones` (
   `com_id` int(50) NOT NULL AUTO_INCREMENT,
   `date` varchar(20) NOT NULL,
-  `complaints` varchar(255) NOT NULL,
+  `atenciones` varchar(255) NOT NULL,
   `remark` varchar(255) NOT NULL,
   `paciente_no` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
@@ -108,10 +108,10 @@ CREATE TABLE IF NOT EXISTS `complaints` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `complaints`
+-- Volcado de datos para la tabla `atenciones`
 --
 
-INSERT INTO `complaints` (`com_id`, `date`, `complaints`, `remark`, `paciente_no`, `section`, `status`) VALUES
+INSERT INTO `atenciones` (`com_id`, `date`, `atenciones`, `remark`, `paciente_no`, `section`, `status`) VALUES
 (1, '09/08/2018', 'Dolor Muela', 'caries', '1111', 'Dental', 'Done');
 
 -- --------------------------------------------------------

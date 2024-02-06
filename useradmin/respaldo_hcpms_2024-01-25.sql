@@ -65,13 +65,13 @@ INSERT INTO auditoria VALUES('36','admin','Ha realizado un respaldo de la Base d
 INSERT INTO auditoria VALUES('37','admin','Ha realizado un respaldo de la Base de Datos','2024-01-25 17:21:27');
 
 --
--- Estructura de la tabla 'complaints'
+-- Estructura de la tabla 'atenciones'
 --
 
-CREATE TABLE `complaints` (
+CREATE TABLE `atenciones` (
   `com_id` int(50) NOT NULL AUTO_INCREMENT,
   `date` varchar(20) NOT NULL,
-  `complaints` varchar(255) NOT NULL,
+  `atenciones` varchar(255) NOT NULL,
   `remark` varchar(255) NOT NULL,
   `paciente_no` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
@@ -80,35 +80,35 @@ CREATE TABLE `complaints` (
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Datos de la tabla 'complaints'
+-- Datos de la tabla 'atenciones'
 --
 
-INSERT INTO complaints VALUES('13','01/21/2024','20/01/2024','dolor de cabeza','112','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('14','01/21/2024','20/01/2024','dolor de cabeza','112','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('15','01/21/2024','20/01/2024','dolor de cabeza','112','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('16','01/23/2024','22/01/2024','Dolor de cabeza','9','Rehabilitation','Done');
-INSERT INTO complaints VALUES('17','01/23/2024','22/01/2024','ninguna','15','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('18','01/23/2024','22/01/2024','movi','112','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('19','01/23/2024','df','dfd','112','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('20','01/24/2024','23/01/2024','Dolor estomacal','1005','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('21','01/24/2024','23/01/2024','Dolor estomacal','1005','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('22','01/24/2024','23/011/2022','ni','1005','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('23','01/24/2024','23/011/2022','ni','1005','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('24','01/24/2024','23/011/2022','ni','1005','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('25','01/24/2024','10','10','1005','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('29','01/24/2024','23/01/2024','otro motivo','9','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('30','01/24/2024','23/01/2024','motivo3','9','Rehabilitation','Done');
-INSERT INTO complaints VALUES('31','01/25/2024','24/01/2024','estornudos','21','Rehabilitation','Done');
-INSERT INTO complaints VALUES('32','01/25/2024','24/01/2024','Mareos','12','Rehabilitation','Done');
-INSERT INTO complaints VALUES('33','01/25/2024','24/01/2024','Estreñimiento','8','Rehabilitation','Done');
-INSERT INTO complaints VALUES('34','01/25/2024','24/01/2024','Estreñimiento','8','Rehabilitation','Done');
-INSERT INTO complaints VALUES('35','01/25/2024','','','8','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('38','01/25/2024','','','8','Rehabilitation','Done');
-INSERT INTO complaints VALUES('39','01/25/2024','24/01/2024','mareo y vomito','8','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('40','01/25/2024','24/01/2024','mareo y vomito','8','Rehabilitation','Pending');
-INSERT INTO complaints VALUES('41','01/25/2024','23/01/2024','Dolor estomacal','7','Rehabilitation','Done');
-INSERT INTO complaints VALUES('42','01/25/2024','25/01/2024','Dolor','7','Rehabilitation','Done');
-INSERT INTO complaints VALUES('43','01/25/2024','25/01/2024','gripon','5','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('13','01/21/2024','20/01/2024','dolor de cabeza','112','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('14','01/21/2024','20/01/2024','dolor de cabeza','112','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('15','01/21/2024','20/01/2024','dolor de cabeza','112','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('16','01/23/2024','22/01/2024','Dolor de cabeza','9','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('17','01/23/2024','22/01/2024','ninguna','15','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('18','01/23/2024','22/01/2024','movi','112','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('19','01/23/2024','df','dfd','112','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('20','01/24/2024','23/01/2024','Dolor estomacal','1005','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('21','01/24/2024','23/01/2024','Dolor estomacal','1005','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('22','01/24/2024','23/011/2022','ni','1005','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('23','01/24/2024','23/011/2022','ni','1005','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('24','01/24/2024','23/011/2022','ni','1005','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('25','01/24/2024','10','10','1005','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('29','01/24/2024','23/01/2024','otro motivo','9','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('30','01/24/2024','23/01/2024','motivo3','9','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('31','01/25/2024','24/01/2024','estornudos','21','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('32','01/25/2024','24/01/2024','Mareos','12','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('33','01/25/2024','24/01/2024','Estreñimiento','8','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('34','01/25/2024','24/01/2024','Estreñimiento','8','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('35','01/25/2024','','','8','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('38','01/25/2024','','','8','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('39','01/25/2024','24/01/2024','mareo y vomito','8','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('40','01/25/2024','24/01/2024','mareo y vomito','8','Rehabilitation','Pending');
+INSERT INTO atenciones VALUES('41','01/25/2024','23/01/2024','Dolor estomacal','7','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('42','01/25/2024','25/01/2024','Dolor','7','Rehabilitation','Done');
+INSERT INTO atenciones VALUES('43','01/25/2024','25/01/2024','gripon','5','Rehabilitation','Done');
 
 --
 -- Estructura de la tabla 'datos_historias'

@@ -118,7 +118,7 @@ ob_start();
 							$query = $conn->query("SELECT * FROM `paciente` WHERE `idmedico` = '$fetch[idmedico]' ORDER BY `paciente_no` DESC") or die(mysqli_error());
 							while($fetch = $query->fetch_array()){
 							$id = $fetch['paciente_no'];
-							$q = $conn->query("SELECT COUNT(*) as total FROM `complaints` where `paciente_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
+							$q = $conn->query("SELECT COUNT(*) as total FROM `atenciones` where `paciente_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
 							$f = $q->fetch_array();
 							?>
 							<tr>

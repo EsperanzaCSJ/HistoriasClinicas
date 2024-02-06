@@ -42,7 +42,7 @@
 			<form method = "POST" enctype = "multipart/form-data">
 			<?php
 				$q = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
-				$q1 = $conn->query("SELECT * FROM `complaints` WHERE `com_id` = '$_GET[comp_id]' && `paciente_no` = '$_GET[id]' && `section` = 'Prenatal'") or die(mysqli_error());
+				$q1 = $conn->query("SELECT * FROM `atenciones` WHERE `com_id` = '$_GET[comp_id]' && `paciente_no` = '$_GET[id]' && `section` = 'Prenatal'") or die(mysqli_error());
 				$f1 = $q1->fetch_array();
 				$f = $q->fetch_array();
 			?>	

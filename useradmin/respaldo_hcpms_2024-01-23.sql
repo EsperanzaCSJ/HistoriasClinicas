@@ -74,13 +74,13 @@ CREATE TABLE `birthing` (
 
 
 --
--- Estructura de la tabla 'complaints'
+-- Estructura de la tabla 'atenciones'
 --
 
-CREATE TABLE `complaints` (
+CREATE TABLE `atenciones` (
   `com_id` int(50) NOT NULL AUTO_INCREMENT,
   `date` varchar(20) NOT NULL,
-  `complaints` varchar(255) NOT NULL,
+  `atenciones` varchar(255) NOT NULL,
   `remark` varchar(255) NOT NULL,
   `paciente_no` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
@@ -89,49 +89,49 @@ CREATE TABLE `complaints` (
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Datos de la tabla 'complaints'
+-- Datos de la tabla 'atenciones'
 --
 
-INSERT INTO complaints VALUES('1','09/08/2018','Dolor Muela','caries','1111','Dental','Done');
-INSERT INTO complaints VALUES('2','01/05/2024','hola vino de nuevo.04/01/2024','Observaciones vista el 04/01/2024','1111','Dental','Pending');
-INSERT INTO complaints VALUES('3','01/05/2024','g','g','1111','Dental','Done');
-INSERT INTO complaints VALUES('4','01/05/2024','muelas','caries','1111','Dental','Done');
-INSERT INTO complaints VALUES('5','01/09/2024','5','5','5','Fecalysis','Done');
-INSERT INTO complaints VALUES('6','01/10/2024','otra','otra','1111','Dental','Done');
-INSERT INTO complaints VALUES('7','01/10/2024','otra2','otra2','1111','Dental','Pending');
-INSERT INTO complaints VALUES('8','01/13/2024','Vomito, Diarrea, Fiebre, Tos espectorante, etc...','Diagnostico','15','Fecalysis','Pending');
-INSERT INTO complaints VALUES('9','01/13/2024','fgdfg','fgdgf','15','Dental','Pending');
-INSERT INTO complaints VALUES('10','01/13/2024','fgdfgdf','fgdfg','15','Fecalysis','Pending');
-INSERT INTO complaints VALUES('11','01/13/2024','fgdfg','fgfdg','15','Fecalysis','Pending');
-INSERT INTO complaints VALUES('12','01/18/2024','ninguna','no lo vi','1111','Dental','Pending');
-INSERT INTO complaints VALUES('13','01/21/2024','20/01/2024','dolor de cabeza','112','datos_historias','Pending');
-INSERT INTO complaints VALUES('14','01/21/2024','20/01/2024','dolor de cabeza','112','datos_historias','Pending');
-INSERT INTO complaints VALUES('15','01/21/2024','20/01/2024','dolor de cabeza','112','datos_historias','Pending');
-INSERT INTO complaints VALUES('16','01/23/2024','22/01/2024','Dolor de cabeza','9','datos_historias','Done');
-INSERT INTO complaints VALUES('17','01/23/2024','22/01/2024','ninguna','15','datos_historias','Pending');
-INSERT INTO complaints VALUES('18','01/23/2024','22/01/2024','movi','112','datos_historias','Pending');
-INSERT INTO complaints VALUES('19','01/23/2024','df','dfd','112','datos_historias','Pending');
-INSERT INTO complaints VALUES('20','01/24/2024','23/01/2024','Dolor estomacal','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('21','01/24/2024','23/01/2024','Dolor estomacal','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('22','01/24/2024','23/011/2022','ni','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('23','01/24/2024','23/011/2022','ni','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('24','01/24/2024','23/011/2022','ni','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('25','01/24/2024','10','10','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('26','01/24/2024','10','10','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('27','01/24/2024','10','10','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('28','01/24/2024','10','10','1005','datos_historias','Pending');
-INSERT INTO complaints VALUES('29','01/24/2024','23/01/2024','otro motivo','9','datos_historias','Pending');
-INSERT INTO complaints VALUES('30','01/24/2024','23/01/2024','motivo3','9','datos_historias','Pending');
-INSERT INTO complaints VALUES('31','01/25/2024','24/01/2024','estornudos','21','datos_historias','Done');
-INSERT INTO complaints VALUES('32','01/25/2024','24/01/2024','Mareos','12','datos_historias','Pending');
-INSERT INTO complaints VALUES('33','01/25/2024','24/01/2024','Estreñimiento','8','datos_historias','Pending');
-INSERT INTO complaints VALUES('34','01/25/2024','24/01/2024','Estreñimiento','8','datos_historias','Done');
-INSERT INTO complaints VALUES('35','01/25/2024','','','8','datos_historias','Pending');
-INSERT INTO complaints VALUES('36','01/25/2024','','','8','datos_historias','Pending');
-INSERT INTO complaints VALUES('37','01/25/2024','','','8','datos_historias','Pending');
-INSERT INTO complaints VALUES('38','01/25/2024','','','8','datos_historias','Pending');
-INSERT INTO complaints VALUES('39','01/25/2024','24/01/2024','mareo y vomito','8','datos_historias','Pending');
-INSERT INTO complaints VALUES('40','01/25/2024','24/01/2024','mareo y vomito','8','datos_historias','Pending');
+INSERT INTO atenciones VALUES('1','09/08/2018','Dolor Muela','caries','1111','Dental','Done');
+INSERT INTO atenciones VALUES('2','01/05/2024','hola vino de nuevo.04/01/2024','Observaciones vista el 04/01/2024','1111','Dental','Pending');
+INSERT INTO atenciones VALUES('3','01/05/2024','g','g','1111','Dental','Done');
+INSERT INTO atenciones VALUES('4','01/05/2024','muelas','caries','1111','Dental','Done');
+INSERT INTO atenciones VALUES('5','01/09/2024','5','5','5','Fecalysis','Done');
+INSERT INTO atenciones VALUES('6','01/10/2024','otra','otra','1111','Dental','Done');
+INSERT INTO atenciones VALUES('7','01/10/2024','otra2','otra2','1111','Dental','Pending');
+INSERT INTO atenciones VALUES('8','01/13/2024','Vomito, Diarrea, Fiebre, Tos espectorante, etc...','Diagnostico','15','Fecalysis','Pending');
+INSERT INTO atenciones VALUES('9','01/13/2024','fgdfg','fgdgf','15','Dental','Pending');
+INSERT INTO atenciones VALUES('10','01/13/2024','fgdfgdf','fgdfg','15','Fecalysis','Pending');
+INSERT INTO atenciones VALUES('11','01/13/2024','fgdfg','fgfdg','15','Fecalysis','Pending');
+INSERT INTO atenciones VALUES('12','01/18/2024','ninguna','no lo vi','1111','Dental','Pending');
+INSERT INTO atenciones VALUES('13','01/21/2024','20/01/2024','dolor de cabeza','112','datos_historias','Pending');
+INSERT INTO atenciones VALUES('14','01/21/2024','20/01/2024','dolor de cabeza','112','datos_historias','Pending');
+INSERT INTO atenciones VALUES('15','01/21/2024','20/01/2024','dolor de cabeza','112','datos_historias','Pending');
+INSERT INTO atenciones VALUES('16','01/23/2024','22/01/2024','Dolor de cabeza','9','datos_historias','Done');
+INSERT INTO atenciones VALUES('17','01/23/2024','22/01/2024','ninguna','15','datos_historias','Pending');
+INSERT INTO atenciones VALUES('18','01/23/2024','22/01/2024','movi','112','datos_historias','Pending');
+INSERT INTO atenciones VALUES('19','01/23/2024','df','dfd','112','datos_historias','Pending');
+INSERT INTO atenciones VALUES('20','01/24/2024','23/01/2024','Dolor estomacal','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('21','01/24/2024','23/01/2024','Dolor estomacal','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('22','01/24/2024','23/011/2022','ni','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('23','01/24/2024','23/011/2022','ni','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('24','01/24/2024','23/011/2022','ni','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('25','01/24/2024','10','10','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('26','01/24/2024','10','10','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('27','01/24/2024','10','10','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('28','01/24/2024','10','10','1005','datos_historias','Pending');
+INSERT INTO atenciones VALUES('29','01/24/2024','23/01/2024','otro motivo','9','datos_historias','Pending');
+INSERT INTO atenciones VALUES('30','01/24/2024','23/01/2024','motivo3','9','datos_historias','Pending');
+INSERT INTO atenciones VALUES('31','01/25/2024','24/01/2024','estornudos','21','datos_historias','Done');
+INSERT INTO atenciones VALUES('32','01/25/2024','24/01/2024','Mareos','12','datos_historias','Pending');
+INSERT INTO atenciones VALUES('33','01/25/2024','24/01/2024','Estreñimiento','8','datos_historias','Pending');
+INSERT INTO atenciones VALUES('34','01/25/2024','24/01/2024','Estreñimiento','8','datos_historias','Done');
+INSERT INTO atenciones VALUES('35','01/25/2024','','','8','datos_historias','Pending');
+INSERT INTO atenciones VALUES('36','01/25/2024','','','8','datos_historias','Pending');
+INSERT INTO atenciones VALUES('37','01/25/2024','','','8','datos_historias','Pending');
+INSERT INTO atenciones VALUES('38','01/25/2024','','','8','datos_historias','Pending');
+INSERT INTO atenciones VALUES('39','01/25/2024','24/01/2024','mareo y vomito','8','datos_historias','Pending');
+INSERT INTO atenciones VALUES('40','01/25/2024','24/01/2024','mareo y vomito','8','datos_historias','Pending');
 
 --
 -- Estructura de la tabla 'dental'
