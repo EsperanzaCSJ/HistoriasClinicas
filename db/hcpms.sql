@@ -373,10 +373,10 @@ CREATE TABLE IF NOT EXISTS `radiological` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `rehabilitation`
+-- Estructura de tabla para la tabla `datos_historias`
 --
 
-CREATE TABLE IF NOT EXISTS `rehabilitation` (
+CREATE TABLE IF NOT EXISTS `datos_historias` (
   `rehab_id` int(11) NOT NULL AUTO_INCREMENT,
   `diagnosis` varchar(50) NOT NULL,
   `type_of_disability` varchar(50) NOT NULL,

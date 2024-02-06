@@ -58,7 +58,7 @@
 					<div class = "form-group">
 						<div class = "form-inline" style = "display: none;">					 
 							<label for = "section">Asignando section tabla jeje</label>
-							<input class = "form-control" type = "text" value = "Rehabilitation" name = "section" >
+							<input class = "form-control" type = "text" value = "datos_historias" name = "section" >
 						</div> 
 					</div>
 					<br />

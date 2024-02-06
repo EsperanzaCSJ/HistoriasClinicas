@@ -39,13 +39,13 @@
 	<div class = "well">
 		<div class = "panel panel-warning">
 			<div class = "panel-heading">
-				<center><label>REHABILITATION</label></center>
+				<center><label>datos_historias</label></center>
 			</div>
 		</div>
 		<div id = "p_fdental" class = "panel panel-success">	
 			<div class = "panel-heading">
 				<label>INFORMACIÓN DEL PACIENTE</label>
-				<a style = "float:right; margin-top:-4px;" href = "rehabilitation.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
+				<a style = "float:right; margin-top:-4px;" href = "datos_historias.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 			<?php
 				$_GET['id'];

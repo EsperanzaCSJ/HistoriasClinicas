@@ -12,7 +12,7 @@
 	// $fdental = $qdental->fetch_array();
 	// $qxray = $conn->query("SELECT COUNT(*) as total FROM `radiological` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
 	// $fxray = $qxray->fetch_array();
-	// $qrehab = $conn->query("SELECT COUNT(*) as total FROM `rehabilitation` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
+	// $qrehab = $conn->query("SELECT COUNT(*) as total FROM `datos_historias` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
 	// $frehab = $qrehab->fetch_array();
 	// $qsputum = $conn->query("SELECT COUNT(*) as total FROM `sputum` WHERE `year` = '$date' GROUP BY `itr_no`") or die(mysqli_error());
 	// $fsputum = $qsputum->fetch_array();
@@ -93,14 +93,14 @@
 										echo $fxray['total'];
 									}	
 								?>, legendText: "Xray"},
-							{ label: "Rehabilitation",  y: 
+							{ label: "datos_historias",  y: 
 								<?php
 									if($frehab == ""){
 										echo 0;
 									}else{
 										echo $frehab['total'];
 									}	
-								?>, legendText: "Rehabilitation"},
+								?>, legendText: "datos_historias"},
 							{ label: "Sputum",  y: 
 								<?php
 									if($fsputum == ""){

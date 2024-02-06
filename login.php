@@ -29,7 +29,7 @@
 					$_SESSION['user_id'] = $fetch['user_id'];
 					header("location: xray.php");
 				}
-				if($section == "Rehabilitation"){
+				if($section == "datos_historias"){
 					$_SESSION['user_id'] = $fetch['user_id'];
 					header("location: home.php");
 				}

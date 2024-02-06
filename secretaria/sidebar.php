@@ -7,7 +7,7 @@
 						<li><a href = "#"><i class = "glyphicon"></i> Pacientes del día</a></li>
 					</ul>
 		</li> -->
-		<li><a href = "view_rehabilitation_record.php"><i class = "glyphicon glyphicon-search"></i> Ver pacientes</a></li>
+		<li><a href = "view_datos_historias_record.php"><i class = "glyphicon glyphicon-search"></i> Ver pacientes</a></li>
 		<?php
 		// include 'secciones.php';
 		?>

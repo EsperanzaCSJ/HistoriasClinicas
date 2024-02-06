@@ -58,12 +58,12 @@
 						<label>Asigne un doctor:</label>
 						<select name = "section" class = "form-control" required = "required">
 								<option value = "">Seleccione al doctor</option>
-								<option value = "Rehabilitation">Dr. Juancho Pacho</option>
-								<option value = "Rehabilitation">Dra. Nicole Kidman</option>
+								<option value = "datos_historias">Dr. Juancho Pacho</option>
+								<option value = "datos_historias">Dra. Nicole Kidman</option>
 								<!-- <option value = "Hematology">Hematology</option>
 								<option value = "Prenatal">Prenatal</option>
 								<option value = "Xray">Rayos X</option>
-								<option value = "Rehabilitation">Rehabilitation</option>
+								<option value = "datos_historias">datos_historias</option>
 								<option value = "Sputum">Sputum</option>
 								<option value = "Urinalysis">Urinalysis</option>
 								<option value = "Maternity">Maternidad</option> -->
