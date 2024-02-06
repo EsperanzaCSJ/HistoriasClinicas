@@ -19,11 +19,11 @@
 <body> 
 	<?php
 			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-			$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` WHERE `paciente_no` = '$_GET[paciente_no]' && `rehab_id` = '$_GET[rehab_id]'") or die(mysqli_error());
+			$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` WHERE `paciente_no` = '$_GET[paciente_no]' && `atencion_no` = '$_GET[atencion_no]'") or die(mysqli_error());
 			$f = $q->fetch_array();
 	?>		
 <button onclick="printContent('print')">Imprimir</button>
-<button><a style = "text-decoration:none; color:#000;" href = "datos_historias_form.php?paciente_no=<?php echo $f['paciente_no']?>&rehab_id=<?php echo $_GET['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print">VOLVER</a></button>
+<button><a style = "text-decoration:none; color:#000;" href = "datos_historias_form.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $_GET['atencion_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print">VOLVER</a></button>
 <br />
 <br />
 	<div id="print">

@@ -110,7 +110,7 @@
 				<tbody>
 				<?php 
 					$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` GROUP BY `paciente_no` ORDER BY `rehab_id` DESC") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` GROUP BY `paciente_no` ORDER BY `atencion_no` DESC") or die(mysqli_error());
 					while($fetch = $query->fetch_array()){
 				?>
 					<tr>

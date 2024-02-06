@@ -63,14 +63,14 @@
 			<tbody>
 			<?php 
 				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` WHERE `paciente_no` = '$_GET[paciente_no]' ORDER BY `rehab_id` DESC") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` WHERE `paciente_no` = '$_GET[paciente_no]' ORDER BY `atencion_no` DESC") or die(mysqli_error());
 				while($f = $q->fetch_array()){
 			?>
 				<tr>
 					<td><?php echo $f['date']?></td>
 					<td><?php echo $f['type_of_disability']?></td>
 					<td><?php echo $f['diagnosis']?></td>
-					<td><center><a class = "btn btn-info" href = "datos_historias_form.php?paciente_no=<?php echo $f['paciente_no']?>&rehab_id=<?php echo $f['rehab_id']?>"><span class = "glyphicon glyphicon-search"></span> VER DETALLES</a><center></td>
+					<td><center><a class = "btn btn-info" href = "datos_historias_form.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no']?>"><span class = "glyphicon glyphicon-search"></span> VER DETALLES</a><center></td>
 				</tr>
 			<?php
 				}

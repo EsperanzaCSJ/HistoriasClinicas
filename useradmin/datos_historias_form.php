@@ -46,7 +46,7 @@
 		<br />
 		<?php
 				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` WHERE `rehab_id` = '$_GET[rehab_id]' && `paciente_no` = '$_GET[paciente_no]'") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` WHERE `atencion_no` = '$_GET[atencion_no]' && `paciente_no` = '$_GET[paciente_no]'") or die(mysqli_error());
 				$f = $q->fetch_array();
 			?>
 		<div class = "alert alert-info">Basic Information <a class = "btn btn-success" style = "float:right; margin-top:-7px;" href = datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a></div>

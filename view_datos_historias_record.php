@@ -35,7 +35,7 @@
 						<tbody>
 						<?php 
 							$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-							$tu = "SELECT * FROM `datos_historias` NATURAL JOIN `paciente` where `idmedico`= '$fetch[idmedico]' GROUP BY `paciente_no` ORDER BY `rehab_id` DESC";
+							$tu = "SELECT * FROM `datos_historias` NATURAL JOIN `paciente` where `idmedico`= '$fetch[idmedico]' GROUP BY `paciente_no` ORDER BY `atencion_no` DESC";
 							$q = $conn->query($tu) or die(mysqli_error());
 							while($f = $q->fetch_array()){
 						?>
@@ -46,7 +46,7 @@
 								<td><?php echo $f['gender']?></td>
 								<td><?php echo $f['address']?></td>
 								<td><center>
-										<a href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&rehab_id=<?php echo $f['rehab_id'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clinico</a> 
+										<a href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clinico</a> 
 									</center></td>
 							</tr>
 						<?php
