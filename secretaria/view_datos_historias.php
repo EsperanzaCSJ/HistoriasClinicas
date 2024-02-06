@@ -40,12 +40,12 @@
 			<?php
 				$q = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[paciente_no]'") or die(mysqli_error());
 				$f = $q->fetch_array();
-				$q1 = $conn->query("SELECT COUNT(*) as total FROM `atenciones` where `status` = 'Pending' && `paciente_no` = '$f[paciente_no]' && `section` = 'datos_historias'") or die(mysqli_error());
+				$q1 = $conn->query("SELECT COUNT(*) as total FROM `cita` where `status` = 'Pending' && `paciente_no` = '$f[paciente_no]' && `section` = 'datos_historias'") or die(mysqli_error());
 				$f1 = $q1->fetch_array();
 			?>
 				<label class = "font-size:18px;">Información del Paciente: <label class = "text-warning;"><?php echo $f['firstname']." ".$f['lastname']?></label></label>
 				<a style = "float:right; margin-top:-4px;" href = "paciente.php" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
-				<a style = "float:right; margin-top:-4px; margin-right:5px;" href = "atenciones.php?id=<?php echo $f['paciente_no']?>&lastname=<?php echo $f['lastname']?>" class = "btn btn-info">Atenciones Pendientes <span class = "badge"> <?php echo $f1['total']?></span></a>
+				<a style = "float:right; margin-top:-4px; margin-right:5px;" href = "cita.php?id=<?php echo $f['paciente_no']?>&lastname=<?php echo $f['lastname']?>" class = "btn btn-info">cita Pendientes <span class = "badge"> <?php echo $f1['total']?></span></a>
 				<label style = "margin-top:5px; margin-right:20px; float:right;">HISTORIA CLINICA Nro: <label class = "text-warning"><?php echo $f['paciente_no']?></label></label>
 			</div>
 			<div class = "panel-body">					

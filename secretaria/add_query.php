@@ -13,7 +13,7 @@
 		$year = date("Y", strtotime("+8 HOURS"));
 		$conn = new mysqli("localhost", 'root', '', 'hcpms') or die(mysqli_error());
 		$conn->query("INSERT INTO `datos_historias` VALUES('', '$diagnosis', '$type_of_disability', '$subjective', '$objective', '$assessment', '$plan', '$date', '$paciente_no', '$user_id', '$month', '$year')") or die(mysqli_error());
-		$conn->query("UPDATE `atenciones` SET `status` = 'Done' WHERE `paciente_no` = '$_GET[paciente_no]' && `section` = 'datos_historias' && `com_id` = '$_GET[comp_id]'") or die(mysqli_error());
+		$conn->query("UPDATE `cita` SET `status` = 'Done' WHERE `paciente_no` = '$_GET[paciente_no]' && `section` = 'datos_historias' && `com_id` = '$_GET[comp_id]'") or die(mysqli_error());
 		header("location:view_datos_historias_record.php");
 		$conn->close();
 	}

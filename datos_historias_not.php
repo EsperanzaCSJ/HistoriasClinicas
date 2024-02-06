@@ -38,7 +38,7 @@
 				<form method = "POST" enctype = "multipart/form-data" cellspacing = "0">
 					<?php
 						$q = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[paciente_no]'") or die(mysqli_error());
-						$q1 = $conn->query("SELECT * FROM `atenciones` WHERE `com_id` = '$_GET[comp_id]' && `paciente_no` = '$_GET[paciente_no]' && `section` = 'datos_historias'") or die(mysqli_error());
+						$q1 = $conn->query("SELECT * FROM `cita` WHERE `com_id` = '$_GET[comp_id]' && `paciente_no` = '$_GET[paciente_no]' && `section` = 'datos_historias'") or die(mysqli_error());
 						$f1 = $q1->fetch_array();
 						$f = $q->fetch_array();
 					?>

@@ -32,7 +32,7 @@
 	<div id="content" class = "well">
 		<div class = "panel panel-success">
 			<div class = "panel-heading">
-				<label>ATENCIONES PENDIENTES</label>
+				<label>cita PENDIENTES</label>
 				<a style = "float:right; margin-top:-4px;" href = "view_datos_historias.php?paciente_no=<?php echo $_GET['paciente_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 			<div class = "panel-body">
@@ -40,12 +40,12 @@
 				$id = $_GET['paciente_no'];
 				$q1 = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$id'") or die(mysqli_error());
 				$f1 = $q1->fetch_array();
-				$q = $conn->query("SELECT * FROM `atenciones` WHERE `section` = 'datos_historias' && `paciente_no` = '$id' ORDER BY `status` DESC") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `cita` WHERE `section` = 'datos_historias' && `paciente_no` = '$id' ORDER BY `status` DESC") or die(mysqli_error());
 				while($f = $q->fetch_array()){
 					if($f['status'] == 'Pending'){
-						echo "<label style = 'color:#419641;'>".$f['atenciones']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' href = 'datos_historias_not.php?paciente_no=".$id."&comp_id=".$f['com_id']."'><span class = 'glyphicon glyphicon-check'></span> Agregar Historia</a><br /><br />";
+						echo "<label style = 'color:#419641;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' href = 'datos_historias_not.php?paciente_no=".$id."&comp_id=".$f['com_id']."'><span class = 'glyphicon glyphicon-check'></span> Agregar Historia</a><br /><br />";
 					}else{
-						echo "<label style = 'color:#419641;'>".$f['atenciones']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' disabled = 'disabled'><span class = 'glyphicon glyphicon-check'></span> Done</a><br /><br />";
+						echo "<label style = 'color:#419641;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' disabled = 'disabled'><span class = 'glyphicon glyphicon-check'></span> Done</a><br /><br />";
 					}
 				}	
 			?>

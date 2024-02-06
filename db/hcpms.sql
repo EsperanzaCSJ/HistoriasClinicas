@@ -93,13 +93,13 @@ CREATE TABLE IF NOT EXISTS `birthing` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `atenciones`
+-- Estructura de tabla para la tabla `cita`
 --
 
-CREATE TABLE IF NOT EXISTS `atenciones` (
+CREATE TABLE IF NOT EXISTS `cita` (
   `com_id` int(50) NOT NULL AUTO_INCREMENT,
   `date` varchar(20) NOT NULL,
-  `atenciones` varchar(255) NOT NULL,
+  `cita` varchar(255) NOT NULL,
   `remark` varchar(255) NOT NULL,
   `paciente_no` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
@@ -108,10 +108,10 @@ CREATE TABLE IF NOT EXISTS `atenciones` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Volcado de datos para la tabla `atenciones`
+-- Volcado de datos para la tabla `cita`
 --
 
-INSERT INTO `atenciones` (`com_id`, `date`, `atenciones`, `remark`, `paciente_no`, `section`, `status`) VALUES
+INSERT INTO `cita` (`com_id`, `date`, `cita`, `remark`, `paciente_no`, `section`, `status`) VALUES
 (1, '09/08/2018', 'Dolor Muela', 'caries', '1111', 'Dental', 'Done');
 
 -- --------------------------------------------------------
@@ -377,7 +377,7 @@ CREATE TABLE IF NOT EXISTS `radiological` (
 --
 
 CREATE TABLE IF NOT EXISTS `datos_historias` (
-  `rehab_id` int(11) NOT NULL AUTO_INCREMENT,
+  `atencion_no` int(11) NOT NULL AUTO_INCREMENT,
   `diagnosis` varchar(50) NOT NULL,
   `type_of_disability` varchar(50) NOT NULL,
   `subjective` varchar(100) NOT NULL,
@@ -389,7 +389,7 @@ CREATE TABLE IF NOT EXISTS `datos_historias` (
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
-  PRIMARY KEY (`rehab_id`)
+  PRIMARY KEY (`atencion_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------

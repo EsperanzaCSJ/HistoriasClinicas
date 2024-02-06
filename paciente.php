@@ -117,7 +117,7 @@ ob_start();
 							$query = $conn->query("SELECT * FROM `paciente` WHERE `idmedico` = '$fetch[idmedico]' ORDER BY `paciente_no` DESC") or die(mysqli_error());
 							while($fetch = $query->fetch_array()){
 							$id = $fetch['paciente_no'];
-							$q = $conn->query("SELECT COUNT(*) as total FROM `atenciones` where `paciente_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
+							$q = $conn->query("SELECT COUNT(*) as total FROM `cita` where `paciente_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
 							$f = $q->fetch_array();
 							?>
 							<tr>
@@ -126,7 +126,7 @@ ob_start();
 								<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 								<td><?php echo $fetch['age']?></td>
 								<td><?php echo $fetch['address']?></td>
-								<td><center><a href = "atenciones.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Atenciones <span class = "badge"><?php echo $f['total']?></span></a>
+								<td><center><a href = "cita.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">cita <span class = "badge"><?php echo $f['total']?></span></a>
 								<a href = "edit_paciente.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
 								<!-- <a href = "delete_paciente.php?id=<?php //echo $fetch['paciente_no']?>&lastname=<?php //echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td> -->
 							</tr>
