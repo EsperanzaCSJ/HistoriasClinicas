@@ -1,6 +1,6 @@
 <?php
 	if(ISSET($_POST['save_patient'])){
-		$itr_no = $_POST['itr_no'];
+		$paciente_no = $_POST['paciente_no'];
 		$date1= $_POST['date1'];
 		//$cedula = $_POST['cedula'];
 		$cedula = "";
@@ -26,12 +26,12 @@
 		$enfermedad_actual=$_POST['enfermedad'];
 		$patologicos=$_POST['patologicos'];
 		$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-		$q1 = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$itr_no'") or die(mysqli_error());
+		$q1 = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$paciente_no'") or die(mysqli_error());
 		$c1 = $q1->num_rows;
 		if($c1 > 0){
 				echo "<script>alert('Nro Documento de Identidad . must not be the same!')</script>";
 		}else{
-			$conn->query("INSERT INTO itr VALUES ('$itr_no', '$date1','$cedula', '$phil_health_no', '$firstname', '$dni', '$lastname', '$birthdate', '$age', '$address', '$civil_status', '$gender', '$bp', '$temp', '$pr', '$rr', '$wt', '".addslashes($ht)."','$telefono', '$trabajo', '$enfermedad_actual','$patologicos')") or die(mysqli_error($conn));
+			$conn->query("INSERT INTO paciente VALUES ('$paciente_no', '$date1','$cedula', '$phil_health_no', '$firstname', '$dni', '$lastname', '$birthdate', '$age', '$address', '$civil_status', '$gender', '$bp', '$temp', '$pr', '$rr', '$wt', '".addslashes($ht)."','$telefono', '$trabajo', '$enfermedad_actual','$patologicos')") or die(mysqli_error($conn));
 			header("location: patient.php");	
 		}
 	}

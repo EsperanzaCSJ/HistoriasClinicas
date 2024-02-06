@@ -47,7 +47,7 @@
 		<br />
 		<?php
 			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-			$q1 = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$_GET[itr_no]'") or die(mysqli_error());
+			$q1 = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[paciente_no]'") or die(mysqli_error());
 			$f1 = $q1->fetch_array();
 		?>
 		<div class = "alert alert-info">datos_historias Record / <?php echo $f1['firstname']." ".substr($f1['middlename'], 0, 1).". ".$f1['lastname']?><a class = "btn btn-success" style = "float:right; margin-top:-7px;" href = "datos_historias.php"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a></div>
@@ -63,14 +63,14 @@
 			<tbody>
 			<?php 
 				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `itr` WHERE `itr_no` = '$_GET[itr_no]' ORDER BY `rehab_id` DESC") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` WHERE `paciente_no` = '$_GET[paciente_no]' ORDER BY `rehab_id` DESC") or die(mysqli_error());
 				while($f = $q->fetch_array()){
 			?>
 				<tr>
 					<td><?php echo $f['date']?></td>
 					<td><?php echo $f['type_of_disability']?></td>
 					<td><?php echo $f['diagnosis']?></td>
-					<td><center><a class = "btn btn-info" href = "datos_historias_form.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id']?>"><span class = "glyphicon glyphicon-search"></span> VER DETALLES</a><center></td>
+					<td><center><a class = "btn btn-info" href = "datos_historias_form.php?paciente_no=<?php echo $f['paciente_no']?>&rehab_id=<?php echo $f['rehab_id']?>"><span class = "glyphicon glyphicon-search"></span> VER DETALLES</a><center></td>
 				</tr>
 			<?php
 				}

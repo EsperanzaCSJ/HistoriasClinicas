@@ -12,7 +12,7 @@
 		$civil_status = $_POST['civil_status'];
 		$gender = $_POST['gender'];
 		$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-		$conn->query("UPDATE `itr` SET `nacionalidad` = '$nacionalidad', `cedula` = '$cedula', `firstname` = '$firstname', `lastname` = '$lastname', `birthdate` = '$birthdate', `age` = '$age', `address` = '$address', `civil_status` = '$civil_status', `gender` = '$gender' WHERE `itr_no` = '$id' && `lastname` = '$last'") or die(mysqli_error());
+		$conn->query("UPDATE `paciente` SET `nacionalidad` = '$nacionalidad', `cedula` = '$cedula', `firstname` = '$firstname', `lastname` = '$lastname', `birthdate` = '$birthdate', `age` = '$age', `address` = '$address', `civil_status` = '$civil_status', `gender` = '$gender' WHERE `paciente_no` = '$id' && `lastname` = '$last'") or die(mysqli_error());
 		header("location: patient.php");
 	}
 	if(ISSET($_POST['edit_admin'])){

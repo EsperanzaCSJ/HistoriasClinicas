@@ -20,7 +20,7 @@
 		$wt= $_POST['wt'];
 		$ht = $_POST['ht'];
 		$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-		$conn->query("UPDATE `itr` SET `cedula` = '$cedula', `phil_health_no` = '$phil_health_no', `firstname` = '$firstname', `dni` = '$dni', `lastname` = '$lastname', `birthdate` = '$birthdate', `age` = '$age', `address` = '$address', `civil_status` = '$civil_status', `sex` = '$gender', `BP` = '$bp', `TEMP` = '$temp', `PR` = '$pr', `RR` = '$rr', `WT` = '$wt', `HT` = '$ht' WHERE `itr_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error()); 
+		$conn->query("UPDATE `paciente` SET `cedula` = '$cedula', `phil_health_no` = '$phil_health_no', `firstname` = '$firstname', `dni` = '$dni', `lastname` = '$lastname', `birthdate` = '$birthdate', `age` = '$age', `address` = '$address', `civil_status` = '$civil_status', `sex` = '$gender', `BP` = '$bp', `TEMP` = '$temp', `PR` = '$pr', `RR` = '$rr', `WT` = '$wt', `HT` = '$ht' WHERE `paciente_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error()); 
 			header("location:view_dental.php?id=".$id."&lastname=".$lastname."");
 			$conn->close();	
 	}

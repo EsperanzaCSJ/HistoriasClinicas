@@ -51,11 +51,11 @@
 				$_GET['id'];
 				$_GET['lastname'];
 				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$query = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
+				$query = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
 				$fetch = $query->fetch_array();
 			?>
 			<div class = "panel-body">
-				<form id = "form_dental" action = "edit_patient.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" method = "POST" enctype = "multipart/form-data">
+				<form id = "form_dental" action = "edit_patient.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" method = "POST" enctype = "multipart/form-data">
 					<div style = "float:right;" class = "form-inline">
 						<label for cedula>Cantidad Familia</label>
 						<input class = "form-control" size = "3" value = "<?php echo $fetch['cedula']?>" type = "text" name = "cedula">

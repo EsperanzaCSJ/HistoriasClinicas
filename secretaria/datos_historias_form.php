@@ -17,13 +17,13 @@
 			<div class = "panel-heading">
 			<?php
 				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `itr` WHERE `rehab_id` = '$_GET[rehab_id]' && `itr_no` = '$_GET[itr_no]'") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` WHERE `rehab_id` = '$_GET[rehab_id]' && `paciente_no` = '$_GET[paciente_no]'") or die(mysqli_error());
 				$f = $q->fetch_array();
 			?>
 				<label>HISTORIA CLÍNICA</label>	
-				<a style = "float:right; margin-top:-4px;" href = "datos_historias_record.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
-				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "datos_historias_print.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Historia</a>
-				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "recipe_print.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Recipe</a>
+				<a style = "float:right; margin-top:-4px;" href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&rehab_id=<?php echo $f['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
+				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "datos_historias_print.php?paciente_no=<?php echo $f['paciente_no']?>&rehab_id=<?php echo $f['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Historia</a>
+				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "recipe_print.php?paciente_no=<?php echo $f['paciente_no']?>&rehab_id=<?php echo $f['rehab_id']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Recipe</a>
 			</div>
 			<form method = "POST" enctype = "multipart/form-data">
 			<div class = "panel-body">

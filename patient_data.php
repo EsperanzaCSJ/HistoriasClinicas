@@ -41,8 +41,8 @@
 			</div>
 			<form method = "POST" enctype = "multipart/form-data">
 			<?php
-				$q = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
-				$q1 = $conn->query("SELECT * FROM `complaints` WHERE `com_id` = '$_GET[comp_id]' && `itr_no` = '$_GET[id]' && `section` = 'Prenatal'") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
+				$q1 = $conn->query("SELECT * FROM `complaints` WHERE `com_id` = '$_GET[comp_id]' && `paciente_no` = '$_GET[id]' && `section` = 'Prenatal'") or die(mysqli_error());
 				$f1 = $q1->fetch_array();
 				$f = $q->fetch_array();
 			?>	
@@ -303,7 +303,7 @@
 				<div class = "form-inline">	
 					<label>DISPOSITION ON DISCHARGE:</label>
 					<input type = "text" class = "form-control" name = "disposition_on_discharge" style = "width:10%;" required = "required"/>
-					<input type = "hidden" value = "<?php echo $_GET['id']?>" name = "itr_no" />
+					<input type = "hidden" value = "<?php echo $_GET['id']?>" name = "paciente_no" />
 					<input type = "hidden" value = "<?php echo $_SESSION['user_id']?>" name = "user_id" />
 				</div>
 				<br />

@@ -9855,7 +9855,7 @@
 
 	Chart.prototype.requestAnimFrame = (function () {
 		return window.requestAnimationFrame ||
-				window.webkitRequestAnimationFrame ||
+				window.webkpacienteequestAnimationFrame ||
 				window.mozRequestAnimationFrame ||
 				window.oRequestAnimationFrame ||
 				window.msRequestAnimationFrame ||

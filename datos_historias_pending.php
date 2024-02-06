@@ -33,17 +33,17 @@
 		<div class = "panel panel-success">
 			<div class = "panel-heading">
 				<label>ATENCIONES PENDIENTES</label>
-				<a style = "float:right; margin-top:-4px;" href = "view_datos_historias.php?itr_no=<?php echo $_GET['itr_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
+				<a style = "float:right; margin-top:-4px;" href = "view_datos_historias.php?paciente_no=<?php echo $_GET['paciente_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 			<div class = "panel-body">
 			<?php
-				$id = $_GET['itr_no'];
-				$q1 = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$id'") or die(mysqli_error());
+				$id = $_GET['paciente_no'];
+				$q1 = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$id'") or die(mysqli_error());
 				$f1 = $q1->fetch_array();
-				$q = $conn->query("SELECT * FROM `complaints` WHERE `section` = 'datos_historias' && `itr_no` = '$id' ORDER BY `status` DESC") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `complaints` WHERE `section` = 'datos_historias' && `paciente_no` = '$id' ORDER BY `status` DESC") or die(mysqli_error());
 				while($f = $q->fetch_array()){
 					if($f['status'] == 'Pending'){
-						echo "<label style = 'color:#419641;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' href = 'datos_historias_not.php?itr_no=".$id."&comp_id=".$f['com_id']."'><span class = 'glyphicon glyphicon-check'></span> Agregar Historia</a><br /><br />";
+						echo "<label style = 'color:#419641;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' href = 'datos_historias_not.php?paciente_no=".$id."&comp_id=".$f['com_id']."'><span class = 'glyphicon glyphicon-check'></span> Agregar Historia</a><br /><br />";
 					}else{
 						echo "<label style = 'color:#419641;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' disabled = 'disabled'><span class = 'glyphicon glyphicon-check'></span> Done</a><br /><br />";
 					}

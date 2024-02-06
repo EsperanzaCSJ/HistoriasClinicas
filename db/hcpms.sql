@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `birthing` (
   `presentation` varchar(15) NOT NULL,
   `vaginal_discharge` varchar(15) NOT NULL,
   `staff` varchar(30) NOT NULL,
-  `itr_no` varchar(4) NOT NULL,
+  `paciente_no` varchar(4) NOT NULL,
   `user_id` varchar(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `complaints` (
   `date` varchar(20) NOT NULL,
   `complaints` varchar(255) NOT NULL,
   `remark` varchar(255) NOT NULL,
-  `itr_no` varchar(50) NOT NULL,
+  `paciente_no` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `status` varchar(10) NOT NULL,
   PRIMARY KEY (`com_id`)
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `complaints` (
 -- Volcado de datos para la tabla `complaints`
 --
 
-INSERT INTO `complaints` (`com_id`, `date`, `complaints`, `remark`, `itr_no`, `section`, `status`) VALUES
+INSERT INTO `complaints` (`com_id`, `date`, `complaints`, `remark`, `paciente_no`, `section`, `status`) VALUES
 (1, '09/08/2018', 'Dolor Muela', 'caries', '1111', 'Dental', 'Done');
 
 -- --------------------------------------------------------
@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `dental` (
   `date` date NOT NULL,
   `dentist` varchar(30) NOT NULL,
   `tooth` int(3) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `dental` (
 -- Volcado de datos para la tabla `dental`
 --
 
-INSERT INTO `dental` (`dental_no`, `date`, `dentist`, `tooth`, `itr_no`, `user_id`, `month`, `year`) VALUES
+INSERT INTO `dental` (`dental_no`, `date`, `dentist`, `tooth`, `paciente_no`, `user_id`, `month`, `year`) VALUES
 (1, '2018-09-08', 'Dr. Machete Lazada', 10, '1111', 1, 'Sep', '2018');
 
 -- --------------------------------------------------------
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `fecalisys` (
   `date_reported` date NOT NULL,
   `pathologist` varchar(30) NOT NULL,
   `medical_technologist` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -203,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `hematology` (
   `remarks` varchar(100) NOT NULL,
   `pathologist` varchar(30) NOT NULL,
   `medical_technologist` varchar(30) NOT NULL,
-  `itr_no` varchar(50) NOT NULL,
+  `paciente_no` varchar(50) NOT NULL,
   `user_id` int(50) NOT NULL,
   `month` varchar(20) NOT NULL,
   `year` varchar(20) NOT NULL,
@@ -213,11 +213,11 @@ CREATE TABLE IF NOT EXISTS `hematology` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `itr`
+-- Estructura de tabla para la tabla `paciente`
 --
 
-CREATE TABLE IF NOT EXISTS `itr` (
-  `itr_no` varchar(4) NOT NULL,
+CREATE TABLE IF NOT EXISTS `paciente` (
+  `paciente_no` varchar(4) NOT NULL,
   `nacionalidad` varchar(1) NOT NULL,
   `cedula` varchar(9) NOT NULL,
   `firstname` varchar(20) NOT NULL,
@@ -228,15 +228,15 @@ CREATE TABLE IF NOT EXISTS `itr` (
   `civil_status` varchar(10) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `user_id` varchar(12) NOT NULL,
-  PRIMARY KEY (`itr_no`),
-  UNIQUE KEY `itr_no` (`itr_no`)
+  PRIMARY KEY (`paciente_no`),
+  UNIQUE KEY `paciente_no` (`paciente_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `itr`
+-- Volcado de datos para la tabla `paciente`
 --
 
-INSERT INTO `itr` (`itr_no`, `nacionalidad`, `cedula`, `firstname`, `lastname`, `birthdate`, `age`, `address`, `civil_status`, `gender`, 'user_id') VALUES
+INSERT INTO `paciente` (`paciente_no`, `nacionalidad`, `cedula`, `firstname`, `lastname`, `birthdate`, `age`, `address`, `civil_status`, `gender`, 'user_id') VALUES
 ('1111', 'V', '11672888', 'Marco', 'Polo', '06/01/1985', 39, 'Tachira', 'Soltero', 'Masculino', '55');
 
 -- --------------------------------------------------------
@@ -294,7 +294,7 @@ CREATE TABLE IF NOT EXISTS `maternity_patient` (
   `time_of_discharge` varchar(30) NOT NULL,
   `final_diagnosis` varchar(100) NOT NULL,
   `disposition_on_charge` varchar(50) NOT NULL,
-  `itr_no` varchar(50) NOT NULL,
+  `paciente_no` varchar(50) NOT NULL,
   `user_id` int(50) NOT NULL,
   `month` varchar(20) NOT NULL,
   `year` int(5) NOT NULL,
@@ -341,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `prenatal` (
   `fetal_activity` varchar(20) NOT NULL,
   `comments` varchar(100) NOT NULL,
   `radiologist` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -363,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `radiological` (
   `type_of_examination` varchar(30) NOT NULL,
   `date_taken` date NOT NULL,
   `radiologist` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -385,7 +385,7 @@ CREATE TABLE IF NOT EXISTS `datos_historias` (
   `assessment` varchar(100) NOT NULL,
   `plan` varchar(100) NOT NULL,
   `date` varchar(10) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -426,7 +426,7 @@ CREATE TABLE IF NOT EXISTS `sputum` (
   `reading` varchar(20) NOT NULL,
   `date_of_examination` date NOT NULL,
   `examined_by` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -460,7 +460,7 @@ CREATE TABLE IF NOT EXISTS `urinalysis` (
   `others` varchar(15) NOT NULL,
   `pathologist` varchar(30) NOT NULL,
   `medical_technologist` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,

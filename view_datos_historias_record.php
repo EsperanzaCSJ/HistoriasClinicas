@@ -35,18 +35,18 @@
 						<tbody>
 						<?php 
 							$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-							$tu = "SELECT * FROM `datos_historias` NATURAL JOIN `itr` where `idmedico`= '$fetch[idmedico]' GROUP BY `itr_no` ORDER BY `rehab_id` DESC";
+							$tu = "SELECT * FROM `datos_historias` NATURAL JOIN `paciente` where `idmedico`= '$fetch[idmedico]' GROUP BY `paciente_no` ORDER BY `rehab_id` DESC";
 							$q = $conn->query($tu) or die(mysqli_error());
 							while($f = $q->fetch_array()){
 						?>
 							<tr>
-								<td><?php echo $f['itr_no']?></td>
+								<td><?php echo $f['paciente_no']?></td>
 								<td><?php echo $f['firstname']." ".$f['lastname']?></td>
 								<td><?php echo $f['age']?></td>
 								<td><?php echo $f['gender']?></td>
 								<td><?php echo $f['address']?></td>
 								<td><center>
-										<a href = "datos_historias_record.php?itr_no=<?php echo $f['itr_no']?>&rehab_id=<?php echo $f['rehab_id'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clinico</a> 
+										<a href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&rehab_id=<?php echo $f['rehab_id'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clinico</a> 
 									</center></td>
 							</tr>
 						<?php

@@ -25,13 +25,13 @@
 			<div class = "panel-body">
 			<?php
 				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$q = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
 				$f = $q->fetch_array();
 			?>
 				<form method = "POST" enctype = "multipart/form-data">
 					<div style = "float:left;" class = "form-inline">
-						<label for = "itr_no">Historia Clinica Nro:</label>
-						<input class = "form-control" value = "<?php echo $f['itr_no'] ?>" disabled = "disabled" size = "3" type = "number" name = "itr_no">
+						<label for = "paciente_no">Historia Clinica Nro:</label>
+						<input class = "form-control" value = "<?php echo $f['paciente_no'] ?>" disabled = "disabled" size = "3" type = "number" name = "paciente_no">
 					</div>
 					<div style = "float:right;" class = "form-inline">
 						<label for = "cedula">Cédula</label>
@@ -71,7 +71,7 @@
 		</div>	
 		<?php
 			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-			$query = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
+			$query = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
 			$fetch = $query->fetch_array();
 		?>
 		<div class = "panel panel-info">
@@ -83,9 +83,9 @@
 		<button class = "btn btn-primary" id = "show_com"><i class = "glyphicon glyphicon-plus">AGREGAR</i></button>
 		<div class = "panel-body">
 			<?php
-				$q1 = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$_GET[id]'") or die(mysqli_error());
+				$q1 = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[id]'") or die(mysqli_error());
 				$f1 = $q1->fetch_array();
-				$q = $conn->query("SELECT * FROM `complaints` WHERE `itr_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
+				$q = $conn->query("SELECT * FROM `complaints` WHERE `paciente_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
 					while($f = $q->fetch_array()){
 						if($f['status'] == "Done"){
 							echo "<label style = 'color:#3399f3;'>".$f['complaints']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<label style = 'float:right; color:red;'></label><br /<hr style = 'border:1px solid #eee;' />";

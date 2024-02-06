@@ -17,10 +17,10 @@ ob_start();
 			<br />
 			<br />
 			<br />
-			<div style = "display:none;" id = "add_itr" class = "panel panel-success">	
+			<div style = "display:none;" id = "add_paciente" class = "panel panel-success">	
 				<div class = "panel-heading">
 					<label>AGREGAR PACIENTE</label>
-					<button id = "hide_itr" style = "float:right; margin-top:-4px;" class = "btn btn-sm btn-danger"><span class = "glyphicon glyphicon-remove"></span> Cerrar</button>
+					<button id = "hide_paciente" style = "float:right; margin-top:-4px;" class = "btn btn-sm btn-danger"><span class = "glyphicon glyphicon-remove"></span> Cerrar</button>
 				</div>
 				<div class = "panel-body">
 				<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
@@ -40,8 +40,8 @@ ob_start();
 						<br />
 						<br />
 						<div style = "float:left;" class = "form-inline">
-							<label for = "itr_no">Nro. Historia:</label>
-							<input class = "form-control" size = "3" min = "0" type = "number" name = "itr_no">
+							<label for = "paciente_no">Nro. Historia:</label>
+							<input class = "form-control" size = "3" min = "0" type = "number" name = "paciente_no">
 						</div> 
 						<br />
 						<br />
@@ -92,7 +92,7 @@ ob_start();
 					<label>LISTA DE PACIENTES</Label>
 				</div>
 				<div class = "panel-body">
-					<button id = "show_itr" class = "btn btn-info"><span class = "glyphicon glyphicon-plus"></span> AGREGAR PACIENTE</button>
+					<button id = "show_paciente" class = "btn btn-info"><span class = "glyphicon glyphicon-plus"></span> AGREGAR PACIENTE</button>
 					<br />
 					<br />
 					<table id = "table" class = "display" width = "100%" cellspacing = "0">
@@ -112,23 +112,23 @@ ob_start();
 							// VAR_dump($_SESSION);
 							// die;
 							$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-							// $query = $conn->query("SELECT * FROM `itr` WHERE `idmedico` = '565d14ssd' ORDER BY `itr_no` DESC") or die(mysqli_error());
-							// $query = $conn->query("SELECT * FROM `itr` WHERE `idmedico` = '$_SESSION[user_id]' ORDER BY `itr_no` DESC") or die(mysqli_error());
-							$query = $conn->query("SELECT * FROM `itr` WHERE `idmedico` = '$fetch[idmedico]' ORDER BY `itr_no` DESC") or die(mysqli_error());
+							// $query = $conn->query("SELECT * FROM `paciente` WHERE `idmedico` = '565d14ssd' ORDER BY `paciente_no` DESC") or die(mysqli_error());
+							// $query = $conn->query("SELECT * FROM `paciente` WHERE `idmedico` = '$_SESSION[user_id]' ORDER BY `paciente_no` DESC") or die(mysqli_error());
+							$query = $conn->query("SELECT * FROM `paciente` WHERE `idmedico` = '$fetch[idmedico]' ORDER BY `paciente_no` DESC") or die(mysqli_error());
 							while($fetch = $query->fetch_array()){
-							$id = $fetch['itr_no'];
-							$q = $conn->query("SELECT COUNT(*) as total FROM `complaints` where `itr_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
+							$id = $fetch['paciente_no'];
+							$q = $conn->query("SELECT COUNT(*) as total FROM `complaints` where `paciente_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
 							$f = $q->fetch_array();
 							?>
 							<tr>
 								<td><?php echo $fetch['cedula']?></td>
-								<td><?php echo $fetch['itr_no']?></td>
+								<td><?php echo $fetch['paciente_no']?></td>
 								<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 								<td><?php echo $fetch['age']?></td>
 								<td><?php echo $fetch['address']?></td>
-								<td><center><a href = "atenciones.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Atenciones <span class = "badge"><?php echo $f['total']?></span></a>
-								<a href = "edit_paciente.php?id=<?php echo $fetch['itr_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
-								<!-- <a href = "delete_paciente.php?id=<?php //echo $fetch['itr_no']?>&lastname=<?php //echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td> -->
+								<td><center><a href = "atenciones.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Atenciones <span class = "badge"><?php echo $f['total']?></span></a>
+								<a href = "edit_paciente.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
+								<!-- <a href = "delete_paciente.php?id=<?php //echo $fetch['paciente_no']?>&lastname=<?php //echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td> -->
 							</tr>
 						<?php
 							}

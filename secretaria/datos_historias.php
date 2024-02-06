@@ -44,11 +44,11 @@
 					<tbody>
 					<?php 
 						$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-						$q = $conn->query("SELECT * FROM `itr` ORDER BY `itr_no` DESC") or die(mysqli_error());
+						$q = $conn->query("SELECT * FROM `paciente` ORDER BY `paciente_no` DESC") or die(mysqli_error());
 						while($f = $q->fetch_array()){
 					?>
 						<tr>
-							<td><?php echo $f['itr_no']?></td>
+							<td><?php echo $f['paciente_no']?></td>
 							<td><?php echo $f['cedula']?></td>
 							<td><?php echo $f['firstname']." ".$f['lastname'] ?></td>
 							<td><?php echo $f['age'] ?></td>
@@ -56,7 +56,7 @@
 							<td><?php echo $f['gender'] ?></td>
 							<td>
 								<center>
-									<a href = "view_datos_historias.php?itr_no=<?php echo $f['itr_no']?>"class = "btn btn-sm btn-info"><span class = "glyphicon glyphicon-search"></span> VER DETALLES</a> 
+									<a href = "view_datos_historias.php?paciente_no=<?php echo $f['paciente_no']?>"class = "btn btn-sm btn-info"><span class = "glyphicon glyphicon-search"></span> VER DETALLES</a> 
 								</center>
 							</td>
 						</tr>

@@ -61,7 +61,7 @@ CREATE TABLE `birthing` (
   `presentation` varchar(15) NOT NULL,
   `vaginal_discharge` varchar(15) NOT NULL,
   `staff` varchar(30) NOT NULL,
-  `itr_no` varchar(4) NOT NULL,
+  `paciente_no` varchar(4) NOT NULL,
   `user_id` varchar(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE `complaints` (
   `date` varchar(20) NOT NULL,
   `complaints` varchar(255) NOT NULL,
   `remark` varchar(255) NOT NULL,
-  `itr_no` varchar(50) NOT NULL,
+  `paciente_no` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `status` varchar(10) NOT NULL,
   PRIMARY KEY (`com_id`)
@@ -142,7 +142,7 @@ CREATE TABLE `dental` (
   `date` date NOT NULL,
   `dentist` varchar(30) NOT NULL,
   `tooth` int(3) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -183,7 +183,7 @@ CREATE TABLE `fecalisys` (
   `date_reported` date NOT NULL,
   `pathologist` varchar(30) NOT NULL,
   `medical_technologist` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -224,7 +224,7 @@ CREATE TABLE `hematology` (
   `remarks` varchar(100) NOT NULL,
   `pathologist` varchar(30) NOT NULL,
   `medical_technologist` varchar(30) NOT NULL,
-  `itr_no` varchar(50) NOT NULL,
+  `paciente_no` varchar(50) NOT NULL,
   `user_id` int(50) NOT NULL,
   `month` varchar(20) NOT NULL,
   `year` varchar(20) NOT NULL,
@@ -237,11 +237,11 @@ CREATE TABLE `hematology` (
 
 
 --
--- Estructura de la tabla 'itr'
+-- Estructura de la tabla 'paciente'
 --
 
-CREATE TABLE `itr` (
-  `itr_no` varchar(4) NOT NULL,
+CREATE TABLE `paciente` (
+  `paciente_no` varchar(4) NOT NULL,
   `nacionalidad` varchar(1) NOT NULL,
   `cedula` varchar(9) NOT NULL,
   `firstname` varchar(20) NOT NULL,
@@ -252,30 +252,30 @@ CREATE TABLE `itr` (
   `civil_status` varchar(10) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `idmedico` varchar(12) NOT NULL,
-  PRIMARY KEY (`itr_no`),
-  UNIQUE KEY `itr_no` (`itr_no`)
+  PRIMARY KEY (`paciente_no`),
+  UNIQUE KEY `paciente_no` (`paciente_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Datos de la tabla 'itr'
+-- Datos de la tabla 'paciente'
 --
 
-INSERT INTO itr VALUES('1','V','16945845','Johnny','Depp','06/09/1963','60','Kentucky, Estados Unidos','Soltero(a)','Masculino','15148hdffd23');
-INSERT INTO itr VALUES('10','V','19191900','George','Washington','02/22/2001','22','a','Casado(a)','Masculino','565d14ssd');
-INSERT INTO itr VALUES('11','V','11212121','Salami','Napoles','08/08/2012','12','as12','Casado(a)','Femenino','565d14ssd');
-INSERT INTO itr VALUES('12','V','25252014','Margarita','Jozic','2000-11-09','23','carr','Divorciado','Femenino','15148hdffd23');
-INSERT INTO itr VALUES('13','V','6254152','Hauser','Quando','2001-10-18','22','carrera 29','Soltero(a)','Masculino','565d14ssd');
-INSERT INTO itr VALUES('15','V','12142514','entendible','entendible','2000-10-18','24','entendible','Soltero(a)','Femenino','565d14ssd');
-INSERT INTO itr VALUES('16','V','16241253','Fran','Sinatra','2000-01-24','24','24','Casado(a)','Masculino','333777a');
-INSERT INTO itr VALUES('2','V','4598253','Elon','Musk','06/28/1971','52','Barquisimeto','Casado(a)','Masculino','13235562');
-INSERT INTO itr VALUES('21','V','5624587','Juan Diego','de la Vega','2000-04-19','23','23','Soltero(a)','Masculino','15148hdffd23');
-INSERT INTO itr VALUES('3','V','14125514','Marie','Curie','02/16/1988','35','Varsovia, Polonia','Casado(a)','Femenino','13235562');
-INSERT INTO itr VALUES('4','V','16525235','Juancho','Perez','10/18/2001','22','republica dominicana','Casado(a)','Masculino','25262402');
-INSERT INTO itr VALUES('5','V','12672747','Presto','Carlo','2002-02-22','20','s20','Casado(a)','Masculino','565d14ssd');
-INSERT INTO itr VALUES('6','V','28504401','Pelo','ncito','04/09/2009','15','12','Soltero(a)','Masculino','13235562');
-INSERT INTO itr VALUES('7','V','28204402','Esperanza','Sanchez','10/18/2001','22','carrera 29','Soltero(a)','Femenino','565d14ssd');
-INSERT INTO itr VALUES('8','V','11444222','Bob','Patricio','1998-04-08','25','sda','Casado(a)','Masculino','15148hdffd23');
-INSERT INTO itr VALUES('9','V','28204000','El coqui','Revete','02/01/1978','46','caracas','Soltero(a)','Masculino','15148hdffd23');
+INSERT INTO paciente VALUES('1','V','16945845','Johnny','Depp','06/09/1963','60','Kentucky, Estados Unidos','Soltero(a)','Masculino','15148hdffd23');
+INSERT INTO paciente VALUES('10','V','19191900','George','Washington','02/22/2001','22','a','Casado(a)','Masculino','565d14ssd');
+INSERT INTO paciente VALUES('11','V','11212121','Salami','Napoles','08/08/2012','12','as12','Casado(a)','Femenino','565d14ssd');
+INSERT INTO paciente VALUES('12','V','25252014','Margarita','Jozic','2000-11-09','23','carr','Divorciado','Femenino','15148hdffd23');
+INSERT INTO paciente VALUES('13','V','6254152','Hauser','Quando','2001-10-18','22','carrera 29','Soltero(a)','Masculino','565d14ssd');
+INSERT INTO paciente VALUES('15','V','12142514','entendible','entendible','2000-10-18','24','entendible','Soltero(a)','Femenino','565d14ssd');
+INSERT INTO paciente VALUES('16','V','16241253','Fran','Sinatra','2000-01-24','24','24','Casado(a)','Masculino','333777a');
+INSERT INTO paciente VALUES('2','V','4598253','Elon','Musk','06/28/1971','52','Barquisimeto','Casado(a)','Masculino','13235562');
+INSERT INTO paciente VALUES('21','V','5624587','Juan Diego','de la Vega','2000-04-19','23','23','Soltero(a)','Masculino','15148hdffd23');
+INSERT INTO paciente VALUES('3','V','14125514','Marie','Curie','02/16/1988','35','Varsovia, Polonia','Casado(a)','Femenino','13235562');
+INSERT INTO paciente VALUES('4','V','16525235','Juancho','Perez','10/18/2001','22','republica dominicana','Casado(a)','Masculino','25262402');
+INSERT INTO paciente VALUES('5','V','12672747','Presto','Carlo','2002-02-22','20','s20','Casado(a)','Masculino','565d14ssd');
+INSERT INTO paciente VALUES('6','V','28504401','Pelo','ncito','04/09/2009','15','12','Soltero(a)','Masculino','13235562');
+INSERT INTO paciente VALUES('7','V','28204402','Esperanza','Sanchez','10/18/2001','22','carrera 29','Soltero(a)','Femenino','565d14ssd');
+INSERT INTO paciente VALUES('8','V','11444222','Bob','Patricio','1998-04-08','25','sda','Casado(a)','Masculino','15148hdffd23');
+INSERT INTO paciente VALUES('9','V','28204000','El coqui','Revete','02/01/1978','46','caracas','Soltero(a)','Masculino','15148hdffd23');
 
 --
 -- Estructura de la tabla 'maternity_patient'
@@ -330,7 +330,7 @@ CREATE TABLE `maternity_patient` (
   `time_of_discharge` varchar(30) NOT NULL,
   `final_diagnosis` varchar(100) NOT NULL,
   `disposition_on_charge` varchar(50) NOT NULL,
-  `itr_no` varchar(50) NOT NULL,
+  `paciente_no` varchar(50) NOT NULL,
   `user_id` int(50) NOT NULL,
   `month` varchar(20) NOT NULL,
   `year` int(5) NOT NULL,
@@ -380,7 +380,7 @@ CREATE TABLE `prenatal` (
   `fetal_activity` varchar(20) NOT NULL,
   `comments` varchar(100) NOT NULL,
   `radiologist` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -405,7 +405,7 @@ CREATE TABLE `radiological` (
   `type_of_examination` varchar(30) NOT NULL,
   `date_taken` date NOT NULL,
   `radiologist` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -430,7 +430,7 @@ CREATE TABLE `datos_historias` (
   `assessment` varchar(100) NOT NULL,
   `plan` varchar(100) NOT NULL,
   `date` varchar(10) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -503,7 +503,7 @@ CREATE TABLE `sputum` (
   `reading` varchar(20) NOT NULL,
   `date_of_examination` date NOT NULL,
   `examined_by` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,
@@ -540,7 +540,7 @@ CREATE TABLE `urinalysis` (
   `others` varchar(15) NOT NULL,
   `pathologist` varchar(30) NOT NULL,
   `medical_technologist` varchar(30) NOT NULL,
-  `itr_no` varchar(11) NOT NULL,
+  `paciente_no` varchar(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `month` varchar(10) NOT NULL,
   `year` varchar(10) NOT NULL,

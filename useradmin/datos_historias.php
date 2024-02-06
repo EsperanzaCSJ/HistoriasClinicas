@@ -110,16 +110,16 @@
 				<tbody>
 				<?php 
 					$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `itr` GROUP BY `itr_no` ORDER BY `rehab_id` DESC") or die(mysqli_error());
+					$query = $conn->query("SELECT * FROM `datos_historias` NATURAL JOIN `paciente` GROUP BY `paciente_no` ORDER BY `rehab_id` DESC") or die(mysqli_error());
 					while($fetch = $query->fetch_array()){
 				?>
 					<tr>
-						<td><?php echo $fetch['itr_no']?></td>
+						<td><?php echo $fetch['paciente_no']?></td>
 						<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 						<td><?php echo $fetch['age']?></td>
 						<td><?php echo $fetch['gender']?></td>
 						<td><?php echo $fetch['address']?></td>
-						<td><center><a class = "btn btn-primary" href = "datos_historias_record.php?itr_no=<?php echo $fetch['itr_no']?>"><span class = "glyphicon glyphicon-search"></span> Todos los Registros</a></center></td>
+						<td><center><a class = "btn btn-primary" href = "datos_historias_record.php?paciente_no=<?php echo $fetch['paciente_no']?>"><span class = "glyphicon glyphicon-search"></span> Todos los Registros</a></center></td>
 					</tr>
 				<?php
 					}

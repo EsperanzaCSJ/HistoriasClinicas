@@ -32,13 +32,13 @@
 		<br />
 		<div class = "panel panel-success">
 			<div class = "panel-heading">
-				<label>HISTORIA CLÍNICA</label>	<a style = "float:right; margin-top:-4px;" href = "datos_historias_pending.php?itr_no=<?php echo $_GET['itr_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> REGRESAR</a>
+				<label>HISTORIA CLÍNICA</label>	<a style = "float:right; margin-top:-4px;" href = "datos_historias_pending.php?paciente_no=<?php echo $_GET['paciente_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> REGRESAR</a>
 			</div>
 			<div class = "panel-body">
 				<form method = "POST" enctype = "multipart/form-data" cellspacing = "0">
 					<?php
-						$q = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$_GET[itr_no]'") or die(mysqli_error());
-						$q1 = $conn->query("SELECT * FROM `complaints` WHERE `com_id` = '$_GET[comp_id]' && `itr_no` = '$_GET[itr_no]' && `section` = 'datos_historias'") or die(mysqli_error());
+						$q = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[paciente_no]'") or die(mysqli_error());
+						$q1 = $conn->query("SELECT * FROM `complaints` WHERE `com_id` = '$_GET[comp_id]' && `paciente_no` = '$_GET[paciente_no]' && `section` = 'datos_historias'") or die(mysqli_error());
 						$f1 = $q1->fetch_array();
 						$f = $q->fetch_array();
 					?>
@@ -132,8 +132,8 @@
 						<textarea name = "nota" class = "form-control" style = "resize:none;"></textarea>
 					</div>
 					<div class = "form-inline" style = "display: none;">					 
-						<label for = "itr_no">Número de historia/Paciente:</label>
-						<input class = "form-control" type = "text" value = "<?php echo $_GET['itr_no'] ?>" name = "itr_no" >
+						<label for = "paciente_no">Número de historia/Paciente:</label>
+						<input class = "form-control" type = "text" value = "<?php echo $_GET['paciente_no'] ?>" name = "paciente_no" >
 					</div>
 					<div class = "form-inline" style = "display: none;">					 
 						<label for = "idmedico">Usuario médico asignado:</label>

@@ -7,14 +7,14 @@ $(document).ready(function(){
 		$("#add").slideUp(1000);
 		$("#show").fadeIn();
 	})
-	$("#show_itr").click(function(){
-		$("#add_itr").slideDown(1000);
-		$("#show_itr").fadeOut();
+	$("#show_paciente").click(function(){
+		$("#add_paciente").slideDown(1000);
+		$("#show_paciente").fadeOut();
 		$("#d_record").fadeOut();
 	});
-	$("#hide_itr").click(function(){
-		$("#add_itr").slideUp(1000);
-		$("#show_itr").fadeIn();
+	$("#hide_paciente").click(function(){
+		$("#add_paciente").slideUp(1000);
+		$("#show_paciente").fadeIn();
 		$("#d_record").fadeIn();
 	})
 	$("#show_fdental").click(function(){

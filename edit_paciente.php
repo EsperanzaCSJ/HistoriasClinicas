@@ -28,13 +28,13 @@ ob_start();
 			<div class = "panel-body">
 			<?php
 				$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-				$q = $conn->query("SELECT * FROM `itr` WHERE `itr_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
+				$q = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$_GET[id]' && `lastname` = '$_GET[lastname]'") or die(mysqli_error());
 				$f = $q->fetch_array();
 			?>
 				<form method = "POST" enctype = "multipart/form-data">
 					<div style = "float:left;" class = "form-inline">
-						<label for = "itr_no">Nro Historia:</label>
-						<input class = "form-control" value = "<?php echo $f['itr_no'] ?>" size = "3" type = "number" name = "itr_no">
+						<label for = "paciente_no">Nro Historia:</label>
+						<input class = "form-control" value = "<?php echo $f['paciente_no'] ?>" size = "3" type = "number" name = "paciente_no">
 					</div>
 					<br />
 					<br />
