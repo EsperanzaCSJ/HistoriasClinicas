@@ -50,7 +50,7 @@
 					<br style = "clear:both;"/>	
 					</div>
 					<div style = "float:left; width:100%;">
-						<label style = "font-size:18px;">Direccion</label>
+						<label style = "font-size:18px;">Dirección</label>
 						<br />
 						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['address']?></label>
 					<br style = "clear:both;"/>					

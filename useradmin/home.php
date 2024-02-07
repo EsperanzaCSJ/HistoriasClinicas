@@ -53,46 +53,6 @@
 						toolTipContent: "{label} <br/> {y}", 
 						indexLabel: "{y}", 
 						dataPoints: [ 
-							{ label: "Fecalysis",  y: 
-								<?php 
-									if($ffecalysis == ""){
-											echo 0;
-									}else{
-										echo $ffecalysis['total'];
-									}
-								?>, legendText: "Fecalysis"}, 
-							{ label: "Maternity",  y: 
-								<?php 
-									if($fmaternity == ""){
-										echo 0;
-									}else{
-										echo $fmaternity['total'];
-									}	
-								?>, legendText: "Maternity"},
-							{ label: "Hematology",  y: 
-								<?php 
-									if($fhematology == ""){
-										echo 0;
-									}else{
-										echo $fhematology['total'];
-									}	
-								?>, legendText: "Hematology"},
-							{ label: "Dental",  y: 
-								<?php 
-									if($fdental == ""){
-										echo 0;
-									}else{
-									echo $fdental['total'];
-									}
-								?>, legendText: "Dental"},
-							{ label: "Xray",  y: 
-								<?php 
-									if($fxray == ""){
-										echo 0;
-									}else{
-										echo $fxray['total'];
-									}	
-								?>, legendText: "Xray"},
 							{ label: "datos_historias",  y: 
 								<?php
 									if($frehab == ""){
@@ -100,23 +60,7 @@
 									}else{
 										echo $frehab['total'];
 									}	
-								?>, legendText: "datos_historias"},
-							{ label: "Sputum",  y: 
-								<?php
-									if($fsputum == ""){
-										echo 0;
-									}else{
-										echo $fsputum['total'];
-									}	
-								?>, legendText: "Sputum"},
-							{ label: "Urinalysis",  y: 
-								<?php 
-									if($furinalysis == ""){
-										echo 0;
-									}else{
-										echo $furinalysis['total'];
-									}	
-								?>, legendText: "Urinalysis"}
+								?>, legendText: "datos_historias"}
 						] 
 					} 
 					] 
