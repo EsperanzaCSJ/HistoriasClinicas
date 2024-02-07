@@ -64,13 +64,13 @@
 			</div>
 			<div class = "panel-body">
 				<button id = "show" class = "btn btn-info"><span class  = "glyphicon glyphicon-plus"></span> AGREGAR</button>
+				<a class = "btn btn-info" href = "print-admin.php" style = "float:right;" ><span class = "glyphicon glyphicon-print"></span> IMPRIMIR</a>
 				<br />
 				<br />		
 				<table id = "table" class = "display" cellspacing = "0"  >
 					<thead>
 						<tr>
 							<th>Usuario</th>
-							<th>Contraseña</th>
 							<th>Nombre</th>
 							<th><center>Editar</center></th>
 						</tr>
@@ -83,7 +83,6 @@
 					?>
 						<tr>
 							<td><?php echo $fetch['username']?></td>
-							<td><?php echo md5($fetch['password'])?></td>
 							<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 							<td><center><a class = "btn btn-sm btn-warning" href = "edit_admin.php?id=<?php echo $fetch['admin_id']?>&lastname=<?php echo $fetch['lastname']?>"><i class = "glyphicon glyphicon-edit"></i></a>
 							<!-- <a onclick="confirmationDelete(this);return false;" href = "delete_admin.php?id=<//?php echo $fetch['admin_id']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Eliminar</a> --></center></td>

@@ -1,13 +1,10 @@
 <?php
 	require_once 'logincheck.php';
-	$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-	$query = $conn->query("SELECT * FROM `user` WHERE `user_id` = '$_SESSION[user_id]'") or die(mysqli_error());
-	$fetch = $query->fetch_array();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+	<style>
 	@media print { 
 		@page {
 			size:letter;
@@ -28,7 +25,7 @@
 			border-collapse: collapse;
 		}
 		th, td {
-			border: 1px solid #b7cfff;
+			border: 1px solid #ccc;
 			padding: 8px;
 		}
 		tr:nth-child(even) {
@@ -38,12 +35,12 @@
 </head> 
 <body>
 <button onclick="printContent('print')">Imprimir</button>
-<button><a style = "text-decoration:none; color:#000;" href = "paciente.php" class = "btn btn-info">VOLVER</a></button>
+<button><a style = "text-decoration:none; color:#000;" href = "user.php" class = "btn btn-info">VOLVER</a></button>
 <br />
 <br />
 	<div id="print">
 		<div style = "margin:10px;">
-			<img src = "images/logo.png" height = "80px" width = "80px" style = "float:left; position:relative; left:15%;" />
+			<img src = "../images/logo.png" height = "80px" width = "80px" style = "float:left; position:relative; left:15%;" />
 			<div style = "float:right; position:relative; right:35%;">
 				<br />
 				<label><center>Consultorio Médico Popular Pio Tamayo</center></label>
@@ -55,45 +52,32 @@
 			<br />
 			<br />
 			<label><center><b>CONSULTORIO MÉDICO POPULAR PIO TAMAYO</b></center></label>
-			<label style = "font-size:14px;"><center>LISTA DE PACIENTES REGISTRADOS</center></label>
+			<label style = "font-size:14px;"><center>LISTA DE MÉDICOS REGISTRADOS</center></label>
 			<br />
 			<br />
-			<label><b>DATOS DEL MÉDICO:</b></label>
-			<br />
-			<label>Nombres: <?php echo $fetch['firstname']." ".$fetch['lastname']?>
-			<br />
-			<label>Especialidad: <?php echo $fetch['especialidad']?></label>
-			<br />
-			<label>Cédula: <?php echo $fetch['cimedico']?></label>
-
 		<div id = "content">
 			<div class = "panel-body">
 				<br />
 				<br />
 				<table id = "table" class = "display" width = "100%" cellspacing = "0">						<thead>
 					<tr>
-						<th>Nro. Cedula</th>
-						<th>Nro. Historia</th>
-						<th>Nombre</th>
-						<th>Edad</th>
-						<th>Dirección</th>
+						<th>Nombres</th>
+						<th>Especialidad</th>
+						<th>Licencia Médica</th>
+						<th>Cédula de Identidad</th>
 					</tr>
 				</thead>
 			<tbody>
-				<?php
-					$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-					$query = $conn->query("SELECT * FROM `paciente` WHERE `idmedico` = '$fetch[idmedico]' ORDER BY `paciente_no` DESC") or die(mysqli_error());
-					while($fetch = $query->fetch_array()){
-					$id = $fetch['paciente_no'];
-					$q = $conn->query("SELECT COUNT(*) as total FROM `cita` where `paciente_no` = '$id' && `status` = 'Pending'") or die(mysqli_error());
-					$f = $q->fetch_array();
-				?>
+					<?php
+						$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
+						$query = $conn->query("SELECT * FROM `user` ORDER BY `user_id` DESC") or die(mysqli_error());
+						while($fetch = $query->fetch_array()){
+					?>
 					<tr>
-						<td><?php echo $fetch['cedula']?></td>
-						<td><?php echo $fetch['paciente_no']?></td>
 						<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
-						<td><?php echo $fetch['age']?></td>
-						<td><?php echo $fetch['address']?></td>
+						<td><?php echo $fetch['especialidad']?></td>
+						<td><?php echo $fetch['idmedico']?></td>
+						<td><?php echo $fetch['cimedico']?></td>
 					</tr>
 				<?php
 					}

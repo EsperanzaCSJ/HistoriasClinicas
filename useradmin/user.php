@@ -75,7 +75,8 @@
 					<label>LISTA DE MÉDICOS</Label>
 				</div>
 				<div class = "panel-body">
-					<button id = "show" class = "btn btn-info"><span class  = "glyphicon glyphicon-plus"></span> AGREGAR</button>
+					<button id = "show" class = "btn btn-info"><span class  = "glyphicon glyphicon-plus"></span> AGREGAR MÉDICO</button>
+					<a class = "btn btn-info" href = "print-medicos.php" style = "float:right;" ><span class = "glyphicon glyphicon-print"></span> IMPRIMIR</a>
 					<br />
 					<br />
 					<table id = "table" class = "display" width = "100%" cellspacing = "0">
