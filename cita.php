@@ -88,10 +88,10 @@
 				$q = $conn->query("SELECT * FROM `cita` WHERE `paciente_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
 					while($f = $q->fetch_array()){
 						if($f['status'] == "Done"){
-							echo "<label style = 'color:#3399f3;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<label style = 'float:right; color:red;'></label><br /<hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['motivo']."</textarea>"."<label style = 'float:right; color:red;'></label><br /<hr style = 'border:1px solid #eee;' />";
 						}
 						if($f['status'] == "Pending"){
-							echo "<label style = 'color:#3399f3;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['motivo']."</textarea>"."<hr style = 'border:1px solid #eee;' />";
 						}
 					}
 				?>

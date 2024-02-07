@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `cita` (
   `com_id` int(50) NOT NULL AUTO_INCREMENT,
   `date` varchar(20) NOT NULL,
   `cita` varchar(255) NOT NULL,
-  `remark` varchar(255) NOT NULL,
+  `motivo` varchar(255) NOT NULL,
   `paciente_no` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `status` varchar(10) NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `cita` (
 -- Volcado de datos para la tabla `cita`
 --
 
-INSERT INTO `cita` (`com_id`, `date`, `cita`, `remark`, `paciente_no`, `section`, `status`) VALUES
+INSERT INTO `cita` (`com_id`, `date`, `cita`, `motivo`, `paciente_no`, `section`, `status`) VALUES
 (1, '09/08/2018', 'Dolor Muela', 'caries', '1111', 'Dental', 'Done');
 
 -- --------------------------------------------------------

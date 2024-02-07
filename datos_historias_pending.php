@@ -43,9 +43,9 @@
 				$q = $conn->query("SELECT * FROM `cita` WHERE `section` = 'datos_historias' && `paciente_no` = '$id' ORDER BY `status` DESC") or die(mysqli_error());
 				while($f = $q->fetch_array()){
 					if($f['status'] == 'Pending'){
-						echo "<label style = 'color:#419641;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' href = 'datos_historias_not.php?paciente_no=".$id."&comp_id=".$f['com_id']."'><span class = 'glyphicon glyphicon-check'></span> Agregar Historia</a><br /><br />";
+						echo "<label style = 'color:#419641;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['motivo']."</textarea>"."<br /><a class = 'btn btn-primary' href = 'datos_historias_not.php?paciente_no=".$id."&comp_id=".$f['com_id']."'><span class = 'glyphicon glyphicon-check'></span> Agregar Historia</a><br /><br />";
 					}else{
-						echo "<label style = 'color:#419641;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['remark']."</textarea>"."<br /><a class = 'btn btn-primary' disabled = 'disabled'><span class = 'glyphicon glyphicon-check'></span> Done</a><br /><br />";
+						echo "<label style = 'color:#419641;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['motivo']."</textarea>"."<br /><a class = 'btn btn-primary' disabled = 'disabled'><span class = 'glyphicon glyphicon-check'></span> Done</a><br /><br />";
 					}
 				}	
 			?>

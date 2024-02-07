@@ -72,7 +72,7 @@ CREATE TABLE `cita` (
   `com_id` int(50) NOT NULL AUTO_INCREMENT,
   `date` varchar(20) NOT NULL,
   `cita` varchar(255) NOT NULL,
-  `remark` varchar(255) NOT NULL,
+  `motivo` varchar(255) NOT NULL,
   `paciente_no` varchar(50) NOT NULL,
   `section` varchar(20) NOT NULL,
   `status` varchar(10) NOT NULL,
