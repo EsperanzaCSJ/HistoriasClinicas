@@ -22,6 +22,8 @@ ob_start();
 					<label>AGREGAR PACIENTE</label>
 					<button id = "hide_paciente" style = "float:right; margin-top:-4px;" class = "btn btn-sm btn-danger"><span class = "glyphicon glyphicon-remove"></span> Cerrar</button>
 				</div>
+				
+				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "datos_historias_print.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Historia</a>
 				<div class = "panel-body">
 				<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
 					<div class = "form-inline" style = "display: none;">					 
@@ -93,6 +95,7 @@ ob_start();
 				</div>
 				<div class = "panel-body">
 					<button id = "show_paciente" class = "btn btn-info"><span class = "glyphicon glyphicon-plus"></span> AGREGAR PACIENTE</button>
+					<a class = "btn btn-info" href = "print-usuarios.php" style = "float:right;" ><span class = "glyphicon glyphicon-print"></span> IMPRIMIR</a>
 					<br />
 					<br />
 					<table id = "table" class = "display" width = "100%" cellspacing = "0">
@@ -126,7 +129,7 @@ ob_start();
 								<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 								<td><?php echo $fetch['age']?></td>
 								<td><?php echo $fetch['address']?></td>
-								<td><center><a href = "cita.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">cita <span class = "badge"><?php echo $f['total']?></span></a>
+								<td><center><a href = "cita.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Cita <span class = "badge"><?php echo $f['total']?></span></a>
 								<a href = "edit_paciente.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
 								<!-- <a href = "delete_paciente.php?id=<?php //echo $fetch['paciente_no']?>&lastname=<?php //echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td> -->
 							</tr>
