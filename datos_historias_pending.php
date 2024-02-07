@@ -32,7 +32,7 @@
 	<div id="content" class = "well">
 		<div class = "panel panel-success">
 			<div class = "panel-heading">
-				<label>cita PENDIENTES</label>
+				<label>CITAS PENDIENTES</label>
 				<a style = "float:right; margin-top:-4px;" href = "view_datos_historias.php?paciente_no=<?php echo $_GET['paciente_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 			<div class = "panel-body">
