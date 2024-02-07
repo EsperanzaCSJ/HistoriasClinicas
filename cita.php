@@ -19,7 +19,7 @@
 		<br />
 		<div style = "display:none;" id = "com" class = "panel panel-success">	
 			<div class = "panel-heading">
-				<label>HISTORIA CLÍNICA</label>
+				<label>REGISTRAR CITA</label>
 				<button class = "btn btn-danger" id = "hide_com" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-remove"></span>CERRAR</button>
 			</div>
 			<div class = "panel-body">
@@ -49,11 +49,11 @@
 					</div>
 					<br />
 					<div class = "form-group">
-						<label>Fecha:</label>
-						<textarea style = "resize:none;" name = "cita" class = "form-control" required = "required"></textarea>
+						<label>Asignar fecha para la consulta:</label>
+						<input type="date" name="cita" class = "form-control" style = "resize:none" required = "required"/>
 						<br />
 						<label>Motivo de la consulta:</label>
-						<textarea style = "resize:none;" name = "remarks" class = "form-control" required = "required"></textarea>
+						<textarea style = "resize:none;" name = "motivo" class = "form-control" required = "required"></textarea>
 					</div>
 					<div class = "form-group">
 						<div class = "form-inline" style = "display: none;">					 
@@ -76,7 +76,7 @@
 		?>
 		<div class = "panel panel-info">
 			<div class = "panel-heading">
-				<label style = "font-size:16px;">Historial de cita / <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
+				<label style = "font-size:16px;">Historial de citas / <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
 				<a style = "float:right; margin-top:-5px;" id = "add_cita" class = "btn btn-success" href = "paciente.php"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 		</div>

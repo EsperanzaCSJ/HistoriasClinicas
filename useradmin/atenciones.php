@@ -53,7 +53,7 @@
 						<textarea style = "resize:none;" name = "cita" class = "form-control"></textarea>
 						<br />
 						<label>Motivo de la consulta:</label>
-						<textarea style = "resize:none;" name = "remarks" class = "form-control"></textarea>
+						<textarea style = "resize:none;" name = "motivo" class = "form-control"></textarea>
 						<br />
 						<label>Asigne un doctor:</label>
 						<select name = "section" class = "form-control" required = "required">
