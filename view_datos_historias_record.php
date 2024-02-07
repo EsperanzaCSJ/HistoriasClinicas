@@ -24,10 +24,10 @@
 					<table id = "table" class = "display" width = "100%" cellspacing = "0">
 						<thead>
 							<tr>
-								<th>Nro Documento de Identidad </th>
+								<th>Nro. Historia</th>
 								<th>Nombre</th>
 								<th>Edad</th>
-								<th>Gender</th>
+								<th>Género</th>
 								<th>Dirección</th>
 								<th><center>Accion</center></th>
 							</tr>
@@ -43,7 +43,7 @@
 								<td><?php echo $f['paciente_no']?></td>
 								<td><?php echo $f['firstname']." ".$f['lastname']?></td>
 								<td><?php echo $f['age']?></td>
-								<td><?php echo $f['gender']?></td>
+								<td><?php echo $f['genero']?></td>
 								<td><?php echo $f['address']?></td>
 								<td><center>
 										<a href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clinico</a> 

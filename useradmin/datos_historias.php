@@ -102,7 +102,7 @@
 						<th>Nro Documento de Identidad </th>
 						<th>Nombre</th>
 						<th>Edad</th>
-						<th>Gender</th>
+						<th>Género</th>
 						<th>Dirección</th>
 						<th><center>Accion</center></th>
 					</tr>
@@ -117,7 +117,7 @@
 						<td><?php echo $fetch['paciente_no']?></td>
 						<td><?php echo $fetch['firstname']." ".$fetch['lastname']?></td>
 						<td><?php echo $fetch['age']?></td>
-						<td><?php echo $fetch['gender']?></td>
+						<td><?php echo $fetch['genero']?></td>
 						<td><?php echo $fetch['address']?></td>
 						<td><center><a class = "btn btn-primary" href = "datos_historias_record.php?paciente_no=<?php echo $fetch['paciente_no']?>"><span class = "glyphicon glyphicon-search"></span> Todos los Registros</a></center></td>
 					</tr>

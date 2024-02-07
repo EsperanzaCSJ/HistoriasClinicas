@@ -9,7 +9,7 @@
 		$f = $q->fetch_array();
 		$q1 = $conn->query("SELECT * FROM `cita` WHERE `paciente_no` = '$_GET[id]'") or die(mysqli_error());
 		$f1 = $q->fetch_array();
-		if(($section == "Prenatal" || $section == "Maternity") && ($f['gender'] == "Male")){
+		if(($section == "Prenatal" || $section == "Maternity") && ($f['genero'] == "Male")){
 				echo "<script>alert('Wrong section!')</script>";
 			}else{
 			$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());

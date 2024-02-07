@@ -14,7 +14,7 @@
 		$phil_health_no = $_POST['phil_health_no'];
 		$address = $_POST['address'];
 		$civil_status = $_POST['civil_status'];
-		$gender = $_POST['gender'];
+		$genero = $_POST['genero'];
 		$bp = $_POST['bp'];
 		$temp = $_POST['temp']."&deg;C";
 		$pr = $_POST['pr'];
@@ -31,7 +31,7 @@
 		if($c1 > 0){
 				echo "<script>alert('Nro Documento de Identidad . must not be the same!')</script>";
 		}else{
-			$conn->query("INSERT INTO paciente VALUES ('$paciente_no', '$date1','$cedula', '$phil_health_no', '$firstname', '$dni', '$lastname', '$birthdate', '$age', '$address', '$civil_status', '$gender', '$bp', '$temp', '$pr', '$rr', '$wt', '".addslashes($ht)."','$telefono', '$trabajo', '$enfermedad_actual','$patologicos')") or die(mysqli_error($conn));
+			$conn->query("INSERT INTO paciente VALUES ('$paciente_no', '$date1','$cedula', '$phil_health_no', '$firstname', '$dni', '$lastname', '$birthdate', '$age', '$address', '$civil_status', '$genero', '$bp', '$temp', '$pr', '$rr', '$wt', '".addslashes($ht)."','$telefono', '$trabajo', '$enfermedad_actual','$patologicos')") or die(mysqli_error($conn));
 			header("location: patient.php");	
 		}
 	}

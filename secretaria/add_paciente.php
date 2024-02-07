@@ -14,7 +14,7 @@ ob_start();
 		$edad = $diferencia->y;
 		$address = $_POST['address'];
 		$civil_status = $_POST['civil_status'];
-		$gender = $_POST['gender'];
+		$genero = $_POST['genero'];
 		$idmedico = $_POST['idmedico'];
 		$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
 		$q1 = $conn->query("SELECT * FROM `paciente` WHERE `paciente_no` = '$paciente_no'") or die(mysqli_error());
@@ -22,7 +22,7 @@ ob_start();
 		if($c1 > 0){
 				echo "<script>alert('El número de la historia no debe ser el mismo!')</script>";
 		}else{
-			$conn->query("INSERT INTO `paciente` VALUES('$paciente_no', '$nacionalidad', '$cedula', '$firstname', '$lastname', '$birthdate', '$edad', '$address', '$civil_status', '$gender', '$idmedico')") or die(mysqli_error());
+			$conn->query("INSERT INTO `paciente` VALUES('$paciente_no', '$nacionalidad', '$cedula', '$firstname', '$lastname', '$birthdate', '$edad', '$address', '$civil_status', '$genero', '$idmedico')") or die(mysqli_error());
 			header("location: paciente.php");
 		}
 	}

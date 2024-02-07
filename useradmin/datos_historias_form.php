@@ -61,9 +61,9 @@
 						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['age']?></label>
 					</div>
 					<div style = "width:10%; float:left;">
-						<label style = "font-size:18px;">Genero</label>
+						<label style = "font-size:18px;">Género</label>
 						<br />
-						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['gender']?></label>
+						<label style = "font-size:18px;" class = "text-muted"><?php echo $f['genero']?></label>
 					</div>
 					<div style = "width:15%; float:left;">
 						<label style = "font-size:18px;">F. Nacimiento</label>

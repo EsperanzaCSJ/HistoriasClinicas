@@ -72,8 +72,8 @@ ob_start();
 								<option value = "Viudo(a)">Viudo(a)</option>
 							</select>
 							<br />
-							<label for = "gender">Genero:</label>
-							<select style = "width:22%;" class = "form-control" name = "gender" required = "required">
+							<label for = "genero">Genero:</label>
+							<select style = "width:22%;" class = "form-control" name = "genero" required = "required">
 								<option value = "">Seleccionar</option>
 								<option value = "Masculino">Masculino</option>
 								<option value = "Femenino">Femenino</option>

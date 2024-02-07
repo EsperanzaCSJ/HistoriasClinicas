@@ -160,7 +160,7 @@ CREATE TABLE `paciente` (
   `age` int(3) NOT NULL,
   `address` varchar(30) NOT NULL,
   `civil_status` varchar(10) NOT NULL,
-  `gender` varchar(10) NOT NULL,
+  `genero` varchar(10) NOT NULL,
   `idmedico` varchar(12) NOT NULL,
   PRIMARY KEY (`paciente_no`),
   UNIQUE KEY `paciente_no` (`paciente_no`)

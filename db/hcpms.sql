@@ -226,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `age` int(3) NOT NULL,
   `address` varchar(40) NOT NULL,
   `civil_status` varchar(10) NOT NULL,
-  `gender` varchar(10) NOT NULL,
+  `genero` varchar(10) NOT NULL,
   `user_id` varchar(12) NOT NULL,
   PRIMARY KEY (`paciente_no`),
   UNIQUE KEY `paciente_no` (`paciente_no`)
@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
 -- Volcado de datos para la tabla `paciente`
 --
 
-INSERT INTO `paciente` (`paciente_no`, `nacionalidad`, `cedula`, `firstname`, `lastname`, `birthdate`, `age`, `address`, `civil_status`, `gender`, 'user_id') VALUES
+INSERT INTO `paciente` (`paciente_no`, `nacionalidad`, `cedula`, `firstname`, `lastname`, `birthdate`, `age`, `address`, `civil_status`, `genero`, 'user_id') VALUES
 ('1111', 'V', '11672888', 'Marco', 'Polo', '06/01/1985', 39, 'Tachira', 'Soltero', 'Masculino', '55');
 
 -- --------------------------------------------------------

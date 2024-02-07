@@ -56,7 +56,7 @@
 							<td><?php echo $f['firstname']." ".$f['lastname'] ?></td>
 							<td><?php echo $f['age'] ?></td>
 							<td><?php echo $f['address'] ?></td>
-							<td><?php echo $f['gender'] ?></td>
+							<td><?php echo $f['genero'] ?></td>
 							<td>
 								<center>
 									<a href = "view_datos_historias.php?paciente_no=<?php echo $f['paciente_no']?>"class = "btn btn-sm btn-info"><span class = "glyphicon glyphicon-search"></span> DETALLES</a> 

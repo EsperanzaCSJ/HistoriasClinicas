@@ -47,7 +47,7 @@
 			<br />
 			<label>Edad: <?php echo $f['age']?></label>
 			<br />
-			<label>Genero: <?php echo $f['gender']?></label>
+			<label>Género: <?php echo $f['genero']?></label>
 			<br/>
 			<label>Dirección: <?php echo $f['address']?></label>
 			<br />

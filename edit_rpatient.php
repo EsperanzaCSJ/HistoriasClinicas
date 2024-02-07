@@ -83,8 +83,8 @@
 						<input class = "form-control" value = "<?php echo $fetch['age']?>" size = "3" name = "age" type = "text">
 						<label for = "civil_status">Estado Civil</label>
 						<input class = "form-control" value = "<?php echo $fetch['civil_status']?>"  name = "civil_status" type = "text" required = "required">
-						<label for = "gender">Genero:</label>
-						<select class = "form-control" name = "gender" required = "required">
+						<label for = "genero">Genero:</label>
+						<select class = "form-control" name = "genero" required = "required">
 							<option value = "">(Select)</option>
 							<option value = "Male">Male</option>
 							<option value = "Female">Female</option>
