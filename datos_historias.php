@@ -59,7 +59,7 @@
 							<td><?php echo $f['genero'] ?></td>
 							<td>
 								<center>
-									<a href = "view_datos_historias.php?paciente_no=<?php echo $f['paciente_no']?>"class = "btn btn-sm btn-info"><span class = "glyphicon glyphicon-search"></span> DETALLES</a> 
+									<a href = "view_datos_historias.php?paciente_no=<?php echo $f['paciente_no']?>"class = "btn btn-sm btn-info"><span class = "glyphicon glyphicon-plus"></span>  AGREGAR</a> 
 								</center>
 							</td>
 						</tr>

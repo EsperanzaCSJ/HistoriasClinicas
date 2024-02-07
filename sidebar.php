@@ -15,8 +15,5 @@
 				<li><a href = "user_secretario.php"><i class = "glyphicon glyphicon-user"></i> Usuarios secretarios</a></li>
 				<li><a href = "Manual.pdf" target="_blank"><i class = "glyphicon glyphicon-book"></i> Manual de Usuario</a></li>
 			</ul>
-		</li>	
-		<?php
-		// include 'secciones.php';
-		?>
+		</li>
 </div>

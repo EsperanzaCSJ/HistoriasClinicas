@@ -12,11 +12,8 @@
 			<ul>
 				<li><a href = "respaldo.php"><i class = "glyphicon glyphicon-cog"></i> Respaldos</a></li>
 				<li><a href = "auditoria.php"><i class = "glyphicon glyphicon-cog"></i> Auditoría</a></li>
-				<li><a href = "Manual" target="_blank"><i class = "glyphicon glyphicon-book"></i> Manual de Usuario</a></li>
+				<li><a href = "../Manual.pdf" target="_blank"><i class = "glyphicon glyphicon-book"></i> Manual de Usuario</a></li>
 			</ul>
-		</li>		
-		<?php
-		// include 'secciones.php';
-		?>
+		</li>
 	</ul>
 </div>

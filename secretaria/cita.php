@@ -19,7 +19,7 @@
 		<br />
 		<div style = "display:none;" id = "com" class = "panel panel-success">	
 			<div class = "panel-heading">
-				<label>HISTORIA CLÍNICA</label>
+				<label>REGISTRAR CITA</label>
 				<button class = "btn btn-danger" id = "hide_com" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-remove"></span>CERRAR</button>
 			</div>
 			<div class = "panel-body">
@@ -49,25 +49,17 @@
 					</div>
 					<br />
 					<div class = "form-group">
-						<label>Fecha:</label>
-						<textarea style = "resize:none;" name = "cita" class = "form-control"></textarea>
+						<label>Asignar fecha para la consulta:</label>
+						<input type="date" name="cita" class = "form-control" style = "resize:none" required = "required"/>
 						<br />
 						<label>Motivo de la consulta:</label>
-						<textarea style = "resize:none;" name = "motivo" class = "form-control"></textarea>
-						<br />
-						<label>Asigne un doctor:</label>
-						<select name = "section" class = "form-control" required = "required">
-								<option value = "">Seleccione al doctor</option>
-								<option value = "datos_historias">Dr. Juancho Pacho</option>
-								<option value = "datos_historias">Dra. Nicole Kidman</option>
-								<!-- <option value = "Hematology">Hematology</option>
-								<option value = "Prenatal">Prenatal</option>
-								<option value = "Xray">Rayos X</option>
-								<option value = "datos_historias">datos_historias</option>
-								<option value = "Sputum">Sputum</option>
-								<option value = "Urinalysis">Urinalysis</option>
-								<option value = "Maternity">Maternidad</option> -->
-						</select>
+						<textarea style = "resize:none;" name = "motivo" class = "form-control" required = "required"></textarea>
+					</div>
+					<div class = "form-group">
+						<div class = "form-inline" style = "display: none;">					 
+							<label for = "section">Asignando section tabla jeje</label>
+							<input class = "form-control" type = "text" value = "datos_historias" name = "section" >
+						</div> 
 					</div>
 					<br />
 					<div class = "form-inline">
@@ -84,7 +76,7 @@
 		?>
 		<div class = "panel panel-info">
 			<div class = "panel-heading">
-				<label style = "font-size:16px;">Historias Clínicas de <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
+				<label style = "font-size:16px;">Historial de citas / <?php echo $fetch['firstname']." ".$fetch['lastname']?></label>
 				<a style = "float:right; margin-top:-5px;" id = "add_cita" class = "btn btn-success" href = "paciente.php"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 			</div>
 		</div>
@@ -96,10 +88,10 @@
 				$q = $conn->query("SELECT * FROM `cita` WHERE `paciente_no` = '$_GET[id]' ORDER BY `status` DESC") or die(mysqli_error());	
 					while($f = $q->fetch_array()){
 						if($f['status'] == "Done"){
-							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['motivo']."</textarea>"."<label style = 'float:right; color:red;'>Done</label><br /><br /><hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['motivo']."</textarea>"."<label style = 'float:right; color:red;'></label><br /<hr style = 'border:1px solid #eee;' />";
 						}
 						if($f['status'] == "Pending"){
-							echo "<label style = 'color:#3399f3;'>".$f['section']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['motivo']."</textarea>"."<br /><br /><hr style = 'border:1px solid #eee;' />";
+							echo "<label style = 'color:#3399f3;'>".$f['cita']."</label>"."<textarea  style = 'resize:none;' disabled = 'disabled' class = 'form-control'>".$f['motivo']."</textarea>"."<hr style = 'border:1px solid #eee;' />";
 						}
 					}
 				?>

@@ -19,7 +19,7 @@
 		<br />
 		<div style = "display:none;" id = "com" class = "panel panel-success">	
 			<div class = "panel-heading">
-				<label>REGISTRAR CITA</label>
+				<label>REGISTRO DE CITAS</label>
 				<button class = "btn btn-danger" id = "hide_com" style = "float:right; margin-top:-5px;"><span class = "glyphicon glyphicon-remove"></span>CERRAR</button>
 			</div>
 			<div class = "panel-body">

@@ -45,7 +45,7 @@
 							<td><?php echo $f['genero']?></td>
 							<td><?php echo $f['address']?></td>
 							<td><center>
-									<a href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> All Record</a> 
+									<a href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clínico</a> 
 								</center></td>
 						</tr>
 					<?php
