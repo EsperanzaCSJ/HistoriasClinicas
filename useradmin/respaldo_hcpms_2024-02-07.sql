@@ -1,5 +1,5 @@
 -- Respaldando la base de datos 'hcpms'
--- Fecha: 2024-02-07 22:44:37
+-- Fecha: 2024-02-07 22:37:52
 
 --
 -- Estructura de la tabla 'admin'
@@ -33,7 +33,7 @@ CREATE TABLE `auditoria` (
   `accion` varchar(50) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Datos de la tabla 'auditoria'
@@ -86,6 +86,18 @@ INSERT INTO auditoria VALUES('57','admin','Ha salido de la pagina','2024-02-07 1
 INSERT INTO auditoria VALUES('58','admin','Ha ingresado a la pagina','2024-02-07 15:48:26');
 INSERT INTO auditoria VALUES('59','admin','Ha salido de la pagina','2024-02-07 15:58:45');
 INSERT INTO auditoria VALUES('60','admin','Ha ingresado a la pagina','2024-02-07 21:29:58');
+INSERT INTO auditoria VALUES('61','admin','Ha realizado un respaldo de la Base de Datos','2024-02-07 22:44:37');
+INSERT INTO auditoria VALUES('62','admin','Ha salido de la pagina','2024-02-07 22:44:54');
+INSERT INTO auditoria VALUES('63','admin','Ha ingresado a la pagina','2024-02-07 23:57:06');
+INSERT INTO auditoria VALUES('64','admin','Ha agregado un usuario médico','2024-02-08 00:08:28');
+INSERT INTO auditoria VALUES('65','admin','Ha agregado un usuario médico','2024-02-08 00:39:21');
+INSERT INTO auditoria VALUES('66','admin','Ha realizado un respaldo de la Base de Datos','2024-02-08 01:18:30');
+INSERT INTO auditoria VALUES('67','admin','Ha realizado un respaldo de la Base de Datos','2024-02-08 01:18:41');
+INSERT INTO auditoria VALUES('68','admin','Ha realizado un respaldo de la Base de Datos','2024-02-08 01:18:44');
+INSERT INTO auditoria VALUES('69','admin','Ha realizado un respaldo de la Base de Datos','2024-02-08 01:18:46');
+INSERT INTO auditoria VALUES('70','admin','Ha salido de la pagina','2024-02-08 01:24:52');
+INSERT INTO auditoria VALUES('71','admin','Ha ingresado a la pagina','2024-02-08 03:34:50');
+INSERT INTO auditoria VALUES('72','admin','Ha realizado un respaldo de la Base de Datos','2024-02-08 03:34:55');
 
 --
 -- Estructura de la tabla 'cita'
@@ -158,11 +170,32 @@ INSERT INTO datos_historias VALUES('22','37','125','60','170','garganta inflamad
 INSERT INTO datos_historias VALUES('23','18','120','120','120','dd','dd','dd','dd','dd','dd','07/02/2024','26','565d14ssd');
 
 --
+-- Estructura de la tabla 'especialidades'
+--
+
+CREATE TABLE `especialidades` (
+  `especialidad_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(20) NOT NULL,
+  PRIMARY KEY (`especialidad_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Datos de la tabla 'especialidades'
+--
+
+INSERT INTO especialidades VALUES('1','Dermatología');
+INSERT INTO especialidades VALUES('2','Traumatología');
+INSERT INTO especialidades VALUES('3','Cirujano');
+INSERT INTO especialidades VALUES('4','Neurocirujano');
+INSERT INTO especialidades VALUES('5','Psicología');
+INSERT INTO especialidades VALUES('6','Pediatría');
+
+--
 -- Estructura de la tabla 'paciente'
 --
 
 CREATE TABLE `paciente` (
-  `paciente_no` varchar(4) NOT NULL,
+  `paciente_no` varchar(12) NOT NULL,
   `nacionalidad` varchar(1) NOT NULL,
   `cedula` varchar(9) NOT NULL,
   `firstname` varchar(20) NOT NULL,
@@ -172,7 +205,7 @@ CREATE TABLE `paciente` (
   `address` varchar(30) NOT NULL,
   `civil_status` varchar(10) NOT NULL,
   `genero` varchar(10) NOT NULL,
-  `idmedico` varchar(12) NOT NULL,
+  `idmedico` varchar(20) NOT NULL,
   PRIMARY KEY (`paciente_no`),
   UNIQUE KEY `itr_no` (`paciente_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -189,11 +222,12 @@ INSERT INTO paciente VALUES('120','V','24563365','Pedro','Bustamante','2000-02-0
 INSERT INTO paciente VALUES('13','V','6254152','Hauser','Quando','2001-10-18','22','carrera 29','Soltero(a)','Masculino','565d14ssd');
 INSERT INTO paciente VALUES('16','V','16241253','Fran','Sinatra','2000-01-24','24','24','Casado(a)','Masculino','333777a');
 INSERT INTO paciente VALUES('2','V','4598253','Elon','Musk','06/28/1971','52','Barquisimeto','Casado(a)','Masculino','13235562');
+INSERT INTO paciente VALUES('200','V','25658745','Perita','Sanjoz','2001-10-18','22','En mi casa','Soltero(a)','Femenino','123521485sdef');
 INSERT INTO paciente VALUES('21','V','5624587','Juan Diego','Vega','2000-04-19','23','Carrera 23 entre 10 y 11','Casado(a)','Masculino','15148hdffd23');
 INSERT INTO paciente VALUES('26','V','26536635','Linda','Tayler','2001-01-18','23','carr 25','Casado(a)','Femenino','565d14ssd');
 INSERT INTO paciente VALUES('3','V','14125514','Marie','Curie','02/16/1988','35','Varsovia, Polonia','Casado(a)','Femenino','13235562');
 INSERT INTO paciente VALUES('4','V','16525235','Juancho','Perez','10/18/2001','22','republica dominicana','Casado(a)','Masculino','25262402');
-INSERT INTO paciente VALUES('40','V','15245369','Jose','Rodriguez','1995-04-25','28','Av vargas con 27','Casado(a)','Masculino','123521485sde');
+INSERT INTO paciente VALUES('40','V','15245369','Jose','Rodriguez','1995-04-25','28','Av vargas con 27','Casado(a)','Masculino','123521485sdef');
 INSERT INTO paciente VALUES('5','V','12672747','Presto','Carlo','2002-02-22','20','s20','Casado(a)','Masculino','565d14ssd');
 INSERT INTO paciente VALUES('6','V','28504401','Pelo','ncito','04/09/2009','15','12','Soltero(a)','Masculino','13235562');
 INSERT INTO paciente VALUES('7','V','28204402','Esperanza','Sanchez','10/18/2001','22','carrera 29','Soltero(a)','Femenino','565d14ssd');
@@ -241,7 +275,7 @@ CREATE TABLE `user` (
   `idmedico` varchar(20) NOT NULL,
   `cimedico` int(11) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Datos de la tabla 'user'
