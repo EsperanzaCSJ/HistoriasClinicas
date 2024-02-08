@@ -22,8 +22,6 @@ ob_start();
 					<label>AGREGAR PACIENTE</label>
 					<button id = "hide_paciente" style = "float:right; margin-top:-4px;" class = "btn btn-sm btn-danger"><span class = "glyphicon glyphicon-remove"></span> Cerrar</button>
 				</div>
-				
-				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "datos_historias_print.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Historia</a>
 				<div class = "panel-body">
 				<form id = "form_dental" method = "POST" enctype = "multipart/form-data">
 					<div class = "form-inline" style = "display: none;">					 
@@ -32,28 +30,28 @@ ob_start();
 					</div> 
 						<div style = "float:left;" class = "form-inline">
 							<label for = "cedula">Nro. Cédula:</label>
-							<select  class = "form-control" name = "nacionalidad" required = "required">
+							<select class = "form-control" name = "nacionalidad" required = "required">
 								<option value = "V">V</option>
 								<option value = "E">E</option>
 							</select>
-							<input class = "form-control" placeholder = "" min = "2700000" max = "99000000" type = "number" name = "cedula">
+							<input class = "form-control" placeholder = "" maxlength="10" type = "number" pattern="[0-9]+" name = "cedula">
 						</div>
 						<br />
 						<br />
 						<br />
 						<div style = "float:left;" class = "form-inline">
 							<label for = "paciente_no">Nro. Historia:</label>
-							<input class = "form-control" size = "3" min = "0" type = "number" name = "paciente_no">
+							<input class = "form-control"  min = "1" maxlength="12" type = "text" pattern="[0-9]+"  name = "paciente_no">
 						</div> 
 						<br />
 						<br />
 						<br />
 						<div class = "form-inline">
 							<label for = "firstname">Nombres:</label>
-							<input class = "form-control" name = "firstname" type = "text" required = "required">
+							<input class = "form-control" name = "firstname" type = "text" required = "required" maxlength="20">
 							&nbsp;&nbsp;&nbsp;
 							<label for = "lastname">Apellidos:</label>
-							<input class = "form-control" name = "lastname" type = "text" required = "required">
+							<input class = "form-control" name = "lastname" type = "text" required = "required"  maxlength="20">
 						</div>
 						<br />
 						<div class = "form-group">
@@ -62,8 +60,8 @@ ob_start();
 							<input type="date" name="birthdate" class = "form-control" style = "width:30%; float:left;"/>							
 							<br style = "clear:both;"/>
 							<br />							
-							<label for = "address">Direccion:</label>
-							<input class = "form-control" name = "address" type = "text" required = "required">
+							<label for = "address">Dirección:</label>
+							<input class = "form-control" name = "address" type = "text" required = "required"  maxlength="30">
 							<br />
 							<label for = "civil_status">Estado Civil:</label>
 							<select style = "width:22%;" class = "form-control" name = "civil_status" required = "required">
