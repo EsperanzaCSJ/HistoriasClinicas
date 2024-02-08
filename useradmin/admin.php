@@ -44,11 +44,11 @@
 						</div>
 						<div class = "form-group">
 							<label for = "firstname">Nombre: </label>
-							<input class = "form-control" type = "text" name = "firstname" required = "required">
+							<input class = "form-control" id="texto1" type = "text" name = "firstname" required = "required" pattern="[A-Za-z]+">
 						</div>
 						<div class = "form-group">
-							<label for = "lastname">Apellidos: </label>
-							<input class = "form-control" type = "text" name = "lastname">
+							<label for = "lastname">Apellidos: </label>							
+							<input class = "form-control" id="texto2" type = "text" name = "lastname" required = "required" pattern="[A-Za-z]+">
 						</div>
 							<button  class = "btn btn-primary" name = "save_admin" ><span class = "glyphicon glyphicon-save"></span> GUARDAR</button>
 							<br />
@@ -107,6 +107,24 @@
 			if(conf)
 			window.location=anchor.attr("href");
 		}
+</script>
+<script>
+    var nombreInput = document.getElementById('texto1');
+
+    nombreInput.addEventListener('input', function(event) {
+      var inputValue = this.value;
+      var newValue = inputValue.replace(/[0-9]/g, '');
+      this.value = newValue;
+    });
+</script>
+<script>
+    var nombreInput = document.getElementById('texto2');
+
+    nombreInput.addEventListener('input', function(event) {
+      var inputValue = this.value;
+      var newValue = inputValue.replace(/[0-9]/g, '');
+      this.value = newValue;
+    });
 </script>
 <script type = "text/javascript">
     $(document).ready(function() {

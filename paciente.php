@@ -48,10 +48,10 @@ ob_start();
 						<br />
 						<div class = "form-inline">
 							<label for = "firstname">Nombres:</label>
-							<input class = "form-control" name = "firstname" type = "text" required = "required" maxlength="20">
+							<input class = "form-control" id="texto1" name = "firstname" type = "text" required = "required" maxlength="20">
 							&nbsp;&nbsp;&nbsp;
 							<label for = "lastname">Apellidos:</label>
-							<input class = "form-control" name = "lastname" type = "text" required = "required"  maxlength="20">
+							<input class = "form-control" id="texto2" name = "lastname" type = "text" required = "required"  maxlength="20">
 						</div>
 						<br />
 						<div class = "form-group">
@@ -149,6 +149,22 @@ ob_start();
 			function disableBack() { window.history.forward() }
 			window.onload = disableBack();
 			window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+		});
+	</script>
+	<script>
+		var nombreInput = document.getElementById('texto1');
+		nombreInput.addEventListener('input', function(event) {
+		var inputValue = this.value;
+		var newValue = inputValue.replace(/[0-9]/g, '');
+		this.value = newValue;
+		});
+	</script>
+	<script>
+		var nombreInput = document.getElementById('texto2');
+		nombreInput.addEventListener('input', function(event) {
+		var inputValue = this.value;
+		var newValue = inputValue.replace(/[0-9]/g, '');
+		this.value = newValue;
 		});
 	</script>	
 	</body>

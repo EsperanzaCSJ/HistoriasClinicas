@@ -35,11 +35,11 @@
 							</div>
 							<div class = "form-group">
 								<label for = "firstname">Nombre: </label>
-								<input class = "form-control" type = "text" name = "firstname" required = "required">
+								<input class = "form-control" id="texto1" type = "text" name = "firstname" required = "required">
 							</div>
 							<div class = "form-group">
 								<label for = "lastname">Apellidos: </label>
-								<input class = "form-control" type = "text" name = "lastname" required = "required">
+								<input class = "form-control" id="texto2" type = "text" name = "lastname" required = "required">
 							</div>
 							<div class = "form-group">
 								<label for = "ci_secretaria">Cédula: </label>
@@ -123,5 +123,21 @@
 				window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
 			});
 		</script>
+	<script>
+		var nombreInput = document.getElementById('texto1');
+		nombreInput.addEventListener('input', function(event) {
+		var inputValue = this.value;
+		var newValue = inputValue.replace(/[0-9]/g, '');
+		this.value = newValue;
+		});
+	</script>
+	<script>
+		var nombreInput = document.getElementById('texto2');
+		nombreInput.addEventListener('input', function(event) {
+		var inputValue = this.value;
+		var newValue = inputValue.replace(/[0-9]/g, '');
+		this.value = newValue;
+		});
+	</script>	
 	</body>
 </html>

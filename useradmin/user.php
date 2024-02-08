@@ -30,11 +30,11 @@
 							</div>
 							<div class = "form-group">
 								<label for = "firstname">Nombre: </label>
-								<input class = "form-control" type = "text" name = "firstname" required = "required" placeholder = "Escriba el nombre del médico">
+								<input class = "form-control" type = "text" id="texto1" name = "firstname" required = "required" placeholder = "Escriba el nombre del médico">
 							</div>
 							<div class = "form-group">
 								<label for = "lastname">Apellidos: </label>
-								<input class = "form-control" type = "text" name = "lastname" required = "required" placeholder = "Escriba el apellido del médico">
+								<input class = "form-control" type = "text" id="texto2" name = "lastname" required = "required" placeholder = "Escriba el apellido del médico">
 							</div>
 							<div class = "form-group">
 								<label for = "cimedico">Cédula: </label>
@@ -145,6 +145,24 @@
 
 				window.onload = disableBack();
 				window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+			});
+		</script>
+		<script>
+			var nombreInput = document.getElementById('texto1');
+
+			nombreInput.addEventListener('input', function(event) {
+			var inputValue = this.value;
+			var newValue = inputValue.replace(/[0-9]/g, '');
+			this.value = newValue;
+			});
+		</script>
+		<script>
+			var nombreInput = document.getElementById('texto2');
+
+			nombreInput.addEventListener('input', function(event) {
+			var inputValue = this.value;
+			var newValue = inputValue.replace(/[0-9]/g, '');
+			this.value = newValue;
 			});
 		</script>
 	</body>

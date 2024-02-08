@@ -30,7 +30,7 @@
 					<div class = "panel-body">
 						<div class = "form-group">
 							<label for = "nombre">Especialidad: </label>
-							<input class = "form-control" name = "nombre" type = "text" required = "required">
+							<input class = "form-control" id="texto1" name = "nombre" type = "text" required = "required">
 						</div>
 							<button  class = "btn btn-primary" name = "save_especialidad" ><span class = "glyphicon glyphicon-save"></span> GUARDAR</button>
 							<br />
@@ -91,6 +91,14 @@
         window.onload = disableBack();
         window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
     });
-</script>	
+</script>
+	<script>
+		var nombreInput = document.getElementById('texto1');
+		nombreInput.addEventListener('input', function(event) {
+		var inputValue = this.value;
+		var newValue = inputValue.replace(/[0-9]/g, '');
+		this.value = newValue;
+		});
+	</script>
 </body>
 </html>

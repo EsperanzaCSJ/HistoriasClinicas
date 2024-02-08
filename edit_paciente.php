@@ -52,65 +52,18 @@ ob_start();
 					<br />
 					<div class = "form-inline">
 						<label for = "firstname">Nombres:</label>
-						<input class = "form-control" name = "firstname" value = "<?php echo $f['firstname']?>" type = "text" required = "required">						
+						<input class = "form-control" id="texto1" name = "firstname" value = "<?php echo $f['firstname']?>" type = "text" required = "required">						
 						&nbsp;&nbsp;&nbsp;
 						<label for = "lastname">Apellidos:</label>
-						<input class = "form-control" name = "lastname" value = "<?php echo $f['lastname']?>" type = "text" required = "required">
+						<input class = "form-control" id="texto2" name = "lastname" value = "<?php echo $f['lastname']?>" type = "text" required = "required">
 					</div>
 					<br />
 					<div class = "form-group">
 						<label for = "birthdate" style = "float:left;">F. Nacimiento:</label>
 						<br style = "clear:both;" />
 						<input type="date" name="birthdate" class = "form-control" style = "width:30%; float:left;" value = "<?php echo $f['birthdate']?>"/>
-						<!-- <select name = "month" style = "width:15%; float:left;" class = "form-control" required = "required" >
-							<option value = "">Mes</option>
-							<option value = "01">Enero</option>
-							<option value = "02">Febrero</option>
-							<option value = "03">Marzo</option>
-							<option value = "04">Abril</option>
-							<option value = "05">Mayo</option>
-							<option value = "06">Junio</option>
-							<option value = "07">Julio</option>
-							<option value = "08">Agosto</option>
-							<option value = "09">Septiembre</option>
-							<option value = "10">Octubre</option>
-							<option value = "11">Noviembre</option>
-							<option value = "12">Diciembre</option>
-						</select>
-						<select name = "day" class = "form-control" style = "width:13%; float:left;" required = "required">
-							<option value = "">Día</option>
-							<option value = "01">01</option>
-							<option value = "02">02</option>
-							<option value = "03">03</option>
-							<option value = "04">04</option>
-							<option value = "05">05</option>
-							<option value = "06">06</option>
-							<option value = "07">07</option>
-							<option value = "08">08</option>
-							<option value = "09">09</option>	
-							<?php
-								
-								//$a = 10;
-								//while($a <= 31){
-								//	echo "<option value = '".$a."'>".$a++."</option>";
-								//}
-							?>
-						</select>
-						<select name = "year" class = "form-control" style = "width:13%; float:left;" required = "required">
-							<option value = "">Año</option>
-							<?php
-								//$a = date('Y');
-								// $a = "2024";
-								//while(1910 <= $a){
-								//	echo "<option value = '".$a."'>".$a--."</option>";
-								//}
-							?>
-						</select> -->
 						<br style = "clear:both;"/>
 						<br />
-						<!-- <label for = "phil_health_no">Tratamiento:</label>
-						<input name = "phil_health_no" class = "form-control" value = "<?php // echo $f['phil_health_no']?>" type = "text">
-						<br /> -->
 						<label for = "address">Dirección:</label>
 						<input class = "form-control" name = "address" type = "text" value = "<?php echo $f['address']?>" required = "required">
 						<br />
@@ -150,7 +103,25 @@ ob_start();
         window.onload = disableBack();
         window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
     });
-</script>	
+</script>
+		<script>
+			var nombreInput = document.getElementById('texto1');
+
+			nombreInput.addEventListener('input', function(event) {
+			var inputValue = this.value;
+			var newValue = inputValue.replace(/[0-9]/g, '');
+			this.value = newValue;
+			});
+		</script>
+		<script>
+			var nombreInput = document.getElementById('texto2');
+
+			nombreInput.addEventListener('input', function(event) {
+			var inputValue = this.value;
+			var newValue = inputValue.replace(/[0-9]/g, '');
+			this.value = newValue;
+			});
+		</script>
 </body>
 </html>
 <?php
