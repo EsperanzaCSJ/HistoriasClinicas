@@ -34,13 +34,15 @@
 								<th>Edad</th>
 								<th>Género</th>
 								<th>Dirección</th>
+								<th>Ultima Visita</th>
 								<th><center>Accion</center></th>
 							</tr>
 						</thead>
 						<tbody>
 						<?php 
 							$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
-							$tu = "SELECT * FROM `datos_historias` NATURAL JOIN `paciente` where `idmedico`= '$fetch[idmedico]' GROUP BY `paciente_no` ORDER BY `atencion_no` DESC";
+							// $tu = "SELECT * FROM `datos_historias` NATURAL JOIN `paciente` where `idmedico`= '$fetch[idmedico]' GROUP BY `paciente_no` ORDER BY `atencion_no` DESC";
+							$tu = "SELECT `paciente_no`,`firstname`,`lastname`,`age`,`genero`,`address`,`atencion_no`,(SELECT date FROM `datos_historias` WHERE `paciente_no` = `paciente`.`paciente_no` ORDER BY `date` DESC LIMIT 1) as `ult_fech` FROM `datos_historias` NATURAL JOIN `paciente` where `idmedico`= '$fetch[idmedico]' GROUP BY `paciente_no` ORDER BY `atencion_no` DESC";
 							$q = $conn->query($tu) or die(mysqli_error());
 							while($f = $q->fetch_array()){
 						?>
@@ -50,8 +52,9 @@
 								<td><?php echo $f['age']?></td>
 								<td><?php echo $f['genero']?></td>
 								<td><?php echo $f['address']?></td>
+								<td><?php echo $f['ult_fech']?></td>
 								<td><center>
-										<a href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clinico</a> 
+										<a href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no'] ?>"class = "btn btn-info"><span class = "glyphicon glyphicon-book"></span> Historial Clinico</a>
 									</center></td>
 							</tr>
 						<?php

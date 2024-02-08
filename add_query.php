@@ -10,7 +10,7 @@
 		$reporte_med = $_POST['reporte_med'];
 		$plan = $_POST['plan'];
 		$nota = $_POST['nota'];
-		$date = date('d/m/Y', strtotime('+8 HOURS'));
+		$date = date('Y/m/d', strtotime('+8 HOURS'));
 		$paciente_no = $_POST['paciente_no'];
 		$idmedico = $_POST['idmedico'];
 		$conn = new mysqli("localhost", 'root', '', 'hcpms') or die(mysqli_error());
