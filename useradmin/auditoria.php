@@ -15,6 +15,11 @@
 					<label>AUDITORIA</label>
 				</div>
 				<div class = "panel-body">
+					<div>
+						<a class = "btn btn-info" href = "print-auditoria.php" style = "float:right;" ><span class = "glyphicon glyphicon-print"></span> IMPRIMIR</a>
+						<br />
+						<br />
+					</div>
 					<table id = "table" cellspacing = "0" class = "display">
 						<thead>
 							<tr>

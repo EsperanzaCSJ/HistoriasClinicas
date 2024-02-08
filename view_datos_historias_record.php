@@ -18,9 +18,14 @@
 				<div class = "panel-heading">
 					<label>PACIENTES ATENDIDOS</label>
 				</div>
+				<div>
+				<br />			
+				<a class = "btn btn-info" href = "print-atendidos.php" style = "float:right;" ><span class = "glyphicon glyphicon-print"></span> IMPRIMIR</a>
 				<br />
 				<br />
+				</div>
 				<div class = "panel-body">
+					
 					<table id = "table" class = "display" width = "100%" cellspacing = "0">
 						<thead>
 							<tr>
