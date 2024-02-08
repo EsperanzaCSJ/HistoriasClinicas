@@ -131,7 +131,7 @@ ob_start();
 								<td><?php echo $fetch['address']?></td>
 								<td><center><a href = "cita.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-info">Cita <span class = "badge"><?php echo $f['total']?></span></a>
 								<a href = "edit_paciente.php?id=<?php echo $fetch['paciente_no']?>&lastname=<?php echo $fetch['lastname']?>" class = "btn btn-sm btn-warning"><span class = "glyphicon glyphicon-pencil"></span>   Editar</a>
-								<!-- <a href = "delete_paciente.php?id=<?php //echo $fetch['paciente_no']?>&lastname=<?php //echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center></td> -->
+								<!-- <a href = "delete_paciente.php?id=<?php //echo $fetch['paciente_no']?>&lastname=<?php //echo $fetch['lastname']?>" class = "btn btn-sm btn-danger"><i class = "glyphicon glyphicon-remove"></i> Borrar</a></center> --></td>
 							</tr>
 						<?php
 							}

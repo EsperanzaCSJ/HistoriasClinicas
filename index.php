@@ -28,8 +28,8 @@
             clear: both;
         }
 		.user-image {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
         }
     </style>
 	</head>
@@ -41,12 +41,11 @@
 	<div  style="margin: 10%;">
 		<div>
 			<center><h1>Bienvenido al sistema de registro de historias clínicas para el Consultorio Médico Popular Pio Tamayo</h1></center>
-			<center>				
-			<br>
+			<center>
 			<br>
 				<div class="column">					
 					<img src="images/icon-user-admin.png" alt="Imagen de administrador" class="user-image">
-					<h2>Administrador</h2>
+					<h3>Administrador</h3>
 					<p>Ingrese como administrador para gestionar usuarios médicos y otras tareas.</p>
 					<div class = "form-group">
 					<a href="useradmin/index.php"><button class = "btn btn-block btn-success"  name = "login"><span class = "glyphicon glyphicon-log-in"></span> Iniciar Sesión</button>
@@ -56,8 +55,8 @@
 				<div class="column">
 					
 					<img src="images/icon-user-medico.JPG" alt="Imagen de administrador" class="user-image">
-					<h2>Médico</h2>
-					<p>Ingrese como Médico para administrar sus Historias clínicas y pacientes.</p>
+					<h3>Médico</h3>
+					<p>Ingrese como usuario Médico para administrar sus Historias clínicas y pacientes.</p>
 					<div class = "form-group">
 					<a href="index-medico.php"><button class = "btn btn-block btn-success"  name = "login"><span class = "glyphicon glyphicon-log-in"></span> Iniciar Sesión</button>
 					</div></a>
@@ -66,7 +65,7 @@
 				<div class="column">
 					
 					<img src="images/icon-secretary.png" alt="Imagen de administrador" class="user-image">
-					<h2>Secretario</h2>
+					<h3>Secretario</h3>
 					<p>Ingrese como secretario para administrar los pacientes de su médico asignado.</p>
 					<div class = "form-group">
 					<a href="secretaria/index.php"><button class = "btn btn-block btn-success"  name = "login"><span class = "glyphicon glyphicon-log-in"></span> Iniciar Sesión</button>

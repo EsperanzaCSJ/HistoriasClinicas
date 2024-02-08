@@ -7,6 +7,8 @@
 				<li><a href = "user.php"><i class = "glyphicon glyphicon-user"></i> Médico</a></li>
 			</ul>
 		</li>
+		<li><a href = "especialidades.php"><i class = "glyphicon glyphicon-book"></i> Especialidades Medicas</a>
+		</li>
 		<!-- <li><li><a href = "patient.php"><i class = "glyphicon glyphicon-user"></i> Pacientes</a></li></li> -->
 		<li><a href = ""><i class = "glyphicon glyphicon-cog"></i> Mantenimiento y ayuda</a>
 			<ul>

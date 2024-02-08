@@ -23,7 +23,7 @@
 				<label>HISTORIA CLÍNICA</label>	
 				<a style = "float:right; margin-top:-4px;" href = "datos_historias_record.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-hand-right"></span> VOLVER</a>
 				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "datos_historias_print.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Historia</a>
-				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "recipe_print.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Recipe</a>
+				<a style = "margin-right:5px; float:right; margin-top:-4px;" href = "recipe_print.php?paciente_no=<?php echo $f['paciente_no']?>&atencion_no=<?php echo $f['atencion_no']?>" class = "btn btn-info"><span class = "glyphicon glyphicon-print"></span> Imprimir Tratamiento</a>
 			</div>
 			<form method = "POST" enctype = "multipart/form-data">
 			<div class = "panel-body">
@@ -102,7 +102,7 @@
 				</div>
 				<br />
 				<div class = "form-group">
-					<label>Recipe:</label>
+					<label>Tratamiento:</label>
 					<div style = "word-wrap:break-word;"><?php echo $f['plan']?></div>
 				</div>
 				<br />

@@ -68,7 +68,7 @@
 			<label>Cédula: <?php echo $fetch['cimedico']?></label></label>
 			<br />
 			<br />
-			<label><center><u><b>RECIPE MÉDICO</b></u></center></label>
+			<label><center><u><b>TRATAMIENTO MÉDICO</b></u></center></label>
 			<br />
 			<br />
 			<label style = "word-wrap:break-word;"><?php echo $f['plan']?></label>

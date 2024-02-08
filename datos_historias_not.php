@@ -123,7 +123,7 @@
 					</div>
 					<br />
 					<div class = "form-group">
-						<label>Recipe:</label>
+						<label>Tratamiento:</label>
 						<textarea name = "plan" class = "form-control" style = "resize:none;"></textarea>
 					</div>
 					<br />

@@ -87,7 +87,7 @@
 			<label style = "word-wrap:break-word;"><?php echo $f['reporte_med']?></label>
 			<br />
 			<br />
-			<label><b>Recipe:</b></label>
+			<label><b>Tratamiento:</b></label>
 			<br />
 			<label style = "word-wrap:break-word;"><?php echo $f['plan']?></label>
 			<br />

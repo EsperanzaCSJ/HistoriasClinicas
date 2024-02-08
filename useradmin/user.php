@@ -16,7 +16,7 @@
 				</div>
 				<div class = "panel-body">
 					<form id = "form_user" method = "POST" enctype = "multi-part/form-data">
-						<div class = "panel panel-default" style = "width:60%; margin:auto;">
+						<div class = "panel panel-default" style = "width:50%; margin:auto;">
 						<div class = "panel-heading">
 						</div>
 						<div class = "panel-body">
@@ -44,17 +44,31 @@
 							<div class = "form-inline" style = "display: none;">					 
 								<label for = "section">Rol de usuario:</label>
 								<input class = "form-control" type = "text" value = "Medic" name = "section" >
-							</div> 
-							<!-- <label for = "section">Rol de usuario: </label>
-								<select name = "section" class = "form-control" required = "required">
-									<option value = "">--Seleccione el rol--</option>
-									<option value = "Medic">Doctor</option>
-									<option value = "Secre">Secretaria</option>
-								</select> -->
+							</div>
 							</div>
 							<div class = "form-group">
 								<label for = "especialidad">Especialidad: </label>
-								<input class = "form-control" type = "text" name = "especialidad" placeholder = "Escriba la especialidad médica del Doctor">
+								<select style = "width:100%;" class = "form-control" name = "especialidad" required = "required">
+									<option value = "">Seleccione la especialidad médica del Doctor</option>
+									<?php
+										$conn = new mysqli("localhost", "root", "", "hcpms") or die(mysqli_error());
+										$query = $conn->query("SELECT * FROM `especialidades`") or die(mysqli_error());
+										while ($fetch = $query->fetch_array()) {
+											echo '<option value="'.$fetch['nombre'].'">'.$fetch['nombre'].'</option>';
+										}
+										$conn->close();
+									?>
+								</select>
+								<!-- <a href = "especialidades.php" style = "width:10%;" class = "btn btn-primary"><span class = "glyphicon glyphicon-plus"></span></a>
+
+									<option value = "neurocirujano">Neurocirujano</option>
+									<option value = "traumatologo">Traumatólogo</option>
+									<option value = "otorrinonaringolo">Otorrinonaringolo</option>
+									<option value = "cirujano">Cirujano</option>
+									<option value = "iInternista">Internista</option>
+								</select>
+
+								<input class = "form-control" type = "text" name = "especialidad" placeholder = "Escriba la especialidad médica del Doctor"> -->
 							</div>
 							<div class = "form-group">
 								<label for = "idmedico">Licencia Médica: </label>
