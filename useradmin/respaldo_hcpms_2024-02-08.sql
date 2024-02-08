@@ -1,5 +1,5 @@
 -- Respaldando la base de datos 'hcpms'
--- Fecha: 2024-02-07 22:44:37
+-- Fecha: 2024-02-08 01:18:46
 
 --
 -- Estructura de la tabla 'admin'
@@ -33,7 +33,7 @@ CREATE TABLE `auditoria` (
   `accion` varchar(50) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Datos de la tabla 'auditoria'
@@ -86,6 +86,14 @@ INSERT INTO auditoria VALUES('57','admin','Ha salido de la pagina','2024-02-07 1
 INSERT INTO auditoria VALUES('58','admin','Ha ingresado a la pagina','2024-02-07 15:48:26');
 INSERT INTO auditoria VALUES('59','admin','Ha salido de la pagina','2024-02-07 15:58:45');
 INSERT INTO auditoria VALUES('60','admin','Ha ingresado a la pagina','2024-02-07 21:29:58');
+INSERT INTO auditoria VALUES('61','admin','Ha realizado un respaldo de la Base de Datos','2024-02-07 22:44:37');
+INSERT INTO auditoria VALUES('62','admin','Ha salido de la pagina','2024-02-07 22:44:54');
+INSERT INTO auditoria VALUES('63','admin','Ha ingresado a la pagina','2024-02-07 23:57:06');
+INSERT INTO auditoria VALUES('64','admin','Ha agregado un usuario médico','2024-02-08 00:08:28');
+INSERT INTO auditoria VALUES('65','admin','Ha agregado un usuario médico','2024-02-08 00:39:21');
+INSERT INTO auditoria VALUES('66','admin','Ha realizado un respaldo de la Base de Datos','2024-02-08 01:18:30');
+INSERT INTO auditoria VALUES('67','admin','Ha realizado un respaldo de la Base de Datos','2024-02-08 01:18:41');
+INSERT INTO auditoria VALUES('68','admin','Ha realizado un respaldo de la Base de Datos','2024-02-08 01:18:44');
 
 --
 -- Estructura de la tabla 'cita'
@@ -156,6 +164,27 @@ INSERT INTO datos_historias VALUES('21','38','120','70','180','Dolor cabeza rodi
 INSERT INTO datos_historias VALUES('22','37','125','60','170','garganta inflamada','amigdalas con pus','amigdalitis','ir al otorrino','-Amoxicicilina cada 12 horas
 -Acetaminofen cada 8 horas','debe volver en una semana para revisión','07/02/2024','26','565d14ssd');
 INSERT INTO datos_historias VALUES('23','18','120','120','120','dd','dd','dd','dd','dd','dd','07/02/2024','26','565d14ssd');
+
+--
+-- Estructura de la tabla 'especialidades'
+--
+
+CREATE TABLE `especialidades` (
+  `especialidad_id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(20) NOT NULL,
+  PRIMARY KEY (`especialidad_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Datos de la tabla 'especialidades'
+--
+
+INSERT INTO especialidades VALUES('1','Dermatología');
+INSERT INTO especialidades VALUES('2','Traumatología');
+INSERT INTO especialidades VALUES('3','Cirujano');
+INSERT INTO especialidades VALUES('4','Neurocirujano');
+INSERT INTO especialidades VALUES('5','Psicología');
+INSERT INTO especialidades VALUES('6','Pediatría');
 
 --
 -- Estructura de la tabla 'paciente'
@@ -241,7 +270,7 @@ CREATE TABLE `user` (
   `idmedico` varchar(20) NOT NULL,
   `cimedico` int(11) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Datos de la tabla 'user'
